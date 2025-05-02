@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div>
+  <input type="text" id="search-input" placeholder="输入关键词搜索">
+  <ul id="search-results"></ul>
+</div>
+
+<script src="{{ "js/lunr.js" | relURL }}"></script>
+<script src="{{ "js/search.js" | relURL }}"></script>
+{{ end }}

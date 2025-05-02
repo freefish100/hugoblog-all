@@ -1,0 +1,18 @@
+<footer class="footer">
+	<div class="container footer__container flex">
+		{{ partial "footer_links.html" . }}
+		<div class="footer__copyright">
+			&copy; {{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }}.
+			<span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span>
+		</div>
+	</div>
+    <!-- 在这里引入 busuanzi.html -->
+    {{ partial "busuanzi.html" . }}
+    <!-- Busuanzi 统计数据 -->
+    <div id="busuanzi-container">
+        <span id="busuanzi_value_page_pv"></span> 次访问
+        <span id="busuanzi_value_site_pv"></span> 总访问量
+        <span id="busuanzi_value_site_uv"></span> 访客数量
+    </div>
+</footer>
+
