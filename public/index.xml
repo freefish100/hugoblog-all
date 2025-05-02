@@ -9,6 +9,13 @@
     <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>dufs 文件服务器</title>
+      <link>http://localhost:1313/posts/js20250502c/</link>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/js20250502c/</guid>
+      <description>https://github.com/sigoden/dufs docker部署&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A admin有全部权限，其它用户只有下载查看搜索权限&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A -a admin:admin@/:rw -a @/ --allow-search --allow-archive 现在有个问题，是无法让admin以外的用户能有upload功能，即使设置了 &amp;ndash;allow-uploa，如果给其它用户rw权限，那其它用户也同时有了删除权限。&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A -a admin:admin@/:rw -a @/:ro --allow-search --allow-archive --allow-upload </description>
+    </item>
+    <item>
       <title>中国大陆 centos 7.9 ubuntu 22.04 安装Docker和Docker Compose</title>
       <link>http://localhost:1313/posts/js20250502/</link>
       <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
