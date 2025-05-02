@@ -11,8 +11,8 @@ googleAnalytics = ""
   highlightColor = "#2956a3"
 
 [Params]
-  description = "自游鱼的博客 电脑技术 互联网技术 AI技术 网络"
-  copyright = "John Doe"
+  description = "自游鱼的博客，分享电脑服务器、存储设备技术、互联网、AI人工智能技术及网络知识，与各大技术爱好者共同成长。"
+  copyright = "自游鱼"
   opengraph = true
   schema = true
   twitter_cards = true
