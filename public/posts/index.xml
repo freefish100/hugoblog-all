@@ -16,11 +16,11 @@
       <description>掌握这些Windows快捷键，让你的效率翻倍！ 时间就是效率，Windows系统的快捷键就像隐藏的魔法按钮，能帮助你快速完成操作，省时省力。不管你是职场人士、学生，还是日常电脑用户，熟练掌握这些快捷键都能让我们的工作和生活更加顺畅。&#xA;今天，我整理了40个Windows常用快捷键，分为基础操作、窗口管理、文件处理和浏览器使用四大类，涵盖了日常使用的大部分场景，让你从小白瞬间成为快捷键高手！&#xA;一、基础操作：日常必备的&amp;quot;起手式&amp;quot; 这些快捷键是Windows系统最常用的基础技能，简单易记，适合所有人上手。&#xA;Ctrl + C - 复制选中的文本、图片或文件，快捷传递信息 Ctrl + X - 剪切内容，移动而不是复制时用它 Ctrl + V - 粘贴刚刚复制或剪切的内容，操作核心三连之一 Ctrl + Z - 撤销失误，堪称&amp;quot;后悔药&amp;quot; Ctrl + Y - 重做撤销的操作，灵活调整 Ctrl + S - 保存文件，避免意外丢失成果 Ctrl + P - 快速打印文档或页面 Ctrl + A - 全选内容，一键搞定大范围操作 Ctrl + F - 查找关键词，文档和网页都适用 Alt + F4 - 关闭当前窗口，退出程序的经典方式 Windows + A - 打开操作中心，查看通知不离开浏览器 Windows + S - 打开搜索栏，快速查找信息 💡 小贴士：Ctrl + C/X/V 是&amp;quot;黄金三角&amp;quot;，熟练后你会发现复制粘贴变得如丝般顺滑！</description>
     </item>
     <item>
-      <title>dufs 文件服务器</title>
+      <title>Dufs轻量级的文件上传下载服务器</title>
       <link>https://freezz.cc/posts/js20250502c/</link>
       <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
       <guid>https://freezz.cc/posts/js20250502c/</guid>
-      <description>https://github.com/sigoden/dufs docker部署&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A admin有全部权限，其它用户只有下载查看搜索权限&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A -a admin:admin@/:rw -a @/ --allow-search --allow-archive 现在有个问题，是无法让admin以外的用户能有upload功能，即使设置了 &amp;ndash;allow-uploa，如果给其它用户rw权限，那其它用户也同时有了删除权限。&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A -a admin:admin@/:rw -a @/:ro --allow-search --allow-archive --allow-upload </description>
+      <description>https://github.com/sigoden/dufs&#xA;Dufs（Distinctive Utility File Server）是一个开源的文件服务器项目，是一个轻量级的文件服务器，旨在提供简单、高效的文件管理和分享功能，支持多种实用特性，提供静态文件服务、文件上传、搜索、访问控制和 WebDAV 支持等功能。它易于部署，界面简洁，支持通过命令行或 Docker 运行，适用于快速搭建文件共享服务。&#xA;docker部署&#xA;sudo docker run -d -v `pwd`:/data -p 5005:5000 --rm sigoden/dufs /data -A 命令解释：&#xA;sudo:&#xA;表示以超级用户（root）权限运行命令。Docker 通常需要 root 权限来管理容器和网络。&#xA;docker run:&#xA;启动一个新的 Docker 容器，基于指定的镜像（这里是 sigoden/dufs）。&#xA;-d:&#xA;以分离模式（detached mode）运行容器，容器在后台运行，不会占用终端。&#xA;-v pwd:/data:&#xA;挂载卷（volume），将主机当前工作目录（通过 pwd 获取）映射到容器内的 /data 目录。主机当前目录中的文件和文件夹可在容器内的 /data 路径下访问，Dufs 将以此目录作为文件服务的根目录。&#xA;注意：pwd 是反引号，执行 pwd 命令并将其输出（当前目录路径）插入命令。&#xA;-p 5005:5000:&#xA;端口映射，将主机的 5005 端口映射到容器内的 5000 端口。&#xA;效果：Dufs 默认监听容器内的 5000 端口，外部通过主机的 5005 端口（如 http://localhost:5005）访问服务。&#xA;--rm:&#xA;容器停止后自动删除，释放资源。&#xA;效果：避免容器堆积，适合临时使用场景。&#xA;sigoden/dufs:&#xA;指定运行的 Docker 镜像，即 Dufs 的官方镜像，托管在 Docker Hub。</description>
     </item>
     <item>
       <title>国内 centos 7.9 ubuntu 22.04 安装Docker和Docker Compose</title>
