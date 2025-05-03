@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 
 	<link rel="stylesheet" href="/css/style.css">
-	
+	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="alternate" type="application/rss+xml" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" title="自游鱼">
 
 	<link rel="shortcut icon" href="/favicon.ico">
@@ -258,18 +258,72 @@ hugo new site ffblog 其中 &ldquo;ffblog&rdquo; 是网站文件 …
 			
 <aside class="sidebar"><style>
      
-    #searchTerm {
-      margin-bottom: 20px;  
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-  </style>
+    
+     
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+     
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+     
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+     
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
 
 <form class="search"> 
-    <div id="resultsContainer">文章搜索...</div>
-    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="欢迎搜索">
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
 </form>
 
-
-  <script>
+<script>
+    
     function search(jsonData, searchTerm) {
       let results = [];
       for (let i = 0; i < jsonData.length; i++) {
@@ -303,28 +357,26 @@ hugo new site ffblog 其中 &ldquo;ffblog&rdquo; 是网站文件 …
     }
   
     function initiateSearch() {
-  let searchTerm = document.getElementById("searchTerm").value.trim(); 
-  let container = document.getElementById("resultsContainer");
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
 
-  
-  if (searchTerm === "") {
-    container.innerHTML = "文章搜索";
-    return; 
-  }
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', '/index.json', true);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      let jsonData = JSON.parse(xhr.responseText);
-      let searchResults = search(jsonData, searchTerm);
-      displayResults(searchResults);
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
     }
-  };
-  xhr.send();
-}
-
-  </script>
+</script>
 <div class="widget-featured widget">
         <h4 class="widget__title">精选文章</h4>
         <div class="widget__content">
@@ -390,13 +442,15 @@ hugo new site ffblog 其中 &ldquo;ffblog&rdquo; 是网站文件 …
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
 	</div>
-</div><div class="widget about">
+</div><div>
 <hr>
-<h4 class="widget-title">关于自游鱼</h3>
+<h4 class="widget-title">关于自游鱼</h4>
 <p>
 欢迎来到自游鱼的博客！自游鱼专注于 电脑技术、互联网 和 AI 技术。通过这个博客，我分享学习笔记、技术见解和实践经验，希望与你共同成长！
 </p>
-<hr>
+<div style="text-align: center; margin: 20px 0;">
+    <img src="/wx.png" alt="自游鱼博客图片" style="max-width: 50%; height: auto;"><p><h5>服务器存储设备咨询</h5>
+</div>
 </div>
 </aside>
 		</div>

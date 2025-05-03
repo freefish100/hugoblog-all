@@ -78,7 +78,7 @@ Precision Workstation 工作站诊断指示灯参考指南 DELL:比如目前是3
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 
 	<link rel="stylesheet" href="/css/style.css">
-	
+	<link rel="stylesheet" href="/css/custom.css">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -325,18 +325,72 @@ PowerEdge R740 系统支持集成 Matrox G200eW3 图形控制器支持的视频�
 			</div>
 			<aside class="sidebar"><style>
      
-    #searchTerm {
-      margin-bottom: 20px;  
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-  </style>
+    
+     
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+     
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+     
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+     
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
 
 <form class="search"> 
-    <div id="resultsContainer">文章搜索...</div>
-    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="欢迎搜索">
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
 </form>
 
-
-  <script>
+<script>
+    
     function search(jsonData, searchTerm) {
       let results = [];
       for (let i = 0; i < jsonData.length; i++) {
@@ -370,45 +424,26 @@ PowerEdge R740 系统支持集成 Matrox G200eW3 图形控制器支持的视频�
     }
   
     function initiateSearch() {
-  let searchTerm = document.getElementById("searchTerm").value.trim(); 
-  let container = document.getElementById("resultsContainer");
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
 
-  
-  if (searchTerm === "") {
-    container.innerHTML = "文章搜索";
-    return; 
-  }
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', '/index.json', true);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      let jsonData = JSON.parse(xhr.responseText);
-      let searchResults = search(jsonData, searchTerm);
-      displayResults(searchResults);
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
     }
-  };
-  xhr.send();
-}
-
-  </script>
-<div class="widget-featured widget">
-        <h4 class="widget__title">精选文章</h4>
-        <div class="widget__content">
-                <ul class="widget__list">
-                        <li class="widget__item"><a class="widget__link" href="/posts/jsbw202410b/">技术备忘--infortrend存储设备篇(随更)</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/20240417a/">公众号文章收集</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/jsbw202410c/">技术备忘--windows篇(随更)</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/jsbw202410a/">技术备忘--戴尔设备篇(随更)</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/js20220729/">VMware ESXI vCenter 备忘笔记</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/rc20220411/">技术文章链接收录</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/js20220401/">Linux CentOS 命令摘录备忘</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/js20220401b/">Linux Ubuntu 命令摘录备忘</a></li>
-                        <li class="widget__item"><a class="widget__link" href="/posts/rc20220223/">网址收录书签备忘(随更)</a></li>
-                </ul>
-        </div>
-</div>
-
+</script>
 <div class="widget-recent widget">
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
@@ -420,21 +455,32 @@ PowerEdge R740 系统支持集成 Matrox G200eW3 图形控制器支持的视频�
 			<li class="widget__item"><a class="widget__link" href="/posts/js20240920/">使用Windows凭据管理轻松切换访问NAS或Windows共享文件的账户</a></li>
 		</ul>
 	</div>
+</div><div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h3 class="widget-title">个性化内容</h3>
+  </div>
+  <div class="card-body">
+    <p class="ad-text">感谢访问 <strong>自游鱼的博客</strong>！你的支持是我们持续创作的动力，加入我们，一起探索技术世界！</p>
+    <a href="https://example.com/ad" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad-banner.webp" alt="宣传图片" class="ad-image">
+    </a>
+    <a href="https://example.com/support" target="_blank" rel="nofollow noopener noreferrer" class="ad-button">了解更多支持方式 <i class="fas fa-arrow-right"></i></a>
+  </div>
 </div>
-<div class="widget-categories widget">
-	<h4 class="widget__title">分类</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">公众号文章</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/%E6%8A%80%E6%9C%AF%E6%91%98%E5%BD%95/">技术摘录</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/%E9%9A%8F%E5%86%99%E6%91%98%E5%BD%95/">随写摘录</a></li>
-		</ul>
-	</div>
+
+<div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h3 class="widget-title">个性化内容</h3>
+  </div>
+  <div class="card-body">
+    <p class="ad-text">感谢访问 <strong>自游鱼的博客</strong>！你的支持是我们持续创作的动力，加入我们，一起探索技术世界！</p>
+    <a href="https://example.com/ad" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad-banner.webp" alt="宣传图片" class="ad-image">
+    </a>
+    <a href="https://example.com/support" target="_blank" rel="nofollow noopener noreferrer" class="ad-button">了解更多支持方式 <i class="fas fa-arrow-right"></i></a>
+  </div>
 </div>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">标签</h4>
@@ -457,13 +503,6 @@ PowerEdge R740 系统支持集成 Matrox G200eW3 图形控制器支持的视频�
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
 	</div>
-</div><div class="widget about">
-<hr>
-<h4 class="widget-title">关于自游鱼</h3>
-<p>
-欢迎来到自游鱼的博客！自游鱼专注于 电脑技术、互联网 和 AI 技术。通过这个博客，我分享学习笔记、技术见解和实践经验，希望与你共同成长！
-</p>
-<hr>
 </div>
 </aside>
 		</div>

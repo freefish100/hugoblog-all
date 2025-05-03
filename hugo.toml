@@ -21,6 +21,7 @@ googleAnalytics = ""
   pager = true
   post_meta = ["author", "date", "categories", "translations"]
   dateformat = "2006-01-02"
+  customCSS = ["css/custom.css"]
 
 [Params.logo]
   image = "img/zyy.png"

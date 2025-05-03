@@ -1,0 +1,62 @@
+baseurl = "https://freezz.cc"
+title = "自游鱼"
+languageCode = "en-us"
+defaultContentLanguage = "zh-cn"
+paginate = "10"
+theme = "mainroad"
+disqusShortname = ""
+googleAnalytics = ""
+
+[Params.style.vars]
+  highlightColor = "#2956a3"
+
+[Params]
+  description = "自游鱼的博客，分享电脑服务器、存储设备技术、互联网、AI人工智能技术及网络知识，与各大技术爱好者共同成长。"
+  copyright = "自游鱼"
+  opengraph = true
+  schema = true
+  twitter_cards = true
+  readmore = false
+  toc = true
+  pager = true
+  post_meta = ["author", "date", "categories", "translations"]
+  dateformat = "2006-01-02"
+
+[Params.logo]
+  image = "img/zyy.png"
+  title = "自游鱼"
+  subtitle = "IT电脑笔记 | 前行 · 探索 · 实践"
+
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = true
+  widgets = ["search", "featured", "recent", "categories", "taglist", "social", "languages","about"]
+
+[Params.thumbnail]
+  visibility = ["list", "post"]
+
+[Params.widgets]
+  recent_num = 5
+  featured_num = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 添加顶部导航菜单
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "server"
+    name = "服务器"
+    url = "/tags/服务器/"
+    weight = 2
+  [[menu.main]]
+    identifier = "storage"
+    name = "存储设备"
+    url = "/tags/存储设备/"
+    weight = 3

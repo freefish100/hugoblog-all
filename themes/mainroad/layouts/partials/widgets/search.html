@@ -1,17 +1,71 @@
 <style>
-    /* 增加搜索框的下外边距 */
-    #searchTerm {
-      margin-bottom: 20px; /* 例如，增加20px的下外边距 */
+    /* 搜索框整体样式 */
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-  </style>
+    
+    /* 搜索输入框 */
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+    /* 搜索结果容器 */
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    /* 搜索结果条目 */
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+    /* 无结果提示 */
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
 
 <form class="search"> 
-    <div id="resultsContainer">文章搜索...</div>
-    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="欢迎搜索">
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
 </form>
 
-
-  <script>
+<script>
+    // 保持原有JavaScript功能不变
     function search(jsonData, searchTerm) {
       let results = [];
       for (let i = 0; i < jsonData.length; i++) {
@@ -45,25 +99,23 @@
     }
   
     function initiateSearch() {
-  let searchTerm = document.getElementById("searchTerm").value.trim(); // 使用.trim()去除两端空格
-  let container = document.getElementById("resultsContainer");
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
 
-  // 如果搜索词为空，则清空搜索结果并返回
-  if (searchTerm === "") {
-    container.innerHTML = "文章搜索";
-    return; // 提前退出函数
-  }
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', '/index.json', true);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      let jsonData = JSON.parse(xhr.responseText);
-      let searchResults = search(jsonData, searchTerm);
-      displayResults(searchResults);
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
     }
-  };
-  xhr.send();
-}
-
-  </script>
+</script>
