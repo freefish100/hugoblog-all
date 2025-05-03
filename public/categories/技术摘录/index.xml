@@ -6,8 +6,15 @@
     <description>Recent content in 技术摘录 on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2024 14:41:01 +0800</lastBuildDate>
     <atom:link href="https://freezz.cc/categories/%E6%8A%80%E6%9C%AF%E6%91%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>公众号文章收集</title>
+      <link>https://freezz.cc/posts/20240417a/</link>
+      <pubDate>Wed, 17 Apr 2024 14:41:01 +0800</pubDate>
+      <guid>https://freezz.cc/posts/20240417a/</guid>
+      <description>一行代码就能激活windows/office&#xA;微软官方工具制作启动U盘全新安装windows</description>
+    </item>
     <item>
       <title>Hugo网站中的markdown事例文章</title>
       <link>https://freezz.cc/posts/test09/</link>
