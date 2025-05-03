@@ -23,13 +23,15 @@ googleAnalytics = ""
   dateformat = "2006-01-02"
 
 [Params.logo]
-  subtitle = "从原点再出发,不是简单的重复"
+  image = "img/zyy.png"
+  title = "自游鱼"
+  subtitle = "IT电脑笔记 | 前行 · 探索 · 实践"
 
 [Params.sidebar]
   home = "right"
   list = "right"
   single = true
-  widgets = ["about","search", "featured", "recent", "categories", "taglist", "social", "languages"]
+  widgets = ["search", "featured", "recent", "categories", "taglist", "social", "languages","about"]
 
 [Params.thumbnail]
   visibility = ["list", "post"]

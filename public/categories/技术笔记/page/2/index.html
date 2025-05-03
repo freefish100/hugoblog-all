@@ -16,7 +16,7 @@
 		
   <meta itemprop="name" content="技术笔记">
   <meta itemprop="description" content="自游鱼的博客，分享电脑服务器、存储设备技术、互联网、AI人工智能技术及网络知识，与各大技术爱好者共同成长。">
-  <meta itemprop="dateModified" content="2025-05-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-03T00:00:00+00:00">
 		
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="技术笔记">
@@ -42,11 +42,13 @@
 		<header class="header">
 	<div class="container header__container">
 		
-	<div class="logo">
+	<div class="logo logo--mixed">
 		<a class="logo__link" href="/" title="自游鱼" rel="home">
-			<div class="logo__item logo__text">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/zyy.png">
+				</div><div class="logo__item logo__text">
 					<div class="logo__title">自游鱼</div>
-					<div class="logo__tagline">从原点再出发,不是简单的重复</div>
+					<div class="logo__tagline">IT电脑笔记 | 前行 · 探索 · 实践</div>
 				</div>
 		</a>
 	</div>
@@ -96,6 +98,24 @@
 	<header class="main__header">
 		<h1 class="main__title">技术笔记</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/jsbw202410b/" rel="bookmark">
+			技术备忘--infortrend存储设备篇(随更)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-07-10T00:00:00Z">2024-07-10</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Infortrend普安存储设备 目前的型号，支持单只硬盘的最大容量是18T。（此条目更新于2022年7月） 存储中的硬盘使用raid10生成逻辑卷后，会自动创建两个raid1的逻辑磁盘，这是正常的。 …
+	</div>
+</article>
+<article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -273,26 +293,6 @@ Precision Workstation 工作站诊断 …
 sudo apt-get update …
 	</div>
 </article>
-<article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/js20221122/" rel="bookmark">
-			Linux(Centos) top命令的使用详解
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-11-22T00:00:00Z">2022-11-22</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。
-top参数详解 第一行，任务队列信息，同 uptime 命令的执行结果
-系统时 …
-	</div>
-</article>
 
 </main>
 
@@ -310,10 +310,7 @@ top参数详解 第一行，任务队列信息，同 uptime 命令的执行结�
 
 			</div>
 			
-<aside class="sidebar"><div class="widget about">
-  <h3 class="widget-title">关于我</h3>
-  <p>欢迎访问自游鱼的博客！我是 自游鱼，热爱电脑技术、互联网技术和 AI 技术。这里分享我的学习笔记和见解，希望与你共同成长！</p>
-</div><style>
+<aside class="sidebar"><style>
      
     #searchTerm {
       margin-bottom: 20px;  
@@ -403,11 +400,11 @@ top参数详解 第一行，任务队列信息，同 uptime 命令的执行结�
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250503/">掌握常用的Windows快捷键，事半功倍提高工作效率</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20250502c/">dufs 文件服务器</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20250502/">国内 centos 7.9 ubuntu 22.04 安装Docker和Docker Compose</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20241205a/">储迹存储功能界面，Rocky linux 9 挂载存储并配置LVM分区</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20240920/">使用Windows凭据管理轻松切换访问NAS或Windows共享文件的账户</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/js20240920b/">DELL戴尔服务器R750 H755阵列卡 配置磁盘阵列raid</a></li>
 		</ul>
 	</div>
 </div>
@@ -447,6 +444,13 @@ top参数详解 第一行，任务队列信息，同 uptime 命令的执行结�
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
 	</div>
+</div><div class="widget about">
+<hr>
+<h4 class="widget-title">关于自游鱼</h3>
+<p>
+欢迎来到自游鱼的博客！自游鱼专注于 电脑技术、互联网 和 AI 技术。通过这个博客，我分享学习笔记、技术见解和实践经验，希望与你共同成长！
+</p>
+<hr>
 </div>
 </aside>
 		</div>

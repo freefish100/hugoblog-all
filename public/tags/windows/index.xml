@@ -6,8 +6,15 @@
     <description>Recent content in Windows on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://freezz.cc/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>掌握常用的Windows快捷键，事半功倍提高工作效率</title>
+      <link>https://freezz.cc/posts/js20250503/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://freezz.cc/posts/js20250503/</guid>
+      <description>掌握这些Windows快捷键，让你的效率翻倍！ 时间就是效率，Windows系统的快捷键就像隐藏的魔法按钮，能帮助你快速完成操作，省时省力。不管你是职场人士、学生，还是日常电脑用户，熟练掌握这些快捷键都能让我们的工作和生活更加顺畅。&#xA;今天，我整理了40个Windows常用快捷键，分为基础操作、窗口管理、文件处理和浏览器使用四大类，涵盖了日常使用的大部分场景，让你从小白瞬间成为快捷键高手！&#xA;一、基础操作：日常必备的&amp;quot;起手式&amp;quot; 这些快捷键是Windows系统最常用的基础技能，简单易记，适合所有人上手。&#xA;Ctrl + C - 复制选中的文本、图片或文件，快捷传递信息 Ctrl + X - 剪切内容，移动而不是复制时用它 Ctrl + V - 粘贴刚刚复制或剪切的内容，操作核心三连之一 Ctrl + Z - 撤销失误，堪称&amp;quot;后悔药&amp;quot; Ctrl + Y - 重做撤销的操作，灵活调整 Ctrl + S - 保存文件，避免意外丢失成果 Ctrl + P - 快速打印文档或页面 Ctrl + A - 全选内容，一键搞定大范围操作 Ctrl + F - 查找关键词，文档和网页都适用 Alt + F4 - 关闭当前窗口，退出程序的经典方式 Windows + A - 打开操作中心，查看通知不离开浏览器 Windows + S - 打开搜索栏，快速查找信息 💡 小贴士：Ctrl + C/X/V 是&amp;quot;黄金三角&amp;quot;，熟练后你会发现复制粘贴变得如丝般顺滑！</description>
+    </item>
     <item>
       <title>国内 centos 7.9 ubuntu 22.04 安装Docker和Docker Compose</title>
       <link>https://freezz.cc/posts/js20250502/</link>
