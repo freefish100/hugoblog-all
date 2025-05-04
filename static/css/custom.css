@@ -150,66 +150,95 @@
   font-size: 0.9rem;
 }
 
-/* 支持顶部横幅 */
+/* 顶部横幅布局 */
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 1rem;
-  flex-wrap: wrap; /* 允许换行 */
-  gap: 1rem; /* 元素间距 */
 }
 
+/* 横幅图在右侧，增加右边距 */
 .custom-banner {
   margin-left: auto;
+  margin-right: 2rem; /* 保持右边距 */
+  max-width: 300px; /* 限制横幅宽度 */
+}
+
+/* 调整菜单栏布局 */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: #2c4a8b; /* 菜单底色 */
+}
+
+/* 动态时钟在菜单栏右侧 */
+.menu-clock {
+  margin-left: auto;
   margin-right: 1rem;
+  background: #2c4a8b; /* 与菜单底色一致 */
+  padding: 0 0.5rem; /* 轻微内边距 */
+  z-index: 10; /* 提高层级 */
 }
 
-/* 美化动态时clock */
+/* 简洁动态时钟样式 */
 #current-time {
-  color: #2956a3; /* 与主题主色一致 */
-  font-size: 1.4rem; /* 字体稍大 */
-  font-family: 'Roboto', sans-serif; /* 现代字体 */
-  font-weight: 500; /* 中等粗细 */
-  background: #ffffff; /* 纯白背景 */
-  padding: 0.4rem 1rem; /* 内边距 */
-  border-radius: 12px; /* 更大圆角 */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.5); /* 轻量阴影+内嵌高光 */
-  border: 1px solid #e0e0e0; /* 微边框 */
-  white-space: nowrap; /* 防止换行 */
-  transition: transform 0.2s ease, box-shadow 0.3s ease; /* 动画效果 */
-}
-
-#current-time:hover {
-  transform: translateY(-2px); /* 悬浮轻微上移 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.5); /* 增强阴影 */
+  color: #ffffff; /* 文字颜色改为白色，与菜单一致 */
+  font-size: 1rem;
+  font-family: inherit;
+  white-space: nowrap;
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
   .header-top {
-    justify-content: space-between; /* 保持两端对齐 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .custom-banner {
+    max-width: 200px;
+    margin-right: 1rem;
   }
 
   #current-time {
-    font-size: 1.2rem;
-    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .menu-clock {
+    margin-right: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .header-top {
-    justify-content: center; /* 小屏幕居中 */
-    flex-direction: column; /* 垂直排列 */
+    flex-direction: column;
+    align-items: center;
   }
 
   .custom-banner {
-    margin: 0; /* 居中时移除边距 */
+    margin-top: 0.5rem;
+    margin-right: 0;
+    max-width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu-clock {
+    margin: 0.5rem 0;
   }
 
   #current-time {
-    font-size: 1rem;
-    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
   }
+}
+
+/* 确保页面容器背景与菜单协调 */
+.container {
+  background: #ffffff; /* 页面容器背景 */
 }

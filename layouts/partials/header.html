@@ -3,17 +3,11 @@
 		<div class="header-top">
 			{{ partial "logo.html" . }}
 			<div class="custom-banner">
-				<span id="current-time"></span>
+				<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+					<img src="/xx1.png" alt="顶部横幅" class="banner-image">
+				</a>
 			</div>
 		</div>
 		{{ partial "menu.html" . }}
 	</div>
-	<script>
-		function updateTime() {
-			const now = new Date();
-			document.getElementById("current-time").textContent = now.toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'medium' });
-		}
-		setInterval(updateTime, 1000);
-		updateTime();
-	</script>
 </header>

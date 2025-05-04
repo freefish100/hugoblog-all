@@ -103,7 +103,9 @@ Precision Workstation 工作站诊断指示灯参考指南 DELL:比如目前是3
 		</a>
 	</div>
 			<div class="custom-banner">
-				<span id="current-time"></span>
+				<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+					<img src="/xx1.png" alt="顶部横幅" class="banner-image">
+				</a>
 			</div>
 		</div>
 		
@@ -141,17 +143,21 @@ Precision Workstation 工作站诊断指示灯参考指南 DELL:比如目前是3
 			</a>
 		</li>
 	</ul>
+	
+	<div class="menu-clock">
+		<span id="current-time"></span>
+	</div>
 </nav>
+<script>
+	function updateTime() {
+		const now = new Date();
+		document.getElementById("current-time").textContent = now.toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'medium' });
+	}
+	setInterval(updateTime, 1000);
+	updateTime();
+</script>
 
 	</div>
-	<script>
-		function updateTime() {
-			const now = new Date();
-			document.getElementById("current-time").textContent = now.toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'medium' });
-		}
-		setInterval(updateTime, 1000);
-		updateTime();
-	</script>
 </header>
 		<div class="wrapper flex">
 			<div class="primary">

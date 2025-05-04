@@ -493,7 +493,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .menu__list {
 	list-style: none;
-	background: #052043;
+	background: #4a668b;
 }
 
 .menu__item:hover {
