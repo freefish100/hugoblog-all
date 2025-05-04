@@ -150,7 +150,7 @@
   font-size: 0.9rem;
 }
 
-/* 顶部横幅布局 */
+/* 新增样式支持顶部横幅 */
 .header-top {
   display: flex;
   align-items: center;
@@ -159,86 +159,31 @@
   margin-bottom: 1rem;
 }
 
-/* 横幅图在右侧，增加右边距 */
 .custom-banner {
   margin-left: auto;
-  margin-right: 2rem; /* 保持右边距 */
-  max-width: 300px; /* 限制横幅宽度 */
-}
-
-/* 调整菜单栏布局 */
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  background: #2c4a8b; /* 菜单底色 */
-}
-
-/* 动态时钟在菜单栏右侧 */
-.menu-clock {
-  margin-left: auto;
   margin-right: 1rem;
-  background: #2c4a8b; /* 与菜单底色一致 */
-  padding: 0 0.5rem; /* 轻微内边距 */
-  z-index: 10; /* 提高层级 */
 }
 
-/* 简洁动态时钟样式 */
-#current-time {
-  color: #ffffff; /* 文字颜色改为白色，与菜单一致 */
-  font-size: 1rem;
-  font-family: inherit;
-  white-space: nowrap;
+.banner-image {
+  width: 400px; /* 默认宽度 */
+  height: auto;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.banner-image:hover {
+  opacity: 0.9;
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
-  .header-top {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .custom-banner {
-    max-width: 200px;
-    margin-right: 1rem;
-  }
-
-  #current-time {
-    font-size: 0.9rem;
-  }
-
-  .menu-clock {
-    margin-right: 0.5rem;
+  .banner-image {
+    width: 300px; /* 小屏幕调整宽度 */
   }
 }
 
 @media (max-width: 480px) {
-  .header-top {
-    flex-direction: column;
-    align-items: center;
+  .banner-image {
+    width: 200px; /* 更小屏幕调整宽度 */
   }
-
-  .custom-banner {
-    margin-top: 0.5rem;
-    margin-right: 0;
-    max-width: 100%;
-  }
-
-  .menu {
-    flex-direction: column;
-  }
-
-  .menu-clock {
-    margin: 0.5rem 0;
-  }
-
-  #current-time {
-    font-size: 0.85rem;
-  }
-}
-
-/* 确保页面容器背景与菜单协调 */
-.container {
-  background: #ffffff; /* 页面容器背景 */
 }
