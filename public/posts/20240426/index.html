@@ -120,44 +120,44 @@
 		</header>
 		<div class="content post__content clearfix">
 			<p>浪潮 G2 系列的存储产品，默认的管理ip为 192.168.70.10，登录用户名和密码为 superuser / Passw0rd! ，电脑浏览器访问G2存储管理的ip，即可打开存储的登录页面</p>
-<p><img src="/images/228e8b46eea93cc235e875109cc5b2e3.png" alt="228e8b46eea93cc235e875109cc5b2e3.png"></p>
+<p><img src="/img/228e8b46eea93cc235e875109cc5b2e3.png" alt="228e8b46eea93cc235e875109cc5b2e3.png"></p>
 <p>登录后，看到首页是G2存储的总览状态</p>
-<p><img src="/images/2f9a5fd33e81d57d4f08a6c2b4e42596.png" alt="2f9a5fd33e81d57d4f08a6c2b4e42596.png"></p>
+<p><img src="/img/2f9a5fd33e81d57d4f08a6c2b4e42596.png" alt="2f9a5fd33e81d57d4f08a6c2b4e42596.png"></p>
 <p>当前已建立了一个存储池和一个存储卷</p>
-<p><img src="/images/57cd4681432fbf495ed0bf6016610e64.png" alt="57cd4681432fbf495ed0bf6016610e64.png"></p>
+<p><img src="/img/57cd4681432fbf495ed0bf6016610e64.png" alt="57cd4681432fbf495ed0bf6016610e64.png"></p>
 <p>这里讲述一下建立一个卷和把卷映射到主机的基本操作：</p>
 <p>1、点击页面左边导航条的第3个图标，再点击“创建卷”</p>
-<p><img src="/images/14607aff0667e81b1ba58ab6b42ed05e.png" alt="14607aff0667e81b1ba58ab6b42ed05e.png"></p>
+<p><img src="/img/14607aff0667e81b1ba58ab6b42ed05e.png" alt="14607aff0667e81b1ba58ab6b42ed05e.png"></p>
 <p>这里新建一个“基本”卷</p>
-<p><img src="/images/72eba403e8c7e1faf13455b0797e673c.png" alt="72eba403e8c7e1faf13455b0797e673c.png"></p>
+<p><img src="/img/72eba403e8c7e1faf13455b0797e673c.png" alt="72eba403e8c7e1faf13455b0797e673c.png"></p>
 <p>2、点击页面左边导航条的第4个图标，再点击“添加主机”</p>
-<p><img src="/images/1688d5580d38a6795cb41099bb9886a8.png" alt="1688d5580d38a6795cb41099bb9886a8.png"></p>
+<p><img src="/img/1688d5580d38a6795cb41099bb9886a8.png" alt="1688d5580d38a6795cb41099bb9886a8.png"></p>
 <p> 填写主机的名称和iSCS端口(主机的iqn)。名称这里可自定义，iSCS端口要填写主机的IQN名称</p>
-<p><img src="/images/9be701fe570c35de39e6514ebfb0a866.png" alt="9be701fe570c35de39e6514ebfb0a866.png"></p>
+<p><img src="/img/9be701fe570c35de39e6514ebfb0a866.png" alt="9be701fe570c35de39e6514ebfb0a866.png"></p>
 <p>按如下步骤可以查找到主机的IQN：打开windows server的“开始菜单”&ndash;“Windows管理工具”&ndash;&ldquo;iSCSI发起程序&rdquo;</p>
-<p><img src="/images/295e3a2d407f6ad0cdbcd02463d943d1.png" alt="295e3a2d407f6ad0cdbcd02463d943d1.png"></p>
+<p><img src="/img/295e3a2d407f6ad0cdbcd02463d943d1.png" alt="295e3a2d407f6ad0cdbcd02463d943d1.png"></p>
 <p>切换到&quot;配置”选项卡，即可看到主机的IQN名称，把IQN复制粘贴到上面第2个步骤的“iSCS端口”里</p>
-<p><img src="/images/1416d303bf3dae0805a43fc1cd15e534.png" alt="1416d303bf3dae0805a43fc1cd15e534.png"></p>
+<p><img src="/img/1416d303bf3dae0805a43fc1cd15e534.png" alt="1416d303bf3dae0805a43fc1cd15e534.png"></p>
 <p>3、把卷映射到主机</p>
-<p><img src="/images/45e353dc7d4182a03d315e9890a9977c.png" alt="45e353dc7d4182a03d315e9890a9977c.png"></p>
+<p><img src="/img/45e353dc7d4182a03d315e9890a9977c.png" alt="45e353dc7d4182a03d315e9890a9977c.png"></p>
 <p>选择要映射到的主机，这里选择上面刚刚添加的那台主机</p>
-<p><img src="/images/f74c30f43f1fd5df582ee5753fec7ac3.png" alt="f74c30f43f1fd5df582ee5753fec7ac3.png"></p>
+<p><img src="/img/f74c30f43f1fd5df582ee5753fec7ac3.png" alt="f74c30f43f1fd5df582ee5753fec7ac3.png"></p>
 <p>4、查看存储设备的ip地址，以太网端口的ip，这台G2是双控制器的机型，每个控制器有4个端口。当前这里就配置了每个控制器的1和2端口的ip，主机通过交换机与存储设备控制器的端口都已连通</p>
-<p><img src="/images/1f4c470e3ded71a9b48a07f5db51732a.png" alt="1f4c470e3ded71a9b48a07f5db51732a.png"></p>
+<p><img src="/img/1f4c470e3ded71a9b48a07f5db51732a.png" alt="1f4c470e3ded71a9b48a07f5db51732a.png"></p>
 <p>5、再次打开&quot;iSCSI发起程序&quot;，切换到“目标”选项卡，在“目标”中填写上图中的控制器以太网端口的ip，如192.168.67.130 ，然后点击“快速连接”</p>
-<p><img src="/images/423dbd96f7f1146b7ad1e75761201bb8.png" alt="423dbd96f7f1146b7ad1e75761201bb8.png"></p>
+<p><img src="/img/423dbd96f7f1146b7ad1e75761201bb8.png" alt="423dbd96f7f1146b7ad1e75761201bb8.png"></p>
 <p>成功连接到目标存储的状态。双控制器的多个端口ip的，重复第5个步骤，把所有的目标ip都连接上</p>
-<p><img src="/images/171ccffad4655b085574af7282099b58.png" alt="171ccffad4655b085574af7282099b58.png"></p>
+<p><img src="/img/171ccffad4655b085574af7282099b58.png" alt="171ccffad4655b085574af7282099b58.png"></p>
 <p>当&quot;iSCSI发起程序&quot;连接目标存储成功后，存储端就会看到主机处于“联机”状态</p>
-<p><img src="/images/39fec257b20378cd7dc731db4eadbc7f.png" alt="39fec257b20378cd7dc731db4eadbc7f.png"></p>
+<p><img src="/img/39fec257b20378cd7dc731db4eadbc7f.png" alt="39fec257b20378cd7dc731db4eadbc7f.png"></p>
 <p>6、安装多路径功能。这台G2存储，是双控多端口链路的，主机还需要安装“多路径”服务，以防止某单条链路故障导致业务中断</p>
-<p><img src="/images/ce29450086d5eaa724cfe8416440473b.png" alt="ce29450086d5eaa724cfe8416440473b.png"></p>
+<p><img src="/img/ce29450086d5eaa724cfe8416440473b.png" alt="ce29450086d5eaa724cfe8416440473b.png"></p>
 <p>安装好MPIO多路径功能后，重启一次主机，然后打开MPIO属性设置</p>
-<p><img src="/images/0ae080b73957a19379479808d7a181a1.png" alt="0ae080b73957a19379479808d7a181a1.png"></p>
+<p><img src="/img/0ae080b73957a19379479808d7a181a1.png" alt="0ae080b73957a19379479808d7a181a1.png"></p>
 <p>点击“发现多路径”选项卡，对相应的设备勾选上“添加对iSCSI设备的支持”</p>
-<p><img src="/images/530efa6a3e65b347547ebca430f3769c.png" alt="530efa6a3e65b347547ebca430f3769c.png"></p>
+<p><img src="/img/530efa6a3e65b347547ebca430f3769c.png" alt="530efa6a3e65b347547ebca430f3769c.png"></p>
 <p>7、打开“磁盘管理器”，点击“操作”菜单&ndash;“重新扫描磁盘”，就可以见到一块新添加的磁盘了，右击这块新磁盘选择“联机”，然后再次右击新磁盘选择“初始化”，然后对新磁盘进行分区，就可以使用了。</p>
-<p><img src="/images/82678e7fa9415afeb75b93431f2b4720.png" alt="82678e7fa9415afeb75b93431f2b4720.png"></p>
+<p><img src="/img/82678e7fa9415afeb75b93431f2b4720.png" alt="82678e7fa9415afeb75b93431f2b4720.png"></p>
 <p>这样就把G2存储上的一个卷，连接并挂载到windows server 的主机上，当成本地磁盘使用了。</p>
 
 		</div>
