@@ -22,8 +22,7 @@ googleAnalytics = ""
   post_meta = ["author", "date", "categories", "translations"]
   dateformat = "2006-01-02"
   customCSS = ["css/custom.css"]
-  googleFonts = false
-
+  
 [Params.logo]
   image = "img/zyy.png"
   title = "自游鱼"
