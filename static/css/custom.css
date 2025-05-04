@@ -150,40 +150,44 @@
   font-size: 0.9rem;
 }
 
-/* 新增样式支持顶部横幅 */
+/* 顶部横幅容器 */
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 1rem;
+  flex-wrap: wrap; /* 允许小屏幕换行 */
 }
 
+/* 横幅容器 */
 .custom-banner {
   margin-left: auto;
   margin-right: 1rem;
+  max-width: 100%; /* 防止溢出 */
 }
 
+/* 横幅图片 */
 .banner-image {
-  width: 400px; /* 默认宽度 */
-  height: auto;
+  max-width: 100%; /* 自适应容器宽度 */
+  height: auto; /* 保持宽高比 */
   border-radius: 4px;
   transition: opacity 0.3s ease;
+  display: block; /* 确保块级行为 */
+  max-width: 400px; /* 大屏幕最大宽度 */
 }
 
+/* 悬停效果 */
 .banner-image:hover {
   opacity: 0.9;
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-  .banner-image {
-    width: 300px; /* 小屏幕调整宽度 */
-  }
-}
-
+/* 小屏幕调整 */
 @media (max-width: 480px) {
-  .banner-image {
-    width: 200px; /* 更小屏幕调整宽度 */
+  .custom-banner {
+    margin-right: 0.5rem; /* 缩小边距 */
+  }
+  .header-top {
+    justify-content: center; /* 小屏幕居中 */
   }
 }
