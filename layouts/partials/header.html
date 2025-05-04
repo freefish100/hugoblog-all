@@ -1,0 +1,19 @@
+<header class="header">
+	<div class="container header__container">
+		<div class="header-top">
+			{{ partial "logo.html" . }}
+			<div class="custom-banner">
+				<span id="current-time"></span>
+			</div>
+		</div>
+		{{ partial "menu.html" . }}
+	</div>
+	<script>
+		function updateTime() {
+			const now = new Date();
+			document.getElementById("current-time").textContent = now.toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'medium' });
+		}
+		setInterval(updateTime, 1000);
+		updateTime();
+	</script>
+</header>
