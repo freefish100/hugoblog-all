@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>windows安装Rsync把文件同步到Linux服务器，安心备份数据 - 自游鱼</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="windows安装rsync把文件同步到Linux服务器，安心备份数据">
+		<meta property="og:url" content="https://freezz.cc/posts/js20250505/">
+  <meta property="og:site_name" content="自游鱼">
+  <meta property="og:title" content="windows安装Rsync把文件同步到Linux服务器，安心备份数据">
+  <meta property="og:description" content="windows安装rsync把文件同步到Linux服务器，安心备份数据">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-05T00:00:00+00:00">
+    <meta property="article:tag" content="服务器">
+    <meta property="article:tag" content="备份">
+
+		
+  <meta itemprop="name" content="windows安装Rsync把文件同步到Linux服务器，安心备份数据">
+  <meta itemprop="description" content="windows安装rsync把文件同步到Linux服务器，安心备份数据">
+  <meta itemprop="datePublished" content="2025-05-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="385">
+  <meta itemprop="keywords" content="服务器,备份">
+		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="windows安装Rsync把文件同步到Linux服务器，安心备份数据">
+  <meta name="twitter:description" content="windows安装rsync把文件同步到Linux服务器，安心备份数据">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+  
+
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		<div class="header-top">
+			
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="自游鱼" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/zyy.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">自游鱼</div>
+					<div class="logo__tagline">IT电脑笔记 | 前行 · 探索 · 实践</div>
+				</div>
+		</a>
+	</div>
+			<div class="custom-banner">
+				<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+					<img src="/xx1.png" alt="顶部横幅" class="banner-image" loading="lazy">
+				</a>
+			</div>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">菜单</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">首页</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+				
+				<span class="menu__text">服务器</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/">
+				
+				<span class="menu__text">存储设备</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">关于</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">windows安装Rsync把文件同步到Linux服务器，安心备份数据</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-05-05T00:00:00Z">2025-05-05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>先简单介绍一下rsync， rsync 是一个开源的、强大的命令行工具，主要用于 快速、灵活地进行文件和目录的同步和备份， 使用rsync，可以做到增量同步备份、本地或远程同步、单向同步或双向同步等。笔者这次主要是使用rsync进行文件的单向异机增量同步备份文件。</p>
+<p>首先在windows中下载和安装cwRsync客户端。目前最新版本为6.4.2，下载时要右键单击下载链接，然后点击“另存为”<br>
+<a href="https://www.itefix.net/cwrsync/client/downloads">https://www.itefix.net/cwrsync/client/downloads</a></p>
+<p><img src="/img/dd282272dbfb6adc11fd9f3cb154d4e6.png" alt="4336f6502036aa6c4eda0bed037b2a2e.png"><br>
+下载后解压至D盘根目录并修改一下名称<br>
+<img src="/img/e905517caf8ac516f358aa4eccce67dd.png" alt="e905517caf8ac516f358aa4eccce67dd.png"><br>
+为了后面方便在命令行中使用 Rsync，需要将cwrsync目录的 bin 子目录添加到系统环境变量 PATH 中：<br>
+<img src="/img/d64d8fe005f477a0d546552a83c91289.png" alt="d64d8fe005f477a0d546552a83c91289.png"><br>
+<img src="/img/8cac26491d5fa522e3873c17d1f7ea83.png" alt="8cac26491d5fa522e3873c17d1f7ea83.png"><br>
+<img src="/img/5f2ea7a026946bfc294c9705ba5c4b54.png" alt="5f2ea7a026946bfc294c9705ba5c4b54.png"><br>
+配置好环境变量后，使用快捷键 “win+R” 打开运行窗口执行“cmd”打开cmd命令程序，执行 &ldquo;rsync &ndash;version&rdquo; 命令，就可以查看到rsync的版本信息。<br>
+<img src="/img/302c2ddfa88dab1a88759e77994c979d.png" alt="302c2ddfa88dab1a88759e77994c979d.png"><br>
+以上步骤就完成了windows的rsync客户端的安装，下面在linux主机中部署rsync服务端。</p>
+<p>笔者的Linux主机安装的是Rocky linux 9.4 发行版<br>
+<img src="/img/b694cdbe533e11cd377c5d905d8f6645.png" alt="b694cdbe533e11cd377c5d905d8f6645.png"></p>
+<ol>
+<li>
+<p>开始安装Rsync，执行如下命令：<br>
+dnf install rsync -y<br>
+然后创建一个 Rsync 同步目录，并将其所有子目录和文件的所有者和所属组更改为 nobody<br>
+mkdir /rsync_data<br>
+chown -R nobody:nobody /rsync_data</p>
+</li>
+<li>
+<p>配置 Rsync 守护进程<br>
+(1) 创建 Rsync 配置文件<br>
+Rsync 的配置文件默认路径为 /etc/rsyncd.conf，创建并编辑它：<br>
+nano /etc/rsyncd.conf<br>
+修改成：</p>
+</li>
+</ol>
+<pre tabindex="0"><code># /etc/rsyncd: configuration file for rsync daemon mode
+# See rsyncd.conf man page for more options.
+# configuration example:
+
+uid = nobody
+gid = nobody
+use chroot = yes
+max connections = 4
+log file = /var/log/rsyncd.log
+pid file = /var/run/rsyncd.pid
+
+# exclude = lost+found/
+# transfer logging = yes
+# timeout = 900
+# ignore nonreadable = yes
+# dont compress   = *.gz *.tgz *.zip *.z *.Z *.rpm *.deb *.bz2
+
+# [ftp]
+#        path = /home/ftp
+#        comment = ftp export area
+
+[backup]
+    path = /rsync_data
+    comment = Backup Directory
+    read only = no
+    auth users = backupuser
+    secrets file = /etc/rsyncd.secrets
+</code></pre><p>其中”[backup]“是定义了一个名为 &ldquo;backup&rdquo; 的模块。这个模块允许客户端通过 rsync 协议访问指定的文件路径。</p>
+<p><img src="/img/465ee94e5de6c8c0464b42b142822f99.png" alt="465ee94e5de6c8c0464b42b142822f99.png"><br>
+(2) 配置身份验证<br>
+创建连接rsync的认证文件 /etc/rsyncd.secrets，在文件中指定用户和密码：<br>
+nano /etc/rsyncd.secrets<br>
+文件内容如：<br>
+backupuser:123abc<br>
+修改文件权限，确保只有 root 能读取：<br>
+chmod 600 /etc/rsyncd.secrets</p>
+<ol start="3">
+<li>启动 Rsync 服务：<br>
+systemctl enable rsyncd<br>
+systemctl start rsyncd</li>
+</ol>
+<p>如果启动 Rsync 服务时出现如下错误提示，一般是因为rsyncd 服务文件（rsyncd.service）没有随包一起安装，需要需要手动创建或安装相应的服务文件。</p>
+<pre tabindex="0"><code>[root@localhost /]# systemctl enable rsyncd
+Failed to enable unit: Unit file rsyncd.service does not exist.
+[root@localhost /]# systemctl start rsyncd
+Failed to start rsyncd.service: Unit rsyncd.service not found.
+</code></pre><p>解决方法如下：<br>
+(1) 创建 rsyncd.service 文件<br>
+nano /usr/lib/systemd/system/rsyncd.service<br>
+在文件中添加以下内容：</p>
+<pre tabindex="0"><code>[Unit]
+Description=Rsync Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/rsync --daemon --no-detach
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>(2) 重新加载 systemd 配置<br>
+systemctl daemon-reload<br>
+(3)运行Rsync 服务并设置开机自动启动<br>
+systemctl enable rsyncd<br>
+systemctl start rsyncd<br>
+这样应该就能解决上面启动rsync服务时的错误。</p>
+<ol start="4">
+<li>执行如下命令查看rsync服务的状态：<br>
+systemctl status rsyncd<br>
+<img src="/img/97e4bb9ad5dd48cd4991a072357ebe25.png" alt="97e4bb9ad5dd48cd4991a072357ebe25.png"></li>
+</ol>
+<p>如果打开了防火墙的，需要放行873端口：<br>
+firewall-cmd &ndash;permanent &ndash;add-port=873/tcp<br>
+firewall-cmd &ndash;reload</p>
+<p>到此，rsync服务端口也安装配置完成了。</p>
+<p>回到客户端windows的CMD命令行程序，执行如下命令按提示输入上面配置的rsync连接密码，就可以同步文件：<br>
+rsync -avz &ndash;progress /cygdrive/d/vscode <a href="mailto:backupuser@192.168.1.49">backupuser@192.168.1.49</a>::backup<br>
+<img src="/img/7309d0eb9a10f3d58cc01a4359f78f30.png" alt="7309d0eb9a10f3d58cc01a4359f78f30.png"><br>
+在windows的cwRsync 中，文件路径以 /cygdrive/ 开头，比如要备份D盘目录下的vscode文件夹，“D:\vscode”需转换成“/cygdrive/d/vscode”来表示。”backupuser“是上面配置身份验证文件中的用户，&ldquo;192.168.1.49&quot;是rsync服务端的ip地址，”backup“就是上面服务端定义的模块名称。</p>
+<p>如果你不想每次输入那一行同步命令，可以做一个.bat批处理文件：</p>
+<pre tabindex="0"><code>@echo off
+setlocal enabledelayedexpansion
+
+:: 设置密码环境变量
+set RSYNC_PASSWORD=123abc
+
+:: 替换以下路径为实际 rsync.exe 的路径
+&#34;D:\cwrsync\bin\rsync.exe&#34; -avz --progress /cygdrive/d/vscode backupuser@192.168.1.49::backup &gt; D:\rsync\rsync_test.log 2&gt;&amp;1
+
+:: 检查日志是否生成
+if exist rsync.log (
+    echo Log File Created Successfully
+    type rsync.log
+) else (
+    echo Log File Not Found. Check rsync execution.
+)
+
+:: 自动退出
+exit
+</code></pre><p>然后另存为 rsync.bat 文件，双击这个 .bat 文件，就能执行同步任务了。我们还可以使用任务计划程序设置自动执行这个.bat文件，以达到按设定的计划来执行同步备份，不需要每次手动去执行，步骤如下 ：<br>
+打开任务计划程序： 按下 Win + S，搜索 任务计划程序，然后打开任务计划程序，在右侧点击 创建基本任务。<br>
+<img src="/img/4432777c5adc8d9b02d577aecbdab053.png" alt="4432777c5adc8d9b02d577aecbdab053.png"><br>
+输入任务名称（例如 &ldquo;Rsync Backup&rdquo;）<br>
+<img src="/img/34b2ddb6b3f0aa6be16d35d16f487beb.png" alt="34b2ddb6b3f0aa6be16d35d16f487beb.png"><br>
+设置触发器：<br>
+选择任务触发器（例如每天运行），然后设置具体的运行时间<br>
+<img src="/img/040374ea73a681109480c16b7dfe8ee5.png" alt="040374ea73a681109480c16b7dfe8ee5.png"><br>
+<img src="/img/fc7f8544f00efe09346f12d9eea8c825.png" alt="fc7f8544f00efe09346f12d9eea8c825.png"><br>
+设置操作：选择 启动程序，点击 下一步<br>
+<img src="/img/657538b0d70e162ece2304a1055a4555.png" alt="657538b0d70e162ece2304a1055a4555.png"><br>
+在 程序或脚本 中选择刚刚创建的批处理文件 D:\rsync\rsync.bat<br>
+<img src="/img/c376ddc4e2e7c92bba31f81e59225e1c.png" alt="c376ddc4e2e7c92bba31f81e59225e1c.png"><br>
+完成任务<br>
+<img src="/img/6c580fecfc1b57b28ec9dede24311c7f.png" alt="6c580fecfc1b57b28ec9dede24311c7f.png"><br>
+点击 完成，任务创建成功。</p>
+<p>测试任务计划<br>
+在任务计划程序中找到刚创建的任务。<br>
+右键点击任务，选择 运行。<br>
+检查同步任务是否按预期运行。<br>
+<img src="/img/451c088254dcae0c2104ee49ee4ffb5e.png" alt="451c088254dcae0c2104ee49ee4ffb5e.png"></p>
+<p>需要注意的是，如果连接rsync服务端出现类似权限错误的提示，需检查目录权限、用户和认证文件等。<br>
+笔者的Rocky linux 9.4 就遇到SELinux限制 Rsync 的访问导致客户端同步不了，可以执行 sestatus 看看SELinux，如果是开启状态，可以执行 setenforce 0 临时关闭SELinux试试，或者通过调整 SELinux 布尔值来放宽对 rsync 的限制，执行：<br>
+setsebool -P rsync_full_access 1<br>
+这样应该就能解决SELinux限制rsync权限的问题了</p>
+<p>如果要还原数据，先在windows中新建一个文件夹，比如在D盘下建新一个restore文件夹，然后在windows的CMD命令程序中执行如下命令：<br>
+rsync -avz <a href="mailto:backupuser@192.168.1.49">backupuser@192.168.1.49</a>::backup /cygdrive/d/restore<br>
+<img src="/img/78d2062b10cf5c96295fd8988408bd13.png" alt="78d2062b10cf5c96295fd8988408bd13.png"></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/js20250503/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;上一篇</span>
+			<p class="pager__title">掌握常用的Windows快捷键，事半功倍提高工作效率</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><style>
+     
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+     
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+     
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+     
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+     
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
+
+<form class="search"> 
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
+</form>
+
+<script>
+    
+    function search(jsonData, searchTerm) {
+      let results = [];
+      for (let i = 0; i < jsonData.length; i++) {
+        for (let property in jsonData[i]) {
+          if (jsonData[i].hasOwnProperty(property) && jsonData[i][property].toString().indexOf(searchTerm) > -1) {
+            results.push(jsonData[i]);
+            break;
+          }
+        }
+      }
+      return results;
+    }
+  
+    function displayResults(searchResults) {
+      let container = document.getElementById("resultsContainer");
+      container.innerHTML = "";
+      if (searchResults.length > 0) {
+        for (let i = 0; i < searchResults.length; i++) {
+          let resultDiv = document.createElement("div");
+          let resultTitle = document.createElement("a");
+          resultTitle.innerText = searchResults[i].title;
+          resultTitle.setAttribute('href', searchResults[i].permalink)
+          resultDiv.appendChild(resultTitle);
+          container.appendChild(resultDiv);
+        }
+      } else {
+        let noResultsMessage = document.createElement("p");
+        noResultsMessage.innerText = "没有找到搜索结果。";
+        container.appendChild(noResultsMessage);
+      }
+    }
+  
+    function initiateSearch() {
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
+
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
+    }
+</script>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250505/">windows安装Rsync把文件同步到Linux服务器，安心备份数据</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250503/">掌握常用的Windows快捷键，事半功倍提高工作效率</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250502c/">Dufs轻量级的文件上传下载服务器</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250502/">国内 centos 7.9 ubuntu 22.04 安装Docker和Docker Compose</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20241205a/">储迹存储功能界面，Rocky linux 9 挂载存储并配置LVM分区</a></li>
+		</ul>
+	</div>
+</div><div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/gaJLaf1" target="_blank" rel="nofollow noopener noreferrer">华为家庭存储16TB 手机一碰扩容 双盘位nas网络存储器相册备份家用硬盘网盘私有云服务器</a></p>
+    <a href="https://u.jd.com/gaJLaf1" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1746280491663s.jpg" alt="华为存储" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/gDJwfrV" target="_blank" rel="nofollow noopener noreferrer">极空间私有云Z2Pro 四核双盘位NAS网络存储智能AI个人云硬盘家庭服务器 手机PC平板扩容 水墨黑</a></p>
+    <a href="https://u.jd.com/gDJwfrV" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1746281317183s.jpg" alt="极空间存储" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infortrend/" title="Infortrend">Infortrend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="Markdown">Markdown</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raid/" title="RAID">RAID</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmware/" title="Vmware">Vmware</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows/" title="Windows">Windows</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%A4%87%E4%BB%BD/" title="备份">备份</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/" title="存储设备">存储设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/" title="实用网站">实用网站</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%88%B4%E5%B0%94/" title="戴尔">戴尔</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%96%87%E7%AB%A0%E6%94%B6%E9%9B%86/" title="文章收集">文章收集</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器">服务器</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%B5%AA%E6%BD%AE/" title="浪潮">浪潮</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87/" title="硬件设备">硬件设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="网站搭建">网站搭建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 自游鱼.
+			<span class="footer__copyright-credits">基于 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 引擎和 <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> 主题</span>
+		</div>
+	</div>
+    
+    
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <div id="busuanzi-container">
+        <span id="busuanzi_value_page_pv"></span> 次访问
+        <span id="busuanzi_value_site_pv"></span> 总访问量
+        <span id="busuanzi_value_site_uv"></span> 访客数量
+    </div>
+</footer>
+
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
