@@ -191,3 +191,11 @@
     justify-content: center; /* 小屏幕居中 */
   }
 }
+
+/* 强制菜单背景一致 */
+.menu__list,
+.menu__btn,
+.menu__item,
+.menu__list--shown {
+  background-color: #4a668b !important;
+}
