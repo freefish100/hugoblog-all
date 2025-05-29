@@ -9,6 +9,13 @@
     <lastBuildDate>Mon, 05 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://freezz.cc/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ubuntu 22.04 部署RAGFlow开源 RAG知识库</title>
+      <link>https://freezz.cc/posts/js20250505b/</link>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://freezz.cc/posts/js20250505b/</guid>
+      <description>RAGFlow 是一个基于深度文档理解的开源 RAG（Retrieval-Augmented Generation，检索增强生成）引擎，能够为个人和各种规模的企业提供高效的 RAG 工作流程，结合大语言模型（LLM）与深度文档理解技术，针对复杂格式的数据（如 Word、PDF、Excel、PPT、图像、网页等）提供准确的问答功能，并生成带有可靠引用的回答，其核心优势在于能够从非结构化数据中提取知识，处理大规模文档，并在检索过程中实现高精度和可解释性。&#xA;部署 RAGFlow 建议的最小配置：&#xA;CPU &amp;gt;= 4 核&#xA;RAM &amp;gt;= 16 GB&#xA;Disk &amp;gt;= 50 GB&#xA;Docker &amp;gt;= 24.0.0 &amp;amp; Docker Compose &amp;gt;= v2.26.1&#xA;当然，最好要有GPU了。&#xA;下面在是ubuntu 22.04中使用Docker来安装 RAGFlow&#xA;在安装 RAGFlow 前需要将系统的内核参数 vm.max_map_count 设置为不小于 262144。vm.max_map_count 是 Linux 内核的一个虚拟内存管理参数。&#xA;sudo sysctl -w vm.max_map_count=262144&#xA;永久生效需编辑 /etc/sysctl.conf，添加 vm.max_map_count=262144&#xA;克隆仓库：&#xA;git clone https://github.com/infiniflow/ragflow.git&#xA;cd ragflow/docker&#xA;使用默认的配置文件启动 Docker 容器（无GPU）：&#xA;sudo docker compose -f docker-compose.yml up -d&#xA;如果有GPU，则执行这条命令来启动 Docker 容器：&#xA;sudo docker compose -f docker-compose-gpu.</description>
+    </item>
+    <item>
       <title>windows安装Rsync把文件同步到Linux服务器，安心备份数据</title>
       <link>https://freezz.cc/posts/js20250505/</link>
       <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
@@ -16,7 +23,7 @@
       <description>先简单介绍一下rsync， rsync 是一个开源的、强大的命令行工具，主要用于 快速、灵活地进行文件和目录的同步和备份， 使用rsync，可以做到增量同步备份、本地或远程同步、单向同步或双向同步等。笔者这次主要是使用rsync进行文件的单向异机增量同步备份文件。&#xA;首先在windows中下载和安装cwRsync客户端。目前最新版本为6.4.2，下载时要右键单击下载链接，然后点击“另存为”&#xA;https://www.itefix.net/cwrsync/client/downloads&#xA;下载后解压至D盘根目录并修改一下名称&#xA;为了后面方便在命令行中使用 Rsync，需要将cwrsync目录的 bin 子目录添加到系统环境变量 PATH 中：&#xA;配置好环境变量后，使用快捷键 “win+R” 打开运行窗口执行“cmd”打开cmd命令程序，执行 &amp;ldquo;rsync &amp;ndash;version&amp;rdquo; 命令，就可以查看到rsync的版本信息。&#xA;以上步骤就完成了windows的rsync客户端的安装，下面在linux主机中部署rsync服务端。&#xA;笔者的Linux主机安装的是Rocky linux 9.4 发行版&#xA;开始安装Rsync，执行如下命令：&#xA;dnf install rsync -y&#xA;然后创建一个 Rsync 同步目录，并将其所有子目录和文件的所有者和所属组更改为 nobody&#xA;mkdir /rsync_data&#xA;chown -R nobody:nobody /rsync_data&#xA;配置 Rsync 守护进程&#xA;(1) 创建 Rsync 配置文件&#xA;Rsync 的配置文件默认路径为 /etc/rsyncd.conf，创建并编辑它：&#xA;nano /etc/rsyncd.conf&#xA;修改成：&#xA;# /etc/rsyncd: configuration file for rsync daemon mode&#xD;# See rsyncd.conf man page for more options.&#xD;# configuration example:&#xD;uid = nobody&#xD;gid = nobody&#xD;use chroot = yes&#xD;max connections = 4&#xD;log file = /var/log/rsyncd.</description>
     </item>
     <item>
-      <title>掌握常用的Windows快捷键，事半功倍提高工作效率</title>
+      <title>基本技能：掌握常用的Windows快捷键，提高工作效率</title>
       <link>https://freezz.cc/posts/js20250503/</link>
       <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
       <guid>https://freezz.cc/posts/js20250503/</guid>

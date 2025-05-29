@@ -106,6 +106,24 @@
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
 	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/202409a/" rel="bookmark">
+			文章测试图片路径是否正确显示图片
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-04-07T08:44:50&#43;01:00">2024-04-07</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		问题： 在hugo构建的网站中，网站的根目录是blog，文章markdown文件是放在blog/content/posts目录下，文章中插入的图片是放 …
+	</div>
+</article>
+<article class="list__item post">
+	
 	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/test09/">
 		<img class="thumbnail__image" src="/img/md01.png" alt="Hugo网站中的markdown事例文章">
@@ -279,26 +297,6 @@ top参数详解 第一行，任务队列信息，同 uptime 命令的执行结�
 		Centos7中使用firewalld来作为防火墙，其底层调用的命令仍然是iptables等命令，但是在配置上发生了较大的变化。 Centos7中有两个位置存放了firewall的配置文件，一个 …
 	</div>
 </article>
-<article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/js20220812/" rel="bookmark">
-			Centos修改硬盘分区大小,把home分区部分容量分配给根分区
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-12T00:00:00Z">2022-08-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		执行df -h查看硬盘使用情况，先看下有没有未分配的磁盘，如果有的话可以把未分配的空间直接分过去，这里都已经使用了，需要从home中分出空间给根目录
-备份home目录文件
-cp -r /home/ …
-	</div>
-</article>
 
 </main>
 
@@ -458,11 +456,11 @@ cp -r /home/ …
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250505b/">ubuntu 22.04 部署RAGFlow开源 RAG知识库</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20250505/">windows安装Rsync把文件同步到Linux服务器，安心备份数据</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/js20250503/">掌握常用的Windows快捷键，事半功倍提高工作效率</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250503/">基本技能：掌握常用的Windows快捷键，提高工作效率</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20250502c/">Dufs轻量级的文件上传下载服务器</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20250502/">国内 centos 7.9 ubuntu 22.04 安装Docker和Docker Compose</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/js20241205a/">储迹存储功能界面，Rocky linux 9 挂载存储并配置LVM分区</a></li>
 		</ul>
 	</div>
 </div>
@@ -482,6 +480,7 @@ cp -r /home/ …
 <div class="widget-taglist widget">
 	<h4 class="widget__title">标签</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ai/" title="AI">AI</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/infortrend/" title="Infortrend">Infortrend</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux</a>
