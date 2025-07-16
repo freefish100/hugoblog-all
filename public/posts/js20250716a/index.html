@@ -13,15 +13,15 @@
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-07-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-15T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-07-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-16T00:00:00+00:00">
     <meta property="article:tag" content="Linux">
 
 		
   <meta itemprop="name" content="Rocky Linux 8 安装nvidia英伟达A10显卡驱动">
   <meta itemprop="description" content="Rocky Linux 8 安装 nvidia英伟达 A10 显卡驱动">
-  <meta itemprop="datePublished" content="2025-07-15T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-07-15T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-07-16T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-07-16T00:00:00+00:00">
   <meta itemprop="wordCount" content="201">
   <meta itemprop="keywords" content="Linux">
 		
@@ -113,60 +113,60 @@
 			<h1 class="post__title">Rocky Linux 8 安装nvidia英伟达A10显卡驱动</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-07-15T00:00:00Z">2025-07-15</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-07-16T00:00:00Z">2025-07-16</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<p>实操的操作系统是 Rocky Linux 8.7
+			<p>实操的操作系统是 Rocky Linux 8.7<br>
 <img src="/img/d48b2ae4db8bb6ac2fc1207ed75fec90.png" alt="d48b2ae4db8bb6ac2fc1207ed75fec90.png"></p>
-<p>显卡是NVIDIA英伟达 A10
+<p>显卡是NVIDIA英伟达 A10<br>
 <img src="/img/fc319596fabe85b7fc2d2aa99fb2e9a4.png" alt="fc319596fabe85b7fc2d2aa99fb2e9a4.png"></p>
-<p><strong>方法一：手动下载安装（ .run 安装包）</strong><br>
-1.禁用默认驱动（Nouveau）<br>
+<p><strong>方法一：手动下载驱动文件进行安装（ .run 安装包）</strong></p>
+<p>具体步骤如下：</p>
+<p>1.禁用系统默认的显卡驱动（Nouveau）<br>
 nouveau 是 Linux 内核自带显卡开源驱动程序，nouveau可能会与 NVIDIA 官方驱动冲突，安装的 NVIDIA 驱动模块无法正确加载（或安装失败），引发重启后系统可能黑屏、无法进入图形界面，所以在安装NVIDIA显卡驱动前，要禁用Nouveau。执行如下命令禁用Nouveau</p>
 <pre tabindex="0"><code>echo -e &#34;blacklist nouveau\\noptions nouveau modeset=0&#34; | sudo tee /etc/modprobe.d/blacklist-nouveau.conf 
 </code></pre><p>然后重新生成 initramfs：<br>
-<code>dracut --force</code><br>
-initramfs 是系统启动时加载的一个临时内存文件系统，用于加载必要的驱动模块、准备环境并挂载根文件系统，是连接内核和完整 Linux 系统之间的桥梁，内核启动时会从 initramfs 中加载模块，为了让 nouveau 被禁用的配置生效，必须重新生成 initramfs，否则禁用指令只在系统运行时有效，重启后仍然会被加载。<br>
-再重启系统<br>
-<code>reboot</code><br>
-重启后验证禁用默认驱动是否成功：<br>
+<code>dracut --force</code></p>
+<p>initramfs 是系统启动时加载的一个临时内存文件系统，用于加载必要的驱动模块、准备环境并挂载根文件系统，是连接内核和完整 Linux 系统之间的桥梁，内核启动时会从 initramfs 中加载模块，为了让 nouveau 被禁用的配置生效，必须重新生成 initramfs，否则禁用指令只在系统运行时有效，重启后仍然会被加载。</p>
+<p>再重启系统<br>
+<code>reboot</code></p>
+<p>重启后验证禁用默认驱动是否成功：<br>
 <code>lsmod | grep nouveau</code><br>
 返回为空，无任何内容输出就代表禁用成功</p>
 <p>2.安装与内核相关的开发包 kernel-devel 和 kernel-headers、以及必要的依赖<br>
 在安装或编译 NVIDIA 驱动时（尤其是 .run 安装方式），内核开发环境是必须的，否则会报错<br>
 先查看系统的内核版本，确保安装的 kernel-devel 和 kernel-headers 版本与当前运行的内核版本一致<br>
 <code>uname -r</code><br>
-比如返回的内核版本是：4.18.0-425.3.1.el8.x86_64<br>
-这里通过系统 ISO 镜像安装相同版本的内核开发包，要先把Rocky Linux 8.7 的iso镜像(比如Rocky-8.7-x86_64-dvd1.iso)上传到系统中，上传到 /tmp 目录下，iso镜像文件内核文件所在路径为：<br>
-<code>\BaseOS\Packages\k\kernelXXX.rpm</code><br>
-然后创建一个挂载目录<br>
-<code>mkdir -p /mnt/iso</code><br>
-挂载Rocky-8.7-x86_64-dvd1.iso镜像文件<br>
-<code>mount -o loop /tmp/Rocky-8.7-x86_64-dvd1.iso /mnt/iso</code><br>
-<img src="/img/e26093db9ab02501137bcd6a3f3cb912.png" alt="e26093db9ab02501137bcd6a3f3cb912.png"><br>
-可以查找内核相关的 RPM 包<br>
-<code>find /mnt/iso -name &quot;*kernel-devel*&quot; -o -name &quot;*kernel-headers*&quot;</code><br>
-<img src="/img/7e4c0c18df013e62fdaf1eaded0c54f0.png" alt="7e4c0c18df013e62fdaf1eaded0c54f0.png"><br>
-列出找到的包<br>
-<code>ls -la /mnt/iso/BaseOS/Packages/k/kernel-\*</code><br>
-<img src="/img/984f16c443562e03aafd6117ce2e851e.png" alt="984f16c443562e03aafd6117ce2e851e.png"><br>
-安装这两个内核 RPM 包</p>
+比如返回的内核版本是：4.18.0-425.3.1.el8.x86_64</p>
+<p>这里通过系统 ISO 镜像安装相同版本的内核开发包，要先把Rocky Linux 8.7 的iso镜像(比如Rocky-8.7-x86_64-dvd1.iso)上传到系统中，上传到 /tmp 目录下，iso镜像文件内核文件所在路径为：</p>
+<pre tabindex="0"><code>\BaseOS\Packages\k\kernelXXX.rpm
+</code></pre><p>然后创建一个挂载目录<br>
+<code>mkdir -p /mnt/iso</code></p>
+<p>挂载Rocky-8.7-x86_64-dvd1.iso镜像文件</p>
+<pre tabindex="0"><code>mount -o loop /tmp/Rocky-8.7-x86_64-dvd1.iso /mnt/iso
+</code></pre><p><img src="/img/e26093db9ab02501137bcd6a3f3cb912.png" alt="e26093db9ab02501137bcd6a3f3cb912.png"></p>
+<p>可以查找内核相关的 RPM 包</p>
+<pre tabindex="0"><code>find /mnt/iso -name &#34;*kernel-devel*&#34; -o -name &#34;*kernel-headers*&#34;
+</code></pre><p><img src="/img/7e4c0c18df013e62fdaf1eaded0c54f0.png" alt="7e4c0c18df013e62fdaf1eaded0c54f0.png"></p>
+<p>列出找到的包</p>
+<pre tabindex="0"><code>ls -la /mnt/iso/BaseOS/Packages/k/kernel-\*
+</code></pre><p><img src="/img/984f16c443562e03aafd6117ce2e851e.png" alt="984f16c443562e03aafd6117ce2e851e.png"></p>
+<p>安装这两个内核 RPM 包</p>
 <pre tabindex="0"><code>dnf localinstall -y /mnt/iso/BaseOS/Packages/k/kernel-devel-*.rpm  
 dnf localinstall -y /mnt/iso/BaseOS/Packages/k/kernel-headers-*.rpm  
-</code></pre><p>再安装必要的依赖<br>
-<code>dnf install gcc make elfutils-libelf-devel libglvnd-devel -y</code></p>
-<p>3.去官网下载安装官方 NVIDIA 驱动（下载 .run 安装包），并上传到服务器<br>
+</code></pre><p>再安装必要的依赖</p>
+<pre tabindex="0"><code>dnf install gcc make elfutils-libelf-devel libglvnd-devel -y
+</code></pre><p>3.去官网下载安装官方 NVIDIA 驱动（下载 .run 安装包），并上传到服务器<br>
 <a href="https://www.nvidia.cn/drivers/lookup/">https://www.nvidia.cn/drivers/lookup/</a><br>
 <a href="https://www.nvidia.com/en-us/drivers/">https://www.nvidia.com/en-us/drivers/</a><br>
 <img src="/img/143e4ca39d0395796c99828101054108.png" alt="143e4ca39d0395796c99828101054108.png"></p>
-<p>我这里下载的版本是NVIDIA-Linux-x86_64-550.90.07.run<br>
-给予安装包可执行权限<br>
-<code>chmod +x NVIDIA-Linux-x86_64-550.90.07.run</code><br>
-执行安装<br>
-<code>./NVIDIA-Linux-x86_64-550.90.07.run</code>
-<img src="/img/26c0290069e7c4cc748bb5c69ddd9f7a.png" alt="26c0290069e7c4cc748bb5c69ddd9f7a.png"></p>
+<p>我这里下载的版本是NVIDIA-Linux-x86_64-550.90.07.run</p>
+<p>4.给予安装包可执行权限，并执行安装</p>
+<pre tabindex="0"><code>chmod +x NVIDIA-Linux-x86_64-550.90.07.run
+./NVIDIA-Linux-x86_64-550.90.07.run
+</code></pre><p><img src="/img/26c0290069e7c4cc748bb5c69ddd9f7a.png" alt="26c0290069e7c4cc748bb5c69ddd9f7a.png"></p>
 <p><img src="/img/5439263a45751380ed2ef4959cadf477.png" alt="5439263a45751380ed2ef4959cadf477.png"></p>
 <p>如提示安装 32-bit 库，建议选择“否”除非有特殊需求<br>
 <img src="/img/659df1a87c5dd592ba867c309141f95a.png" alt="659df1a87c5dd592ba867c309141f95a.png"></p>
@@ -181,28 +181,27 @@ dnf localinstall -y /mnt/iso/BaseOS/Packages/k/kernel-headers-*.rpm
 <p>安装完成，建议重启系统<br>
 <img src="/img/8ec4901fef17a67b44c25122cb27a6e2.png" alt="8ec4901fef17a67b44c25122cb27a6e2.png"></p>
 <p><img src="/img/1843decca3b7b90ea3ed7428d3d8eda0.png" alt="1843decca3b7b90ea3ed7428d3d8eda0.png"></p>
-<p>验证安装，执行：<br>
-nvidia-smi<br>
+<p>6.系统重启完成后，验证安装，执行：<br>
+<code>nvidia-smi</code><br>
 <img src="/img/0fa3f3432bec1c79af479568b5c960de.png" alt="0fa3f3432bec1c79af479568b5c960de.png"></p>
 <p><strong>方法二：使用官方NVIDIA CUDA仓库安装NVIDIA 显卡驱动</strong><br>
-1.禁用Nouveau驱动（方法同上）<br>
-2.禁用 NVIDIA 驱动的模块过滤<br>
-dnf module disable -y nvidia-driver<br>
-3.安装必要的开发工具DKMS：</p>
+1.禁用Nouveau驱动（方法同上）</p>
+<p>2.禁用 NVIDIA 驱动的模块过滤</p>
+<pre tabindex="0"><code>dnf module disable -y nvidia-driver
+</code></pre><p>3.安装必要的开发工具DKMS：</p>
 <pre tabindex="0"><code>dnf install -y epel-release  
 dnf install -y dkms  
 dkms --version
-</code></pre><p>4.安装kernel-devel 和 kernel-headers ，这俩的版本需要与当前运行的内核版本一致(方法同上)<br>
-5.安装gcc gcc-c++ make elfutils-libelf-devel libglvnd-devel 等必要的依赖<br>
-<code>dnf install -y gcc gcc-c++ make elfutils-libelf-devel libglvnd-devel</code><br>
-6.使用官方NVIDIA CUDA仓库，为Rocky Linux 8添加NVIDIA的官方CUDA仓库。</p>
+</code></pre><p>4.安装kernel-devel 和 kernel-headers ，这俩的版本需要与当前运行的内核版本一致(方法同上)</p>
+<p>5.安装gcc gcc-c++ make elfutils-libelf-devel libglvnd-devel 等必要的依赖</p>
+<pre tabindex="0"><code>dnf install -y gcc gcc-c++ make elfutils-libelf-devel libglvnd-devel
+</code></pre><p>6.为Rocky Linux 8添加NVIDIA的官方CUDA仓库，并开始安装NVIDIA驱动</p>
 <pre tabindex="0"><code>dnf config-manager --add-repo=https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
-</code></pre><p>开始安装NVIDIA驱动</p>
-<pre tabindex="0"><code>dnf clean all  
+dnf clean all  
 dnf -y module install nvidia-driver:latest-dkms
-</code></pre><p>latest-dkms分支会确保内核更新后驱动模块能够自动重新编译，从而保持兼容性。<br>
-安装完成后运行nvidia-smi命令，验证是否成功<br>
-<code>nvidia-smi</code>
+</code></pre><p>latest-dkms分支会确保内核更新后驱动模块能够自动重新编译，从而保持兼容性。</p>
+<p>7.安装完成后运行 nvidia-smi 命令，验证是否成功<br>
+<code>nvidia-smi</code><br>
 <img src="/img/0da9fa11e34af22d8266c42a11b3ff2c.png" alt="0da9fa11e34af22d8266c42a11b3ff2c.png"></p>
 
 		</div>

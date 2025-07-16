@@ -6,14 +6,14 @@
     <description>Recent content in Posts on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://freezz.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rocky Linux 8 安装nvidia英伟达A10显卡驱动</title>
       <link>https://freezz.cc/posts/js20250716a/</link>
-      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://freezz.cc/posts/js20250716a/</guid>
-      <description>实操的操作系统是 Rocky Linux 8.7 显卡是NVIDIA英伟达 A10 方法一：手动下载安装（ .run 安装包）&#xA;1.禁用默认驱动（Nouveau）&#xA;nouveau 是 Linux 内核自带显卡开源驱动程序，nouveau可能会与 NVIDIA 官方驱动冲突，安装的 NVIDIA 驱动模块无法正确加载（或安装失败），引发重启后系统可能黑屏、无法进入图形界面，所以在安装NVIDIA显卡驱动前，要禁用Nouveau。执行如下命令禁用Nouveau&#xA;echo -e &amp;#34;blacklist nouveau\\noptions nouveau modeset=0&amp;#34; | sudo tee /etc/modprobe.d/blacklist-nouveau.conf 然后重新生成 initramfs：&#xA;dracut --force&#xA;initramfs 是系统启动时加载的一个临时内存文件系统，用于加载必要的驱动模块、准备环境并挂载根文件系统，是连接内核和完整 Linux 系统之间的桥梁，内核启动时会从 initramfs 中加载模块，为了让 nouveau 被禁用的配置生效，必须重新生成 initramfs，否则禁用指令只在系统运行时有效，重启后仍然会被加载。&#xA;再重启系统&#xA;reboot&#xA;重启后验证禁用默认驱动是否成功：&#xA;lsmod | grep nouveau&#xA;返回为空，无任何内容输出就代表禁用成功&#xA;2.安装与内核相关的开发包 kernel-devel 和 kernel-headers、以及必要的依赖&#xA;在安装或编译 NVIDIA 驱动时（尤其是 .run 安装方式），内核开发环境是必须的，否则会报错&#xA;先查看系统的内核版本，确保安装的 kernel-devel 和 kernel-headers 版本与当前运行的内核版本一致&#xA;uname -r&#xA;比如返回的内核版本是：4.18.0-425.3.1.el8.x86_64&#xA;这里通过系统 ISO 镜像安装相同版本的内核开发包，要先把Rocky Linux 8.</description>
+      <description>实操的操作系统是 Rocky Linux 8.7&#xA;显卡是NVIDIA英伟达 A10&#xA;方法一：手动下载驱动文件进行安装（ .run 安装包）&#xA;具体步骤如下：&#xA;1.禁用系统默认的显卡驱动（Nouveau）&#xA;nouveau 是 Linux 内核自带显卡开源驱动程序，nouveau可能会与 NVIDIA 官方驱动冲突，安装的 NVIDIA 驱动模块无法正确加载（或安装失败），引发重启后系统可能黑屏、无法进入图形界面，所以在安装NVIDIA显卡驱动前，要禁用Nouveau。执行如下命令禁用Nouveau&#xA;echo -e &amp;#34;blacklist nouveau\\noptions nouveau modeset=0&amp;#34; | sudo tee /etc/modprobe.d/blacklist-nouveau.conf 然后重新生成 initramfs：&#xA;dracut --force&#xA;initramfs 是系统启动时加载的一个临时内存文件系统，用于加载必要的驱动模块、准备环境并挂载根文件系统，是连接内核和完整 Linux 系统之间的桥梁，内核启动时会从 initramfs 中加载模块，为了让 nouveau 被禁用的配置生效，必须重新生成 initramfs，否则禁用指令只在系统运行时有效，重启后仍然会被加载。&#xA;再重启系统&#xA;reboot&#xA;重启后验证禁用默认驱动是否成功：&#xA;lsmod | grep nouveau&#xA;返回为空，无任何内容输出就代表禁用成功&#xA;2.安装与内核相关的开发包 kernel-devel 和 kernel-headers、以及必要的依赖&#xA;在安装或编译 NVIDIA 驱动时（尤其是 .run 安装方式），内核开发环境是必须的，否则会报错&#xA;先查看系统的内核版本，确保安装的 kernel-devel 和 kernel-headers 版本与当前运行的内核版本一致&#xA;uname -r&#xA;比如返回的内核版本是：4.18.0-425.3.1.el8.x86_64&#xA;这里通过系统 ISO 镜像安装相同版本的内核开发包，要先把Rocky Linux 8.</description>
     </item>
     <item>
       <title>ubuntu 22.04 部署RAGFlow开源 RAG知识库</title>
