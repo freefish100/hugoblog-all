@@ -6,8 +6,15 @@
     <description>Recent content in 技术笔记 on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://freezz.cc/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动</title>
+      <link>https://freezz.cc/posts/js20250807/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://freezz.cc/posts/js20250807/</guid>
+      <description>ubuntu-drivers 是 Ubuntu 官方提供的一个命令行工具，是 Ubuntu 系统中管理专有驱动（主要是显卡驱动，尤其是 NVIDIA）的核心工具，用于简化硬件驱动程序的管理和安装。它可以从 Ubuntu 官方软件源获取驱动，以确保驱动的兼容性和安全性，在处理专有驱动（如 NVIDIA、AMD 显卡驱动、无线网卡驱动等）时非常有用，它能够扫描系统硬件和识别需要驱动的设备（如显卡、无线网卡等），然后推荐适合的驱动程序，特别在安装nvidia显卡驱动时，ubuntu-drivers 能自动识别NVIDIA最佳的驱动，可大大简化安装的流程 。&#xA;ubuntu-drivers 工具是所有现代 Ubuntu 版本默认自带的，我们一般不需要额外手动安装它。下面就实践分享一下使用 ubuntu-drivers 安装 nvidia 显卡驱动的全过程。为操作方便，我们切换到 root 用户来执行操作，如果是使用普通用户，需要加 sudo 来提权。&#xA;先执行下面命令查看一下主机中的NVIDIA显卡：&#xA;lspci | grep -i nvidia 然后执行这条命令，查看下可用的驱动及推荐的驱动项：&#xA;ubuntu-drivers devices 这就会列出了可用包括 nvidia 显卡驱动在内的可用驱动程序，其中有 “recommended” 的表示推荐安装的版本，本实例这里就是 nvidia-driver-575 这个版本&#xA;再执行以下命令来安装 nvidia-driver-575 这个版本的驱动&#xA;apt update apt install nvidia-driver-575 -y 当然，如果想安装列表中其它版本的驱动也是可以的。整个安装过程需要几分钟到十几分钟不等，耐心等待安装完成。当完成安装后，执行重启一次系统&#xA;reboot 重启完成后，执行如下命令来验证安装是否成功：&#xA;nvidia-smi 如果输出类似以下内容，说明驱动安装成功： 这里会显示出NVIDIA显卡驱动的版本、显卡的型号、显存情况和温度功耗等信息。&#xA;还可以执行下面这个命令查看显卡加载的驱动&#xA;lspci -k | grep -iA3 nvidia &amp;ldquo;Kernel driver in use: nvidia&amp;rdquo;，表明已经成功安装并启用了nvidia专有驱动。&#xA;apt install nvidia-driver-XXX命令，它会自动安装一些依赖项，并配置blacklist（禁用 nouveau）等操作，非常自动和智能，让我们能够顺利地安装上显卡驱动。</description>
+    </item>
     <item>
       <title>Linux中强大的分区工具parted，磁盘分区格式化</title>
       <link>https://freezz.cc/posts/js20250729/</link>

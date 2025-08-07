@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动 - 自游鱼</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+		<meta property="og:url" content="https://freezz.cc/posts/js20250807/">
+  <meta property="og:site_name" content="自游鱼">
+  <meta property="og:title" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+  <meta property="og:description" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-07T00:00:00+00:00">
+    <meta property="article:tag" content="Linux">
+
+		
+  <meta itemprop="name" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+  <meta itemprop="description" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+  <meta itemprop="datePublished" content="2025-08-07T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-08-07T00:00:00+00:00">
+  <meta itemprop="wordCount" content="85">
+  <meta itemprop="keywords" content="Linux">
+		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+  <meta name="twitter:description" content="Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+  
+
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		<div class="header-top">
+			
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="自游鱼" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/zyy.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">自游鱼</div>
+					<div class="logo__tagline">IT电脑笔记 | 前行 · 探索 · 实践</div>
+				</div>
+		</a>
+	</div>
+			<div class="custom-banner">
+				<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+					<img src="/xx1.png" alt="顶部横幅" class="banner-image" loading="lazy">
+				</a>
+			</div>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">菜单</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">首页</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+				
+				<span class="menu__text">服务器</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/">
+				
+				<span class="menu__text">存储设备</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">关于</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-08-07T00:00:00Z">2025-08-07</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>ubuntu-drivers 是 Ubuntu 官方提供的一个命令行工具，是 Ubuntu 系统中管理专有驱动（主要是显卡驱动，尤其是 NVIDIA）的核心工具，用于简化硬件驱动程序的管理和安装。它可以从 Ubuntu 官方软件源获取驱动，以确保驱动的兼容性和安全性，在处理专有驱动（如 NVIDIA、AMD 显卡驱动、无线网卡驱动等）时非常有用，它能够扫描系统硬件和识别需要驱动的设备（如显卡、无线网卡等），然后推荐适合的驱动程序，特别在安装nvidia显卡驱动时，ubuntu-drivers 能自动识别NVIDIA最佳的驱动，可大大简化安装的流程 。</p>
+<p>ubuntu-drivers 工具是所有现代 Ubuntu 版本默认自带的，我们一般不需要额外手动安装它。下面就实践分享一下使用 ubuntu-drivers 安装 nvidia 显卡驱动的全过程。为操作方便，我们切换到 root 用户来执行操作，如果是使用普通用户，需要加 sudo 来提权。</p>
+<p>先执行下面命令查看一下主机中的NVIDIA显卡：</p>
+<pre tabindex="0"><code>lspci | grep -i nvidia
+</code></pre><p><img src="/img/dfa2c95f0586e017d797c050480ecf05.png" alt="dfa2c95f0586e017d797c050480ecf05.png"></p>
+<p>然后执行这条命令，查看下可用的驱动及推荐的驱动项：</p>
+<pre tabindex="0"><code>ubuntu-drivers devices
+</code></pre><p><img src="/img/8fa49ae1753757682977961d997d854f.png" alt="8fa49ae1753757682977961d997d854f.png">
+这就会列出了可用包括 nvidia 显卡驱动在内的可用驱动程序，其中有 “recommended” 的表示推荐安装的版本，本实例这里就是 nvidia-driver-575 这个版本</p>
+<p>再执行以下命令来安装  nvidia-driver-575 这个版本的驱动</p>
+<pre tabindex="0"><code>apt update
+apt install nvidia-driver-575 -y
+</code></pre><p>当然，如果想安装列表中其它版本的驱动也是可以的。整个安装过程需要几分钟到十几分钟不等，耐心等待安装完成。当完成安装后，执行重启一次系统</p>
+<pre tabindex="0"><code>reboot
+</code></pre><p>重启完成后，执行如下命令来验证安装是否成功：</p>
+<pre tabindex="0"><code>nvidia-smi
+</code></pre><p>如果输出类似以下内容，说明驱动安装成功：
+<img src="/img/242663bbc513e4699c6992fda486944b.png" alt="242663bbc513e4699c6992fda486944b.png">
+这里会显示出NVIDIA显卡驱动的版本、显卡的型号、显存情况和温度功耗等信息。</p>
+<p>还可以执行下面这个命令查看显卡加载的驱动</p>
+<pre tabindex="0"><code>lspci -k | grep -iA3 nvidia
+</code></pre><p><img src="/img/7e8fea70f33e3bcb1f8a8c7235a5866a.png" alt="7e8fea70f33e3bcb1f8a8c7235a5866a.png">
+&ldquo;Kernel driver in use: nvidia&rdquo;，表明已经成功安装并启用了nvidia专有驱动。</p>
+<p><code>apt install nvidia-driver-XXX</code>命令，它会自动安装一些依赖项，并配置blacklist（禁用 nouveau）等操作，非常自动和智能，让我们能够顺利地安装上显卡驱动。</p>
+<p>除了使用 <code>apt install nvidia-driver-XXX</code>这个命令，还可以使用 <code>ubuntu-drivers autoinstall</code>
+来安装包括显卡驱动在内的其他设备的推荐驱动（如 Broadcom 无线网卡等）。</p>
+<p>ubuntu-drivers 工具能够自动扫描当前系统的硬件并推荐最佳驱动，尤其适合用于安装显卡驱动，它自动处理依赖关系，避免手动安装可能导致的驱动冲突或系统不稳定，极大地简化了 Ubuntu 系统中安装显卡驱动的操作，非常值得推荐和使用。</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/js20250729/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;上一篇</span>
+			<p class="pager__title">Linux中强大的分区工具parted，磁盘分区格式化</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><style>
+     
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+     
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+     
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+     
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+     
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
+
+<form class="search"> 
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
+</form>
+
+<script>
+    
+    function search(jsonData, searchTerm) {
+      let results = [];
+      for (let i = 0; i < jsonData.length; i++) {
+        for (let property in jsonData[i]) {
+          if (jsonData[i].hasOwnProperty(property) && jsonData[i][property].toString().indexOf(searchTerm) > -1) {
+            results.push(jsonData[i]);
+            break;
+          }
+        }
+      }
+      return results;
+    }
+  
+    function displayResults(searchResults) {
+      let container = document.getElementById("resultsContainer");
+      container.innerHTML = "";
+      if (searchResults.length > 0) {
+        for (let i = 0; i < searchResults.length; i++) {
+          let resultDiv = document.createElement("div");
+          let resultTitle = document.createElement("a");
+          resultTitle.innerText = searchResults[i].title;
+          resultTitle.setAttribute('href', searchResults[i].permalink)
+          resultDiv.appendChild(resultTitle);
+          container.appendChild(resultDiv);
+        }
+      } else {
+        let noResultsMessage = document.createElement("p");
+        noResultsMessage.innerText = "没有找到搜索结果。";
+        container.appendChild(noResultsMessage);
+      }
+    }
+  
+    function initiateSearch() {
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
+
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
+    }
+</script>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250807/">Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250729/">Linux中强大的分区工具parted，磁盘分区格式化</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250716a/">Rocky Linux 8 安装nvidia英伟达A10显卡驱动</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250505b/">ubuntu 22.04 部署RAGFlow开源 RAG知识库</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20250505/">windows安装Rsync把文件同步到Linux服务器，安心备份数据</a></li>
+		</ul>
+	</div>
+</div><div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/gaJLaf1" target="_blank" rel="nofollow noopener noreferrer">华为家庭存储16TB 手机一碰扩容 双盘位nas网络存储器相册备份家用硬盘网盘私有云服务器</a></p>
+    <a href="https://u.jd.com/gaJLaf1" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1746280491663s.jpg" alt="华为存储" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/gDJwfrV" target="_blank" rel="nofollow noopener noreferrer">极空间私有云Z2Pro 四核双盘位NAS网络存储智能AI个人云硬盘家庭服务器 手机PC平板扩容 水墨黑</a></p>
+    <a href="https://u.jd.com/gDJwfrV" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1746281317183s.jpg" alt="极空间存储" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ai/" title="AI">AI</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infortrend/" title="Infortrend">Infortrend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="Markdown">Markdown</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raid/" title="RAID">RAID</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmware/" title="Vmware">Vmware</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows/" title="Windows">Windows</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%A4%87%E4%BB%BD/" title="备份">备份</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/" title="存储设备">存储设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/" title="实用网站">实用网站</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%88%B4%E5%B0%94/" title="戴尔">戴尔</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%96%87%E7%AB%A0%E6%94%B6%E9%9B%86/" title="文章收集">文章收集</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器">服务器</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%B5%AA%E6%BD%AE/" title="浪潮">浪潮</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87/" title="硬件设备">硬件设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="网站搭建">网站搭建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 自游鱼.
+			<span class="footer__copyright-credits">基于 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 引擎和 <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> 主题</span>
+		</div>
+	</div>
+    
+    
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <div id="busuanzi-container">
+        <span id="busuanzi_value_page_pv"></span> 次访问
+        <span id="busuanzi_value_site_pv"></span> 总访问量
+        <span id="busuanzi_value_site_uv"></span> 访客数量
+    </div>
+</footer>
+
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
