@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>存储 on 自游鱼</title>
+    <link>https://freezz.cc/tags/%E5%AD%98%E5%82%A8/</link>
+    <description>Recent content in 存储 on 自游鱼</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://freezz.cc/tags/%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>戴尔DELL R760xs 服务器 虚拟化 ESXI 7.0 连接普安 Infortrend DS 1012R存储</title>
+      <link>https://freezz.cc/posts/js20251113/</link>
+      <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://freezz.cc/posts/js20251113/</guid>
+      <description>三台DELL R760xs服务器和一台Infortrend DS 1012R存储设备，如图&#xA;三台DELL R760xs服务器的光纤双口网卡通过光纤分别直接连接到Infortrend DS 1012R存储的A和B两个控制器的光纤通道扩展卡上，连接如图所示：&#xA;修改Infortrend存储 DS 1012RE2的主机板通道模式为10G iSCSI模式，连接端口为通道4、通道5、通道6&#xA;Infortrend存储 DS 1012RE2的通道ip配置如下：&#xA;A控制器通道4的ip：10.10.1.233&#xA;B控制器通道4的ip：10.10.1.234&#xA;A控制器通道5的ip：10.10.1.235&#xA;B控制器通道5的ip：10.10.1.236&#xA;A控制器通道6的ip：10.10.1.237&#xA;B控制器通道6的ip：10.10.1.238&#xA;存储 DS 1012RE2，磁盘空间现划分有一个分区，把这个分区映射给DELL R760xs 服务器&#xA;DELL R760xs 服务器通过ESXI 7.0虚拟化系统连接到存储的配置步骤：&#xA;1.新建两个虚拟交换机，每个交换机对应一个物理光纤网卡端口，用于连接到存储设备上的A和B控制器的通道卡&#xA;2.新建两个端口组，分别对应上面的两个交换机&#xA;3.查看物理网卡，这里列出DELL R760xs 服务器已安装的物理网卡，其中两个ixgben就是光纤网卡&#xA;4.新建两个VMkernel网卡，分别对就上面的两个端口组，并设置好ip地址和掩码&#xA;5.配置存储适配器 新建一个“软件iSCSI”适配器&#xA;在“网络端口绑定”中添加绑定上面新建的那两个VMkernel网卡，并“添加动态目标”ip和端口(默认3260) 切换到“设备”选项卡，点击“重新扫描”和“刷新”，就可以看到存储设备了 新建数据存储并进行格式化 另外的两台DELL R760xs 服务器也进行类似的操作，这样三台服务器就可以同时挂载存储设备上的分区(LUN)了，这里要注意的是：存储的同一个分区(LUN)，只需在其中一台服务器上进行格式化即可，其它两台只连接上去就可以了</description>
+    </item>
+  </channel>
+</rss>
