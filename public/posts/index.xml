@@ -16,6 +16,13 @@
       <description>三台DELL R760xs服务器和一台Infortrend DS 1012R存储设备，如图&#xA;三台DELL R760xs服务器的光纤双口网卡通过光纤分别直接连接到Infortrend DS 1012R存储的A和B两个控制器的光纤通道扩展卡上，连接如图所示：&#xA;修改Infortrend存储 DS 1012RE2的主机板通道模式为10G iSCSI模式，连接端口为通道4、通道5、通道6&#xA;Infortrend存储 DS 1012RE2的通道ip配置如下：&#xA;A控制器通道4的ip：10.10.1.233&#xA;B控制器通道4的ip：10.10.1.234&#xA;A控制器通道5的ip：10.10.1.235&#xA;B控制器通道5的ip：10.10.1.236&#xA;A控制器通道6的ip：10.10.1.237&#xA;B控制器通道6的ip：10.10.1.238&#xA;存储 DS 1012RE2，磁盘空间现划分有一个分区，把这个分区映射给DELL R760xs 服务器&#xA;DELL R760xs 服务器通过ESXI 7.0虚拟化系统连接到存储的配置步骤：&#xA;1.新建两个虚拟交换机，每个交换机对应一个物理光纤网卡端口，用于连接到存储设备上的A和B控制器的通道卡&#xA;2.新建两个端口组，分别对应上面的两个交换机&#xA;3.查看物理网卡，这里列出DELL R760xs 服务器已安装的物理网卡，其中两个ixgben就是光纤网卡&#xA;4.新建两个VMkernel网卡，分别对就上面的两个端口组，并设置好ip地址和掩码&#xA;5.配置存储适配器 新建一个“软件iSCSI”适配器&#xA;在“网络端口绑定”中添加绑定上面新建的那两个VMkernel网卡，并“添加动态目标”ip和端口(默认3260) 切换到“设备”选项卡，点击“重新扫描”和“刷新”，就可以看到存储设备了 新建数据存储并进行格式化 另外的两台DELL R760xs 服务器也进行类似的操作，这样三台服务器就可以同时挂载存储设备上的分区(LUN)了，这里要注意的是：存储的同一个分区(LUN)，只需在其中一台服务器上进行格式化即可，其它两台只连接上去就可以了</description>
     </item>
     <item>
+      <title>实践Linux挂载Windows共享文件夹或NAS文件夹，让Linux也能访问Windows文件</title>
+      <link>https://freezz.cc/posts/js20251113b/</link>
+      <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://freezz.cc/posts/js20251113b/</guid>
+      <description>对于许多Linux用户来说，让Linux访问局域网内的Windows共享文件夹或NAS（网络附加存储）中的共享文件是一个常见需求，这最理想的方式，莫过于将这些网络共享位置的文件夹直接当作本地目录来使用。&#xA;笔者下面分享一份清晰、易懂的实践指南，通过CIFS/Samba协议，让Linux系统能够挂载并访问Windows共享文件夹或NAS上的共享文件夹。&#xA;第一步：安装必要工具 在开始挂载之前，我们需要安装cifs-utils工具包，它是Linux系统与Windows文件共享协议（SMB/CIFS）通信的核心组件。&#xA;对于 Debian/Ubuntu 系统，执行如下命令：&#xA;apt update apt install cifs-utils -y 对于 RHEL/CentOS/Rocky Linux 系统，执行如下命令：&#xA;dnf install cifs-utils -y 第二步：验证系统模块 安装好cifs-utils后，需要确认系统是否正确加载了cifs模块：&#xA;lsmod | grep cifs 正常的返回结果会显示cifs模块信息，说明模块已正常加载。如果没有任何返回信息，则需要手动加载模块：&#xA;modprobe cifs 第三步：准备共享文件夹信息 在实际操作前，我们需要以下文件夹共享信息，操作时按实际情况来修改：&#xA;共享文件夹地址： \\192.168.1.52\test 用户名： admin 密码： admin123 Linux挂载点： /mnt/win_share Windows工作组： WORKGROUP（可选） 第四步：创建挂载点 在Linux系统中创建一个目录作为挂载点：&#xA;mkdir -p /mnt/win_share 第五步：执行挂载操作 使用mount命令将Windows共享文件夹挂载到Linux系统：&#xA;mount -t cifs //192.168.1.52/test /mnt/win_share -o username=admin,password=admin123,domain=WORKGROUP,vers=3.0 参数说明：&#xA;-t cifs：指定文件系统类型为CIFS vers=3.0：指定SMB协议版本，可选值：1.0、2.0、2.1、3.0&#xA;如果挂载失败，可以尝试不同的SMB版本。较老的系统可能需要使用vers=1.0或2.0 username：指定访问共享文件夹的用户名 password：指定共享文件夹的密码 domain=WORKGROUP：指定Windows工作组（可选） 第六步：验证挂载结果 检查挂载是否成功：&#xA;df -Th 如上图，最后一行就显示了挂载的共享文件夹信息&#xA;查看共享文件夹中的内容：</description>
+    </item>
+    <item>
       <title>Ubuntu系统使用ubuntu-drivers智能安装nvidia显卡驱动</title>
       <link>https://freezz.cc/posts/js20250807/</link>
       <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
