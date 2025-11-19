@@ -6,8 +6,15 @@
     <description>Recent content in 技术笔记 on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Nov 2025 21:25:59 +0800</lastBuildDate>
     <atom:link href="https://freezz.cc/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>轻量强大的DHCP工具 Open DHCP Server 电脑秒变专业DHCP服务器</title>
+      <link>https://freezz.cc/posts/js20251119/</link>
+      <pubDate>Wed, 19 Nov 2025 21:25:59 +0800</pubDate>
+      <guid>https://freezz.cc/posts/js20251119/</guid>
+      <description>Open DHCP Server 是一款完全免费、开源的DHCP服务器软件，它支持 Windows和 Linux 双平台，安装包大小还不到2MB，资源占用极低，几乎不吃 CPU 和内存，可以作为 Windows 服务在后台运行。&#xA;Open DHCP Server非常适合对于临时网络、测试网络、笔记本直连设备 (比如只想给几台设备分配 IP 而不想买路由器)等场景，它非常轻量、部署快速。笔者我就经常利用它来让笔记本直连服务器管理口 (BMC)，给没配置ip的服务器管理口分配ip,从而方便访问服务器管理口来查看和管理服务器硬件信息和健康状态。&#xA;下面分享下 Open DHCP Server 的基本使用。&#xA;安装 Open DHCP Server 安装 Open DHCP Server 非常简单，点两下就可以安装完成。安装时可以选择安装路径，比如这里安装在 D:\OpenDHCPServer目录下&#xA;配置 OpenDHCPServer 安装完成后，打开安装目录，找到 OpenDHCPServer.ini 这个配置文件，使用记事本或其它编辑工具修改DHCP分配ip的网段和范围：&#xA;[RANGE_SET] #This is first and simple DHCP range section example, #This example may be good enough for simple/home use. #If you need range filters, look at example below DHCPRange=192.168.0.20-192.168.0.30 ;DHCPRange=192.168.4.1-192.168.4.254 ;DHCPRange=192.168.5.1-192.168.5.254 #Following are range specific DHCP options.</description>
+    </item>
     <item>
       <title>戴尔DELL R760xs 服务器 虚拟化 ESXI 7.0 连接普安 Infortrend DS 1012R存储</title>
       <link>https://freezz.cc/posts/js20251113/</link>
