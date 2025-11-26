@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>国产信创 on 自游鱼</title>
+    <link>https://freezz.cc/tags/%E5%9B%BD%E4%BA%A7%E4%BF%A1%E5%88%9B/</link>
+    <description>Recent content in 国产信创 on 自游鱼</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Nov 2025 18:49:28 +0800</lastBuildDate>
+    <atom:link href="https://freezz.cc/tags/%E5%9B%BD%E4%BA%A7%E4%BF%A1%E5%88%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搭配鲲鹏920处理器的华启服务器安装麒麟 Kylin Server 国产操作系统</title>
+      <link>https://freezz.cc/posts/js20251126/</link>
+      <pubDate>Wed, 26 Nov 2025 18:49:28 +0800</pubDate>
+      <guid>https://freezz.cc/posts/js20251126/</guid>
+      <description>国产服务器正处于快速发展的阶段，特别最近这几年销量高速增长，不仅在政务、金融、电信等关键领域站稳脚跟，也开始向能源、交通、制造等行业进军，国产服务器使用国产操作系统，将成为未来服务器行业的一个新的发展态势。今天笔者给大家分享华启通用型服务器安装麒麟Kylin Linux Advanced Server V10 国产操作的过程。&#xA;这款服务器具体型号为华启DH-RS2197VL，它是基于鲲鹏920处理器的2U单路机架式服务器，提供企业级的强劲计算性能以及灵活可配置的 AI 计算能力，适合各类中小企业、工厂学校和商超等领域。&#xA;下面通过iBMC带外管理口使用虚拟控制台安装麒麟 Kylin Server 国产操作系统&#xA;华启DH-RS2197VL服务器的开机的画面，可以看到BMC管理口的默认ip是192.168.1.100，准备一条网线把服务器的BMC管理口接入到局域网中&#xA;使用局域网中的一台电脑，打开浏览器，访问BMC管理口的ip： 192.168.1.100，即可进入BMC的登录界面，初始的用户名root，密码Admin123@dh&#xA;在页面的首页打开“虚拟控制台”&#xA;点击光驱图标，加载Kylin Server V10 操作系统的iso安装镜像，并连接虚拟光驱&#xA;连接好虚拟光驱后的状态&#xA;然后点击“系统启动项”图标，勾选“光驱”，表示将从光驱启动系统&#xA;再点击“电源控制”图标，重启服务器&#xA;重启后，就会从加载了系统镜像的虚拟光驱启动，进入麒麟Kylin Server V10 操作系统的安装程序&#xA;下面就正式进入麒麟 Kylin Linux Server 操作系统的安装界面&#xA;选项第一项安装系统&#xA;选择语言，这里选择简体中文&#xA;选择安装的目的地磁盘&#xA;因为原磁盘有数据，所以要回收空间，清除原有的硬盘分区&#xA;设置好root用户的密码，可以创建多一个用户。点击“开始安装”&#xA;等待安装程序自动完成安装，完成后点击“重启系统”&#xA;重启后，正进入系统&#xA;点击“许可信息”，勾选“同意许可协议”&#xA;输入登录系统的用户名和密码，进入系统&#xA;查看服务器硬件配置和系统信息&#xA;查看详细的服务器硬件和系统信息</description>
+    </item>
+  </channel>
+</rss>
