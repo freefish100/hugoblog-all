@@ -6,8 +6,15 @@
     <description>Recent content in 技术笔记 on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Nov 2025 18:49:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Dec 2025 20:13:58 +0800</lastBuildDate>
     <atom:link href="https://freezz.cc/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>欧拉 openEuler 2403 LTS 安装华为 openGauss 高斯数据库</title>
+      <link>https://freezz.cc/posts/js20251201/</link>
+      <pubDate>Mon, 01 Dec 2025 20:13:58 +0800</pubDate>
+      <guid>https://freezz.cc/posts/js20251201/</guid>
+      <description>欧拉openEuler 2403 LTS 系统安装华为openGauss高斯企业版数据库笔记。&#xA;1.下载安装包到指定目录 https://opengauss.org/zh/download 以root或普通用户登录待安装openGauss的任意主机，并按规划创建存放安装包的目录&#xA;mkdir -p /opt/software/openGauss cd /opt/software/openGauss tar -zxvf openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz tar -zxvf openGauss-OM-x.x.x-openEuler20.03-x86_64.tar.gz chmod 755 -R /opt/software 不建议把安装包的存放目录规划到openGauss用户的根目录或其子目录下，可能导致权限问题&#xA;将安装包“openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz”和配置文件“cluster_config.xml”都上传至上一步所创建的目录中。&#xA;在第一步所创建的安装包的目录下，解压安装包openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz。安装包解压后，会有OM安装包和Server安装包。继续解压OM安装包，会在/opt/software/openGauss路径下自动生成script子目录，并且在script目录下生成gs_preinstall等各种OM工具脚本。&#xA;2.解压企业版安装包（版本: 7.0.0-RC2） dnf install tar tar -zxvf openGauss-All-7.0.0-RC2-openEuler24.03-x86_64.tar.gz tar -jxf openGauss-Server-7.0.0-RC2-openEuler24.03-x86_64.tar.bz2 ls -lb 3.安装 Python3.11 环境 1）安装编译 Python 所需的依赖：&#xA;sudo dnf update -y sudo dnf groupinstall -y &amp;#34;Development Tools&amp;#34; sudo dnf install -y \ wget openssl-devel bzip2-devel libffi-devel zlib-devel \ xz-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel \ uuid-devel 2）下载 Python 3.</description>
+    </item>
     <item>
       <title>搭配鲲鹏920处理器的华启服务器安装麒麟 Kylin Server 国产操作系统</title>
       <link>https://freezz.cc/posts/js20251126/</link>
