@@ -6,8 +6,15 @@
     <description>Recent content in 实用工具 on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Nov 2025 22:44:45 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Dec 2025 21:36:39 +0800</lastBuildDate>
     <atom:link href="https://freezz.cc/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows11 安装时跳过硬件最低要求检测、跳过联网登录、一键激活系统</title>
+      <link>https://freezz.cc/posts/js20251204/</link>
+      <pubDate>Thu, 04 Dec 2025 21:36:39 +0800</pubDate>
+      <guid>https://freezz.cc/posts/js20251204/</guid>
+      <description>电脑安装windows11的最低硬件要求：&#xA;https://learn.microsoft.com/zh-cn/windows/whats-new/windows-11-requirements&#xA;https://www.microsoft.com/zh-cn/windows/windows-11-specifications&#xA;处理器：1 Ghz 或更快的兼容 64 位的处理器（双核心或多核心）&#xA;内存：不小于4 GB&#xA;磁盘空间： 不小于64 GB&#xA;系统固件：支持 UEFI、安全启动&#xA;TPM：受信任的平台模块 (TPM) 2.0 版本&#xA;在安装windows11过程中，安装程序会检测硬件是否符合系统的最低要求，如果不符合，就会弹出“不满足Windows11系统要求”的告警提示，并中止安装。&#xA;所以，如果我们的电脑比较老旧或者硬件不符合条件的情况下，想要安装Windows11，就需要跳过“硬件检测”这一个步骤，以便能够让普通的电脑也能顺利安装上Windows11。下面分享一下操作步骤：&#xA;首先在安装程序进行到“硬件最低要求检测”前，比如安装程序进入到如下“选择语言设置”界面时&#xA;同时按下键盘的 Shift + F10（笔记本 Fn+Shift+F10）组合键调出命令行窗口，输入命令：&#xA;reg add HKLM\System\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d 1 /f reg add HKLM\System\Setup\LabConfig /v BypassSecureBootCheck /t REG_DWORD /d 1 /f reg add HKLM\System\Setup\LabConfig /v BypassRAMCheck /t REG_DWORD /d 1 /f reg add HKLM\System\Setup\LabConfig /v BypassStorageCheck /t REG_DWORD /d 1 /f reg add HKLM\System\Setup\LabConfig /v BypassCPUCheck /t REG_DWORD /d 1 /f BypassTPMCheck：绕过 TPM 2.</description>
+    </item>
     <item>
       <title>免费好用的视频下载工具 yt-dlp，支持YouTube、bilibili等数千个视频网站</title>
       <link>https://freezz.cc/posts/js20251124/</link>
