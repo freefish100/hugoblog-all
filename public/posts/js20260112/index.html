@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息 - 自游鱼</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+		<meta property="og:url" content="https://freezz.cc/posts/js20260112/">
+  <meta property="og:site_name" content="自游鱼">
+  <meta property="og:title" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+  <meta property="og:description" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-12T20:48:17+08:00">
+    <meta property="article:modified_time" content="2026-01-12T20:48:17+08:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="实用工具">
+
+		
+  <meta itemprop="name" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+  <meta itemprop="description" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+  <meta itemprop="datePublished" content="2026-01-12T20:48:17+08:00">
+  <meta itemprop="dateModified" content="2026-01-12T20:48:17+08:00">
+  <meta itemprop="wordCount" content="1259">
+  <meta itemprop="keywords" content="Linux,实用工具">
+		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+  <meta name="twitter:description" content="最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+  
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9932068393504492"
+     crossorigin="anonymous"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		<div class="header-top">
+			
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="自游鱼" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/zyy.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">自游鱼</div>
+					<div class="logo__tagline">IT电脑笔记 | 前行 · 探索 · 实践</div>
+				</div>
+		</a>
+	</div>
+			<div class="custom-banner">
+				<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+					<img src="/xx1.png" alt="顶部横幅" class="banner-image" loading="lazy">
+				</a>
+			</div>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">菜单</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">首页</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+				
+				<span class="menu__text">服务器</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/">
+				
+				<span class="menu__text">存储设备</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">关于</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-01-12T20:48:17&#43;08:00">2026-01-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">目录</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装-smartctl-工具-smartmontools-软件包">安装 <code>smartctl</code> 工具 <code>smartmontools</code> 软件包</a></li>
+        <li><a href="#使用场景-1查看硬盘的基本信息">使用场景 1：查看硬盘的基本信息</a></li>
+        <li><a href="#使用场景-2日常健康检查">使用场景 2：日常健康检查</a></li>
+        <li><a href="#使用场景-3怀疑硬盘有问题做深度检测">使用场景 3：怀疑硬盘有问题，做深度检测</a></li>
+        <li><a href="#使用场景4显示更详细的硬盘-smart-状态信息和硬盘健康状况">使用场景4：显示更详细的硬盘 SMART 状态信息和硬盘健康状况</a></li>
+        <li><a href="#硬盘接在raid阵列卡上的案例">硬盘接在raid阵列卡上的案例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>硬盘有价，数据无价。硬盘是所有数据文件资料的载体，万一硬盘坏掉了，资料可就会全丢，损失可大了。所以，我们平时使用电脑，不能忽视电脑硬盘的健康状况。</p>
+<p>硬盘的健康状况，通常需要通过S.M.A.R.T.技术来监测，S.M.A.R.T.（Self-Monitoring, Analysis, and Reporting Technology）是现代硬盘（包括 HDD 和 SSD）内置的一种自我监测与报告技术。它通过持续记录硬盘的运行状态（如坏扇区数、通电时间、温度、重分配次数等），在潜在故障发生前发出预警。</p>
+<p>那我们要使用什么工具来检测硬盘的健康状况呢？在Linux系统中，最经典的工具就是 <code>smartctl</code> ，它来自于 smartmontools 包，smartctl 支持几乎所有现代 SATA/SAS/SCSI 硬盘和 SSD。</p>
+<p>smartmontools 是一套开源、跨平台的命令行工具集，支持 Linux（原生平台）、Windows 和 macOS等操作系统，用于监控、查询和控制硬盘的 S.M.A.R.T.功能，帮助我们提前发现硬盘故障风险，预防数据丢失。</p>
+<h3 id="安装-smartctl-工具-smartmontools-软件包">安装 <code>smartctl</code> 工具 <code>smartmontools</code> 软件包</h3>
+<p>在Linux系统中，想要使用 <code>smartctl</code>，需要先安装 <code>smartmontools</code> 软件包，不同的Linux发行版本，安装命令略有不同，例如：</p>
+<ol>
+<li>Debian / Ubuntu / Linux Mint</li>
+</ol>
+<pre tabindex="0"><code>sudo apt install smartmontools
+</code></pre><ol start="2">
+<li>RHEL / CentOS / AlmaLinux / Rocky Linux / Fedora</li>
+</ol>
+<pre tabindex="0"><code>sudo dnf install smartmontools
+</code></pre><p>我这里要安装最新版本的smartmontools，所以使用从源码安装的方式，目前 <code>smartmontools</code> 最新的版本是7.5。</p>
+<pre tabindex="0"><code>https://github.com/smartmontools/smartmontools/releases
+</code></pre><p>安装步骤如下：</p>
+<pre tabindex="0"><code>先安装编辑环境依赖：
+如果是 RHEL / CentOS / AlmaLinux / Rocky Linux，执行：
+sudo dnf install -y gcc gcc-c++ make autoconf automake
+如果是debian/ubuntu,则执行：
+sudo apt install -y gcc g++ make autoconf automake
+
+下载smartmontools并编译安装
+wget https://github.com/smartmontools/smartmontools/releases/download/RELEASE_7_5/smartmontools-7.5.tar.gz
+tar zxvf smartmontools-7.5.tar.gz
+cd smartmontools-7.5
+./configure
+make
+sudo make install
+
+安装后查看版本
+smartctl -V
+</code></pre><p><img src="/img/0382f1f35e6c6fd2d658652fc0059741.png" alt="0382f1f35e6c6fd2d658652fc0059741.png"></p>
+<p>下面就开始使用 <code>smartctl</code> 了，我这里列出几个日常典型的使用场景，让你全方位掌控硬盘的基本信息和健康状态。先执行 <code>lsblk</code> 命令列出电脑系统中的硬盘，如图所示，我的电脑有两个硬盘，分别是 <code>/dev/sda</code>和<code>/dev/sdb</code>。<br>
+<img src="/img/b06d2f1c67c6d290b17f429812ce1a1b.png" alt="b06d2f1c67c6d290b17f429812ce1a1b.png"></p>
+<p>下面的操作，以 <code>/dev/sda</code> 这块硬盘为例。</p>
+<h3 id="使用场景-1查看硬盘的基本信息">使用场景 1：查看硬盘的基本信息</h3>
+<pre tabindex="0"><code>sudo smartctl -i /dev/sda  
+</code></pre><p><img src="/img/9a3fdb29ac58e8b150343ce204146aa5.png" alt="9a3fdb29ac58e8b150343ce204146aa5.png"></p>
+<h3 id="使用场景-2日常健康检查">使用场景 2：日常健康检查</h3>
+<p>快速健康判断</p>
+<pre tabindex="0"><code>sudo smartctl -H /dev/sda
+</code></pre><p>作用：这个命令会显示硬盘的 SMART 总体健康状况。<br>
+输出内容：它只会返回一个简短的健康检查结果，通常是：<br>
+PASSED：硬盘状态良好，没有发现严重问题。<br>
+FAILED：硬盘存在问题，可能已经开始出现故障。<br>
+<img src="/img/b090944bb601c0e19ad4b42db3ca2985.png" alt="b090944bb601c0e19ad4b42db3ca2985.png"></p>
+<pre tabindex="0"><code>sudo smartctl -A /dev/sda  
+</code></pre><p>作用：这个命令会显示硬盘的 所有 SMART 属性值，即详细的 SMART 数据。<br>
+输出内容：它列出硬盘的所有 SMART 属性，如：<br>
+原始读取错误率 (Raw_Read_Error_Rate)<br>
+重新分配的扇区数 (Reallocated_Sector_Ct)<br>
+启动/停止次数 (Start_Stop_Count)<br>
+温度 (Temperature_Celsius) 等。<br>
+<img src="/img/05b10c336679dec466bc9701b5f3943b.png" alt="05b10c336679dec466bc9701b5f3943b.png"></p>
+<h3 id="使用场景-3怀疑硬盘有问题做深度检测">使用场景 3：怀疑硬盘有问题，做深度检测</h3>
+<pre tabindex="0"><code>长测试，启动全盘扫描（耗时几十分钟到几小时）  
+sudo smartctl -t long /dev/sda  
+短测试，快速扫描  
+sudo smartctl -t short /dev/sda  
+查看测试结果  
+sudo smartctl -l selftest /dev/sda
+</code></pre><h3 id="使用场景4显示更详细的硬盘-smart-状态信息和硬盘健康状况">使用场景4：显示更详细的硬盘 SMART 状态信息和硬盘健康状况</h3>
+<pre tabindex="0"><code>sudo smartctl -a /dev/sda
+或者  
+sudo smartctl -x /dev/sda
+</code></pre><p>比如：</p>
+<pre tabindex="0"><code>debian@acer:~$ sudo smartctl -a /dev/sda
+smartctl 7.5 2025-04-30 r5714 [x86_64-linux-6.12.57+deb13-amd64] (local build)
+Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Western Digital Blue Mobile
+Device Model:     WDC WD10JPVX-22JC3T0
+Serial Number:    WD-WX91AB6NP71C
+LU WWN Device Id: 5 0014ee 6b1e71185
+Firmware Version: 01.01A01
+User Capacity:    1,000,204,886,016 bytes [1.00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    5400 rpm
+Device is:        In smartctl database 7.5/5706
+ATA Version is:   ACS-2 (minor revision not indicated)
+SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Thu Jan  8 16:09:52 2026 CST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00) Offline data collection activity
+                                        was never started.
+                                        Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0) The previous self-test routine completed
+                                        without error or no self-test has ever 
+                                        been run.
+Total time to complete Offline 
+data collection:                (17640) seconds.
+Offline data collection
+capabilities:                    (0x7b) SMART execute Offline immediate.
+                                        Auto Offline data collection on/off support.
+                                        Suspend Offline collection upon new
+                                        command.
+                                        Offline surface scan supported.
+                                        Self-test supported.
+                                        Conveyance Self-test supported.
+                                        Selective Self-test supported.
+SMART capabilities:            (0x0003) Saves SMART data before entering
+                                        power-saving mode.
+                                        Supports SMART auto save timer.
+Error logging capability:        (0x01) Error logging supported.
+                                        General Purpose Logging supported.
+Short self-test routine 
+recommended polling time:        (   2) minutes.
+Extended self-test routine
+recommended polling time:        ( 198) minutes.
+Conveyance self-test routine
+recommended polling time:        (   5) minutes.
+SCT capabilities:              (0x7035) SCT Status supported.
+                                        SCT Feature Control supported.
+                                        SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x002f   200   200   051    Pre-fail  Always       -       0
+  3 Spin_Up_Time            0x0027   182   176   021    Pre-fail  Always       -       1875
+  4 Start_Stop_Count        0x0032   001   001   000    Old_age   Always       -       229891
+  5 Reallocated_Sector_Ct   0x0033   200   200   140    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x002e   200   200   000    Old_age   Always       -       0
+  9 Power_On_Hours          0x0032   066   066   000    Old_age   Always       -       25140
+ 10 Spin_Retry_Count        0x0032   100   100   000    Old_age   Always       -       0
+ 11 Calibration_Retry_Count 0x0032   100   100   000    Old_age   Always       -       0
+ 12 Power_Cycle_Count       0x0032   099   099   000    Old_age   Always       -       1035
+191 G-Sense_Error_Rate      0x0032   075   075   000    Old_age   Always       -       25
+192 Power-Off_Retract_Count 0x0032   200   200   000    Old_age   Always       -       72
+193 Load_Cycle_Count        0x0032   070   070   000    Old_age   Always       -       391937
+194 Temperature_Celsius     0x0022   127   102   000    Old_age   Always       -       20
+196 Reallocated_Event_Count 0x0032   200   200   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0032   200   200   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0030   100   253   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0032   200   200   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x0008   100   253   000    Old_age   Offline      -       0
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+The above only provides legacy SMART information - try &#39;smartctl -x&#39; for more
+</code></pre><p>这个命令会显示硬盘的 所有 SMART 信息，包括：<br>
+硬盘的基本信息：型号、序列号、固件版本、容量等。<br>
+健康状态：例如，SMART 总体健康检查的结果。<br>
+SMART 属性：例如，读错误率、启动/停止次数、重新分配的扇区计数、温度等。<br>
+错误日志：显示硬盘是否有错误记录。<br>
+自检日志：显示硬盘是否运行过自检以及结果。<br>
+电源计数和工作时间：显示硬盘的通电时间、重启次数等。</p>
+<p>我们还可以从 <code>sudo smartctl -a /dev/sda</code> 返回的信息中找到过滤出是否健康状况、是否有坏道坏扇区、通电时间、通电次数和温度等关键信息：</p>
+<pre tabindex="0"><code>sudo smartctl -a /dev/sda | grep -E &#34;SMART overall-health|Reallocated_Sector|Current_Pending_Sector|Offline_Uncorrectable|Power_O
+n_Hours|Start_Stop_Count|Temperature_Celsius|Drive Temperature&#34;
+</code></pre><p><img src="/img/1b17e56611092cc1ac24dac8895947f9.png" alt="1b17e56611092cc1ac24dac8895947f9.png"></p>
+<h3 id="硬盘接在raid阵列卡上的案例">硬盘接在raid阵列卡上的案例</h3>
+<p>在一些服务器中，硬盘一般是连接到raid阵列卡的，比如下面这台戴尔R630服务器，使用了戴尔的阵列卡DELL or MegaRaid controller，需要先执行 <code>sudo smartctl --scan</code> 这条命令以列出连接上该RAID 控制器上所有可以通过 SMART 工具访问的物理磁盘：</p>
+<pre tabindex="0"><code>debian@debian:~$ sudo smartctl --scan
+返回如下信息：
+/dev/sda -d scsi # /dev/sda, SCSI device
+/dev/sdb -d scsi # /dev/sdb, SCSI device
+/dev/bus/0 -d megaraid,0 # /dev/bus/0 [megaraid_disk_00], SCSI device
+/dev/bus/0 -d megaraid,1 # /dev/bus/0 [megaraid_disk_01], SCSI device
+/dev/bus/0 -d megaraid,2 # /dev/bus/0 [megaraid_disk_02], SCSI device
+/dev/bus/0 -d megaraid,3 # /dev/bus/0 [megaraid_disk_03], SCSI device
+</code></pre><p><img src="/img/cd2ddb1f51a5d781cb083e9cecf5a825.png" alt="cd2ddb1f51a5d781cb083e9cecf5a825.png"><br>
+<strong>解释一下：</strong><br>
+这里的 /dev/sda 和 /dev/sdb 是 RAID 控制器提供的 逻辑卷（virtual disks），不是物理硬盘，也不是直通设备。<br>
+从上面返回的信息看，/dev/bus/0 RAID 控制器接了4个硬盘，其设备标识符分别是megaraid,0、megaraid,1、megaraid,2、megaraid,3。</p>
+<p>由于 <code>/dev/bus/0</code> 不是一块硬盘，而是一个 RAID 控制器，所以在执行 <code>smartctl</code> 命令对硬盘进行测试时，需要加上参数 <code>-d</code> 来指定RAID 控制器后面所连接的某一块硬盘。比如查看“megaraid,0”这块硬盘的信息：</p>
+<pre tabindex="0"><code>sudo smartctl -i -d megaraid,0 /dev/bus/0 
+</code></pre><p><img src="/img/8963570e4912894e7adfdc1089d506cd.png" alt="8963570e4912894e7adfdc1089d506cd.png"><br>
+又比如查看“megaraid,3”这块硬盘的信息：</p>
+<pre tabindex="0"><code>sudo smartctl -i -d megaraid,3 /dev/bus/0  
+</code></pre><p><img src="/img/ce73e163e689dc36cc6dfb416c1550bc.png" alt="ce73e163e689dc36cc6dfb416c1550bc.png"></p>
+<pre tabindex="0"><code>短测试：  
+sudo smartctl -t short -d megaraid,1 /dev/bus/0  
+长测试：  
+sudo smartctl -t long -d megaraid,1 /dev/bus/0
+</code></pre><p><img src="/img/db9246fa2dc5e719dc02557159a2ff43.png" alt="db9246fa2dc5e719dc02557159a2ff43.png"><br>
+查看测试结果：</p>
+<pre tabindex="0"><code>sudo smartctl -l selftest -d megaraid,1 /dev/bus/0  
+</code></pre><p><img src="/img/3dd073c8a17d1f1952a057138eff5896.png" alt="3dd073c8a17d1f1952a057138eff5896.png"><br>
+<img src="/img/8f202c8ab1810fdf8292790bdb2530d2.png" alt="8f202c8ab1810fdf8292790bdb2530d2.png"><br>
+从上图中返回的信息可见，最新的一次长测试（#1）是正常的。<br>
+<code>Test Description: Background long</code> → 这是一次完整的长自检（Extended Self-test），由 MegaRAID 控制器在后台执行。<br>
+<code>Status: Completed</code> → 成功完成，没有中断或失败。<br>
+<code>LBA_first_err: -</code> → 未检测到任何读写错误（如果有坏道或介质错误，这里会显示第一个出错的 LBA 地址）。<br>
+<code>\[SK ASC ASQ\]: \[- - -\]</code> → 无 SCSI 错误码，进一步确认无 I/O 故障。</p>
+<p>又比如查看 MegaRAID 控制器后面连接的“megaraid,1”这块硬盘完整的 SMART 信息：</p>
+<pre tabindex="0"><code>sudo smartctl -a -d megaraid,1 /dev/bus/0
+</code></pre><p>返回信息如下：</p>
+<pre tabindex="0"><code>smartctl 7.5 2025-04-30 r5714 [x86_64-linux-6.12.57+deb13-amd64] (local build)
+Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               FUJITSU
+Product:              MBE2147RC
+Revision:             D906
+Compliance:           SPC-3
+User Capacity:        146,815,733,760 bytes [146 GB]
+Logical block size:   512 bytes
+Rotation Rate:        15000 rpm
+Form Factor:          2.5 inches
+Logical Unit id:      0x500000e11a13b4d0
+Serial number:        D304PC60N9AU
+Device type:          disk
+Transport protocol:   SAS (SPL-4)
+Local Time is:        Thu Jan  8 03:01:15 2026 EST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Disabled or Not Supported
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     22 C
+Drive Trip Temperature:        65 C
+
+Accumulated power on time, hours:minutes 36848:18
+Manufactured in week 26 of year 2012
+Specified cycle count over device lifetime:  50000
+Accumulated start-stop cycles:  102
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0       32        32        32         34      37322.328           0
+write:         0     1051      1051      1051       1477      15166.799           0
+verify:        0       14        14        14         14      18141.253           0
+
+Non-medium error count:       74
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background long   Completed                  16   36847                 - [-   -    -]
+# 2  Background long   Completed                  16   36844                 - [-   -    -]
+# 3  Background short  Completed                  16   36843                 - [-   -    -]
+# 4  Background short  Completed                  16   36843                 - [-   -    -]
+# 5  Background short  Completed                  16       2                 - [-   -    -]
+# 6  Background long   Completed                  16       2                 - [-   -    -]
+# 7  Background short  Completed                  16       1                 - [-   -    -]
+
+Long (extended) Self-test duration: 1254 seconds [20.9 minutes]
+</code></pre><p>通过以上介绍，我们可以看到，<code>smartctl</code> 作为一个强大而免费的开源工具，能帮助我们轻松监控硬盘的健康状态，无论你是普通用户还是服务器管理员，都能及早发现潜在问题——比如坏扇区增加、温度过高或错误率上升，从而避免突发故障导致的数据灾难。</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">实用工具</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/js20251204/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;上一篇</span>
+			<p class="pager__title">windows11 安装时跳过硬件最低要求检测、跳过联网登录、一键激活系统</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><style>
+     
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+     
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+     
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+     
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+     
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
+
+<form class="search"> 
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
+</form>
+
+<script>
+    
+    function search(jsonData, searchTerm) {
+      let results = [];
+      for (let i = 0; i < jsonData.length; i++) {
+        for (let property in jsonData[i]) {
+          if (jsonData[i].hasOwnProperty(property) && jsonData[i][property].toString().indexOf(searchTerm) > -1) {
+            results.push(jsonData[i]);
+            break;
+          }
+        }
+      }
+      return results;
+    }
+  
+    function displayResults(searchResults) {
+      let container = document.getElementById("resultsContainer");
+      container.innerHTML = "";
+      if (searchResults.length > 0) {
+        for (let i = 0; i < searchResults.length; i++) {
+          let resultDiv = document.createElement("div");
+          let resultTitle = document.createElement("a");
+          resultTitle.innerText = searchResults[i].title;
+          resultTitle.setAttribute('href', searchResults[i].permalink)
+          resultDiv.appendChild(resultTitle);
+          container.appendChild(resultDiv);
+        }
+      } else {
+        let noResultsMessage = document.createElement("p");
+        noResultsMessage.innerText = "没有找到搜索结果。";
+        container.appendChild(noResultsMessage);
+      }
+    }
+  
+    function initiateSearch() {
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
+
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
+    }
+</script>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/js20260112/">最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20251204/">windows11 安装时跳过硬件最低要求检测、跳过联网登录、一键激活系统</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20251201/">欧拉 openEuler 2403 LTS 安装华为 openGauss 高斯数据库</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20251126/">搭配鲲鹏920处理器的华启服务器安装麒麟 Kylin Server 国产操作系统</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20251124/">免费好用的视频下载工具 yt-dlp，支持YouTube、bilibili等数千个视频网站</a></li>
+		</ul>
+	</div>
+</div><div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/TD5fHWT" target="_blank" rel="nofollow noopener noreferrer">小洁匠选德国精工电动剃须刀男士2025新款刮胡子刀迷你便携不留黑点小钢炮 德国新升级-16代【亮银色】7w转速续航240天 当次日达丨百万热销丨干湿两剃丨不留黑点丨全身水洗
+</a></p>
+    <a href="https://u.jd.com/TD5fHWT" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1763048442648.jpg" alt="德国精工电动剃须刀" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/Ta5Ecs8" target="_blank" rel="nofollow noopener noreferrer">刺猬阿甘零食大礼包酥脆解馋送礼追剧零食小吃 混合口味400g1箱</a></p>
+    <a href="https://u.jd.com/Ta5Ecs8" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1763048983196.jpg" alt="刺猬阿甘零食" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ai/" title="AI">AI</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infortrend/" title="Infortrend">Infortrend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="Markdown">Markdown</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raid/" title="RAID">RAID</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmware/" title="Vmware">Vmware</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows/" title="Windows">Windows</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%9B%BD%E4%BA%A7%E4%BF%A1%E5%88%9B/" title="国产信创">国产信创</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%A4%87%E4%BB%BD/" title="备份">备份</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AD%98%E5%82%A8/" title="存储">存储</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/" title="存储设备">存储设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" title="实用工具">实用工具</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/" title="实用网站">实用网站</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%88%B4%E5%B0%94/" title="戴尔">戴尔</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%96%87%E7%AB%A0%E6%94%B6%E9%9B%86/" title="文章收集">文章收集</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器">服务器</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%B5%AA%E6%BD%AE/" title="浪潮">浪潮</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87/" title="硬件设备">硬件设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="网站搭建">网站搭建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2026 自游鱼.
+			<span class="footer__copyright-credits">基于 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 引擎和 <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> 主题</span>
+		</div>
+	</div>
+    
+    
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <div id="busuanzi-container">
+        <span id="busuanzi_value_page_pv"></span> 次访问
+        <span id="busuanzi_value_site_pv"></span> 总访问量
+        <span id="busuanzi_value_site_uv"></span> 访客数量
+    </div>
+</footer>
+
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

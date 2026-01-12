@@ -6,8 +6,15 @@
     <description>Recent content in 实用工具 on 自游鱼</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Dec 2025 21:36:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 20:48:17 +0800</lastBuildDate>
     <atom:link href="https://freezz.cc/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息</title>
+      <link>https://freezz.cc/posts/js20260112/</link>
+      <pubDate>Mon, 12 Jan 2026 20:48:17 +0800</pubDate>
+      <guid>https://freezz.cc/posts/js20260112/</guid>
+      <description>硬盘有价，数据无价。硬盘是所有数据文件资料的载体，万一硬盘坏掉了，资料可就会全丢，损失可大了。所以，我们平时使用电脑，不能忽视电脑硬盘的健康状况。&#xA;硬盘的健康状况，通常需要通过S.M.A.R.T.技术来监测，S.M.A.R.T.（Self-Monitoring, Analysis, and Reporting Technology）是现代硬盘（包括 HDD 和 SSD）内置的一种自我监测与报告技术。它通过持续记录硬盘的运行状态（如坏扇区数、通电时间、温度、重分配次数等），在潜在故障发生前发出预警。&#xA;那我们要使用什么工具来检测硬盘的健康状况呢？在Linux系统中，最经典的工具就是 smartctl ，它来自于 smartmontools 包，smartctl 支持几乎所有现代 SATA/SAS/SCSI 硬盘和 SSD。&#xA;smartmontools 是一套开源、跨平台的命令行工具集，支持 Linux（原生平台）、Windows 和 macOS等操作系统，用于监控、查询和控制硬盘的 S.M.A.R.T.功能，帮助我们提前发现硬盘故障风险，预防数据丢失。&#xA;安装 smartctl 工具 smartmontools 软件包 在Linux系统中，想要使用 smartctl，需要先安装 smartmontools 软件包，不同的Linux发行版本，安装命令略有不同，例如：&#xA;Debian / Ubuntu / Linux Mint sudo apt install smartmontools RHEL / CentOS / AlmaLinux / Rocky Linux / Fedora sudo dnf install smartmontools 我这里要安装最新版本的smartmontools，所以使用从源码安装的方式，目前 smartmontools 最新的版本是7.5。&#xA;https://github.com/smartmontools/smartmontools/releases 安装步骤如下：&#xA;先安装编辑环境依赖： 如果是 RHEL / CentOS / AlmaLinux / Rocky Linux，执行： sudo dnf install -y gcc gcc-c++ make autoconf automake 如果是debian/ubuntu,则执行： sudo apt install -y gcc g++ make autoconf automake 下载smartmontools并编译安装 wget https://github.</description>
+    </item>
     <item>
       <title>windows11 安装时跳过硬件最低要求检测、跳过联网登录、一键激活系统</title>
       <link>https://freezz.cc/posts/js20251204/</link>
