@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>获取  windows linux 电脑硬件信息脚本 - 自游鱼</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="获取  windows linux 电脑硬件信息脚本">
+		<meta property="og:url" content="https://freezz.cc/posts/js20260130/">
+  <meta property="og:site_name" content="自游鱼">
+  <meta property="og:title" content="获取  windows linux 电脑硬件信息脚本">
+  <meta property="og:description" content="获取  windows linux 电脑硬件信息脚本">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-29T00:36:54+08:00">
+    <meta property="article:modified_time" content="2026-01-29T00:36:54+08:00">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Linux">
+
+		
+  <meta itemprop="name" content="获取  windows linux 电脑硬件信息脚本">
+  <meta itemprop="description" content="获取  windows linux 电脑硬件信息脚本">
+  <meta itemprop="datePublished" content="2026-01-29T00:36:54+08:00">
+  <meta itemprop="dateModified" content="2026-01-29T00:36:54+08:00">
+  <meta itemprop="wordCount" content="4478">
+  <meta itemprop="keywords" content="Windows,Linux">
+		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="获取  windows linux 电脑硬件信息脚本">
+  <meta name="twitter:description" content="获取  windows linux 电脑硬件信息脚本">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+  
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9932068393504492"
+     crossorigin="anonymous"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		<div class="header-top">
+			
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="自游鱼" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/zyy.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">自游鱼</div>
+					<div class="logo__tagline">IT电脑笔记 | 前行 · 探索 · 实践</div>
+				</div>
+		</a>
+	</div>
+			<div class="custom-banner">
+				<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+					<img src="/xx1.png" alt="顶部横幅" class="banner-image" loading="lazy">
+				</a>
+			</div>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">菜单</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">首页</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+				
+				<span class="menu__text">服务器</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/">
+				
+				<span class="menu__text">存储设备</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">关于</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">获取  windows linux 电脑硬件信息脚本</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-01-29T00:36:54&#43;08:00">2026-01-29</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">目录</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h4 id="获取windows电脑硬件信息脚本">获取windows电脑硬件信息脚本</h4>
+<pre tabindex="0"><code># Windows Hardware Information Script
+# Converted from Linux har_info4.sh
+# Requires PowerShell 5.1 or later (Administrator privileges recommended)
+
+$ErrorActionPreference = &#34;SilentlyContinue&#34;
+
+# Colors (Simulated with Write-Host)
+function Print-Section {
+    param([string]$Title)
+    Write-Host &#34;=== $Title ===&#34; -ForegroundColor Green
+    Write-Host &#34;================================================&#34; -ForegroundColor Blue
+}
+
+function Print-SubSection {
+    param([string]$Title)
+    Write-Host &#34;`n$Title&#34; -ForegroundColor Yellow
+}
+
+function Check-Command {
+    param([string]$Command)
+    if (Get-Command $Command -ErrorAction SilentlyContinue) {
+        return $true
+    }
+    return $false
+}
+
+# --- System Info ---
+function Get-SystemInfo {
+    Print-Section &#34;主机信息&#34;
+    
+    $os = Get-CimInstance Win32_OperatingSystem
+    $cs = Get-CimInstance Win32_ComputerSystem
+    $csp = Get-CimInstance Win32_ComputerSystemProduct
+    
+    Write-Host &#34;主机名: $($cs.DNSHostName)&#34;
+    Write-Host &#34;操作系统: $($os.Caption) $($os.Version)&#34;
+    Write-Host &#34;系统架构: $($os.OSArchitecture)&#34;
+    
+    Print-SubSection &#34;制造商信息:&#34;
+    Write-Host &#34;制造商: $($cs.Manufacturer)&#34;
+    Write-Host &#34;产品名称: $($cs.Model)&#34;
+    Write-Host &#34;序列号: $($csp.IdentifyingNumber)&#34;
+    Write-Host &#34;UUID: $($csp.UUID)&#34;
+    Write-Host &#34;&#34;
+}
+
+# --- Motherboard Info ---
+function Get-MotherboardInfo {
+    Print-Section &#34;主板信息&#34;
+    
+    $bb = Get-CimInstance Win32_BaseBoard
+    $bios = Get-CimInstance Win32_BIOS
+    
+    Write-Host &#34;制造商: $($bb.Manufacturer)&#34;
+    Write-Host &#34;产品: $($bb.Product)&#34;
+    Write-Host &#34;版本: $($bb.Version)&#34;
+    Write-Host &#34;序列号: $($bb.SerialNumber)&#34;
+    
+    Print-SubSection &#34;BIOS 信息:&#34;
+    Write-Host &#34;厂商: $($bios.Manufacturer)&#34;
+    Write-Host &#34;版本: $($bios.SMBIOSBIOSVersion)&#34;
+    Write-Host &#34;发布日期: $($bios.ReleaseDate)&#34;
+    Write-Host &#34;&#34;
+}
+
+# --- CPU Info ---
+function Get-CpuInfo {
+    Print-Section &#34;CPU 信息&#34;
+    
+    $cpus = @(Get-CimInstance Win32_Processor)
+    foreach ($cpu in $cpus) {
+        Write-Host &#34;CPU 型号: $($cpu.Name)&#34;
+        Write-Host &#34;物理核心数: $($cpu.NumberOfCores)&#34;
+        Write-Host &#34;逻辑核心数: $($cpu.NumberOfLogicalProcessors)&#34;
+        Write-Host &#34;当前频率: $($cpu.MaxClockSpeed) MHz&#34;
+        Write-Host &#34;L3 缓存: $([math]::Round($cpu.L3CacheSize / 1KB, 2)) MB&#34;
+        
+        $virt = &#34;Unknown&#34;
+        if ($cpu.VirtualizationFirmwareEnabled) { $virt = &#34;Yes&#34; } else { $virt = &#34;No&#34; }
+        Write-Host &#34;虚拟化支持: $virt&#34;
+        Write-Host &#34;---&#34;
+    }
+    Write-Host &#34;物理 CPU 数量: $($cpus.Count)&#34;
+    Write-Host &#34;&#34;
+}
+
+# --- Memory Info ---
+function Get-MemoryInfo {
+    Print-Section &#34;内存信息&#34;
+    
+    $cs = Get-CimInstance Win32_ComputerSystem
+    $os = Get-CimInstance Win32_OperatingSystem
+    
+    $totalMemGB = [math]::Round($cs.TotalPhysicalMemory / 1GB, 2)
+    $freeMemGB = [math]::Round($os.FreePhysicalMemory / 1MB, 2) # FreePhysicalMemory is in KB
+    
+    Write-Host &#34;总内存: $totalMemGB GB&#34;
+    Write-Host &#34;可用内存: $freeMemGB GB&#34;
+    
+    $dimms = Get-CimInstance Win32_PhysicalMemory
+    $dimmTotal = 0
+    foreach ($d in $dimms) {
+        $dimmTotal += $d.Capacity
+    }
+    $dimmTotalGB = [math]::Round($dimmTotal / 1GB, 2)
+    Write-Host &#34;DIMM 标称总容量: $dimmTotalGB GB&#34;
+    
+    Print-SubSection &#34;内存插槽详细信息:&#34;
+    $installedSlots = 0
+    foreach ($d in $dimms) {
+        $sizeGB = [math]::Round($d.Capacity / 1GB, 2)
+        Write-Host &#34;---&#34;
+        Write-Host &#34;  容量: $sizeGB GB&#34;
+        Write-Host &#34;  插槽位置: $($d.DeviceLocator) / $($d.BankLabel)&#34;
+        Write-Host &#34;  类型: Unknown (Type $($d.MemoryType))&#34; 
+        Write-Host &#34;  频率: $($d.Speed) MHz&#34;
+        Write-Host &#34;  制造商: $($d.Manufacturer)&#34;
+        Write-Host &#34;  型号: $($d.PartNumber)&#34;
+        $installedSlots++
+    }
+    
+    # Try to guess total slots (Win32_PhysicalMemoryArray)
+    $memArray = Get-CimInstance Win32_PhysicalMemoryArray
+    if ($memArray) {
+        Write-Host &#34;&#34;
+        Write-Host &#34;内存条统计: $installedSlots/$($memArray.MemoryDevices) 个插槽已使用&#34;
+    }
+    Write-Host &#34;&#34;
+}
+
+# --- Disk Info ---
+function Get-DiskInfo {
+    Print-Section &#34;硬盘信息&#34;
+    
+    if (Get-Command Get-PhysicalDisk -ErrorAction SilentlyContinue) {
+        Print-SubSection &#34;磁盘列表 (Get-PhysicalDisk):&#34;
+        $disks = Get-PhysicalDisk | Sort-Object DeviceId
+        foreach ($d in $disks) {
+            $size = [math]::Round($d.Size / 1GB, 2)
+            $type = $d.MediaType
+            if ($type -eq &#34;Unspecified&#34;) { $type = &#34;Unknown (RAID Virtual Disk?) &#34; }
+            
+            Write-Host &#34;--- Disk $($d.DeviceId) ---&#34;
+            Write-Host &#34;  型号: $($d.Model)&#34;
+            Write-Host &#34;  容量: $size GB&#34;
+            Write-Host &#34;  类型: $type&#34;
+            Write-Host &#34;  序列号: $($d.SerialNumber)&#34;
+            Write-Host &#34;  总线类型: $($d.BusType)&#34;
+        }
+    } else {
+        Print-SubSection &#34;磁盘列表 (Win32_DiskDrive):&#34;
+        $disks = Get-CimInstance Win32_DiskDrive
+        foreach ($d in $disks) {
+            $size = [math]::Round($d.Size / 1GB, 2)
+            Write-Host &#34;--- $($d.DeviceID) ---&#34;
+            Write-Host &#34;  型号: $($d.Model)&#34;
+            Write-Host &#34;  容量: $size GB&#34;
+            Write-Host &#34;  序列号: $($d.SerialNumber)&#34;
+        }
+    }
+    Write-Host &#34;&#34;
+}
+
+# --- Storage &amp; RAID Info ---
+function Get-StorageInfo {
+    Print-Section &#34;存储控制器与 RAID 信息&#34;
+    
+    Print-SubSection &#34;存储控制器 (SCSIAdapter):&#34;
+    $controllers = Get-CimInstance Win32_SCSIController
+    foreach ($c in $controllers) {
+        Write-Host &#34;    名称: $($c.Name)&#34;
+        Write-Host &#34;    制造商: $($c.Manufacturer)&#34;
+        Write-Host &#34;    驱动版本: $($c.DriverVersion)&#34;
+        Write-Host &#34;&#34;
+    }
+    
+    # Check for external tools
+    # Broadcom/LSI MegaRAID/StorCLI
+    # Search common paths
+    $tools = @(&#34;storcli64.exe&#34;, &#34;storcli.exe&#34;, &#34;MegaCli64.exe&#34;, &#34;MegaCli.exe&#34;, &#34;perccli64.exe&#34;, &#34;arcconf.exe&#34;)
+    $foundTool = $false
+    
+    # Add current dir to path for this session
+    $env:Path += &#34;;$PWD&#34;
+    
+    foreach ($tool in $tools) {
+        if (Check-Command $tool) {
+            $foundTool = $true
+            Print-SubSection &#34;检测到 RAID 工具: $tool&#34;
+            
+            if ($tool -match &#34;storcli|perccli&#34;) {
+                Write-Host &#34;控制器信息:&#34;
+                &amp; $tool /cALL show | Select-String &#34;Controller|Model|Serial|Status|FW|Package&#34;
+                Print-SubSection &#34;虚拟磁盘:&#34;
+                &amp; $tool /cALL/vALL show | Select-String &#34;DG|VD|TYPE|State|Size|Sectors|Stripe|RAID&#34;
+                Print-SubSection &#34;物理磁盘:&#34;
+                # StorCLI output is usually already a table (single line per disk), so we can just show relevant lines
+                # or the whole table header + rows
+                $pdOut = &amp; $tool /cALL/eALL/sALL show all
+                $pdOut | Select-String &#34;EID|Slot|DID|State|Size|Intf|Med|Model|SN|FW|PN&#34;
+            }
+            elseif ($tool -match &#34;MegaCli&#34;) {
+                Write-Host &#34;控制器信息:&#34;
+                &amp; $tool -AdpAllInfo -aALL | Select-String &#34;Product Name|Serial No|FW Package Build&#34;
+                Print-SubSection &#34;虚拟磁盘:&#34;
+                &amp; $tool -LdInfo -aALL | Select-String &#34;Virtual Drive|RAID Level|State|Size&#34;
+                Print-SubSection &#34;物理磁盘:&#34;
+                # Parse MegaCli output for single line summary
+                $pdList = &amp; $tool -PdList -aALL
+                $currentDisk = @{}
+                foreach ($line in $pdList) {
+                    if ($line -match &#34;^Slot Number\s*:\s*(\d+)&#34;) {
+                        if ($currentDisk.Keys.Count -gt 0) {
+                            Write-Host &#34;    槽位: $($currentDisk.Slot) 型号: $($currentDisk.Model) 容量: $($currentDisk.Size) SN: $($currentDisk.SN) FW: $($currentDisk.FW)&#34;
+                            $currentDisk = @{}
+                        }
+                        $currentDisk.Slot = $matches[1]
+                    }
+                    elseif ($line -match &#34;^Raw Size\s*:\s*(.+)&#34;) { $currentDisk.Size = $matches[1].Trim() }
+                    elseif ($line -match &#34;^Inquiry Data\s*:\s*(.+)&#34;) { $currentDisk.Model = $matches[1].Trim() }
+                    elseif ($line -match &#34;^Serial Number\s*:\s*(.+)&#34;) { $currentDisk.SN = $matches[1].Trim() }
+                    elseif ($line -match &#34;^Device Firmware Level\s*:\s*(.+)&#34;) { $currentDisk.FW = $matches[1].Trim() }
+                }
+                # Print last disk
+                if ($currentDisk.Keys.Count -gt 0) {
+                     Write-Host &#34;    槽位: $($currentDisk.Slot) 型号: $($currentDisk.Model) 容量: $($currentDisk.Size) SN: $($currentDisk.SN) FW: $($currentDisk.FW)&#34;
+                }
+            }
+            elseif ($tool -match &#34;arcconf&#34;) {
+                 Write-Host &#34;Adaptec RAID Info:&#34;
+                 &amp; $tool getconfig 1
+            }
+            
+            Write-Host &#34;&#34;
+        }
+    }
+    
+    if (-not $foundTool) {
+        Write-Host &#34;未在 PATH 中检测到常用 RAID 管理工具 (storcli, megacli, arcconf 等)&#34;
+        Write-Host &#34;如需详细 RAID 信息，请安装相应工具并将路径添加到环境变量。&#34;
+    }
+    Write-Host &#34;&#34;
+}
+
+# --- GPU Info ---
+function Get-GpuInfo {
+    Print-Section &#34;显卡/GPU 信息&#34;
+    
+    $gpus = Get-CimInstance Win32_VideoController
+    foreach ($gpu in $gpus) {
+        $mem = &#34;N/A&#34;
+        if ($gpu.AdapterRAM) { $mem = &#34;$([math]::Round($gpu.AdapterRAM / 1MB, 0)) MB&#34; }
+        
+        Write-Host &#34;名称: $($gpu.Name)&#34;
+        Write-Host &#34;显存: $mem&#34;
+        Write-Host &#34;驱动版本: $($gpu.DriverVersion)&#34;
+        Write-Host &#34;---&#34;
+    }
+    
+    if (Check-Command &#34;nvidia-smi&#34;) {
+        Print-SubSection &#34;NVIDIA GPU 详细信息:&#34;
+        nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader
+        Write-Host &#34;&#34;
+        nvidia-smi
+    }
+    Write-Host &#34;&#34;
+}
+
+# --- Network Info ---
+function Get-NetworkInfo {
+    Print-Section &#34;网卡信息&#34;
+    
+    $nics = Get-NetAdapter | Where-Object { $_.PhysicalMediaType -ne &#34;Unspecified&#34; }
+    foreach ($nic in $nics) {
+        Write-Host &#34;--- $($nic.Name) ---&#34;
+        Write-Host &#34;  描述: $($nic.InterfaceDescription)&#34;
+        Write-Host &#34;  MAC 地址: $($nic.MacAddress)&#34;
+        Write-Host &#34;  链接速度: $($nic.LinkSpeed)&#34;
+        Write-Host &#34;  状态: $($nic.Status)&#34;
+        
+        $ip = Get-NetIPAddress -InterfaceIndex $nic.InterfaceIndex -AddressFamily IPv4 -ErrorAction SilentlyContinue
+        if ($ip) {
+            Write-Host &#34;  IPv4 地址: $($ip.IPAddress)&#34;
+        }
+        
+        Write-Host &#34;  驱动名称: $($nic.DriverName)&#34;
+        Write-Host &#34;  驱动版本: $($nic.DriverVersion)&#34;
+        Write-Host &#34;&#34;
+    }
+}
+
+# --- Main ---
+Clear-Host
+Write-Host &#34;Windows 硬件识别脚本&#34; -ForegroundColor Blue
+Write-Host &#34;===================&#34; -ForegroundColor Blue
+Write-Host &#34;开始检测硬件信息...`n&#34;
+
+Get-SystemInfo
+Get-MotherboardInfo
+Get-CpuInfo
+Get-MemoryInfo
+Get-DiskInfo
+Get-StorageInfo
+Get-GpuInfo
+Get-NetworkInfo
+
+Write-Host &#34;硬件信息检测完成! &#34; -ForegroundColor Green
+Write-Host &#34;`n按回车键退出... &#34;
+# Read-Host
+</code></pre><p>使用方法：把上面的脚本内容保存为 <code>har_info_win.ps1</code>文件，存放到任何目录，比如C盘根目录下
+<img src="/img/26054584a8178d942210ad016932432c.png" alt="26054584a8178d942210ad016932432c.png">
+在当前的资源管理器窗口的地址框中输入 <code>powershell</code>，然后回车，会弹出powershell命令窗口并自动定位到C盘根目录下
+<img src="/img/0694432c7cba82298d2a870ee5402944.png" alt="0694432c7cba82298d2a870ee5402944.png">
+在powershell命令窗口输入 <code>./har_info_win.ps1</code>并回车执行这一条命令，就可以执行脚本并显示出结果了
+<img src="/img/8122c2056b17560b9ebc44fd3f9dac19.png" alt="8122c2056b17560b9ebc44fd3f9dac19.png">
+<img src="/img/f8524c453214c0c59a53b7e6cd5f2363.png" alt="f8524c453214c0c59a53b7e6cd5f2363.png"></p>
+<h4 id="获取linux电脑硬件信息脚本">获取Linux电脑硬件信息脚本</h4>
+<pre tabindex="0"><code>#!/bin/bash
+
+# Linux硬件识别脚本
+# 支持识别主机、主板、CPU、内存、硬盘、阵列卡、显卡、网卡等硬件信息
+
+# 颜色定义
+RED=&#39;\033[0;31m&#39;
+GREEN=&#39;\033[0;32m&#39;
+YELLOW=&#39;\033[1;33m&#39;
+BLUE=&#39;\033[0;34m&#39;
+NC=&#39;\033[0m&#39; # No Color
+
+# 检查是否为root用户
+check_root() {
+    if [[ $EUID -ne 0 ]]; then
+        echo -e &#34;${YELLOW}警告: 建议以root权限运行以获取完整信息${NC}&#34;
+        echo &#34;当前以普通用户权限运行，某些信息可能无法获取&#34;
+        echo
+    fi
+}
+
+# 打印分隔线
+print_separator() {
+    echo -e &#34;${BLUE}================================================${NC}&#34;
+}
+
+# 检查命令是否存在
+check_command() {
+    if ! command -v $1 &amp;&gt; /dev/null; then
+        return 1
+    fi
+    return 0
+}
+
+# 获取主机信息
+get_system_info() {
+    echo -e &#34;${GREEN}=== 主机信息 ===${NC}&#34;
+    print_separator
+    
+    # 主机名
+    echo &#34;主机名: $(hostname)&#34;
+    
+    # 操作系统信息
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        echo &#34;操作系统: $NAME $VERSION&#34;
+    fi
+    
+    # 内核版本
+    echo &#34;内核版本: $(uname -r)&#34;
+    
+    # 架构
+    echo &#34;系统架构: $(uname -m)&#34;
+    
+    # 系统制造商信息
+    if check_command dmidecode; then
+        echo
+        echo -e &#34;${YELLOW}制造商信息:${NC}&#34;
+        echo &#34;制造商: $(sudo dmidecode -s system-manufacturer 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;产品名称: $(sudo dmidecode -s system-product-name 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;版本: $(sudo dmidecode -s system-version 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;序列号: $(sudo dmidecode -s system-serial-number 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;UUID: $(sudo dmidecode -s system-uuid 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+    fi
+    
+    echo
+}
+
+# 获取主板信息
+get_motherboard_info() {
+    echo -e &#34;${GREEN}=== 主板信息 ===${NC}&#34;
+    print_separator
+    
+    if check_command dmidecode; then
+        echo &#34;制造商: $(sudo dmidecode -s baseboard-manufacturer 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;产品名称: $(sudo dmidecode -s baseboard-product-name 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;版本: $(sudo dmidecode -s baseboard-version 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;序列号: $(sudo dmidecode -s baseboard-serial-number 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        
+        # BIOS信息
+        echo
+        echo -e &#34;${YELLOW}BIOS信息:${NC}&#34;
+        echo &#34;厂商: $(sudo dmidecode -s bios-vendor 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;版本: $(sudo dmidecode -s bios-version 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+        echo &#34;发布日期: $(sudo dmidecode -s bios-release-date 2&gt;/dev/null || echo &#39;未知&#39;)&#34;
+    else
+        echo &#34;需要dmidecode工具获取主板信息&#34;
+    fi
+    
+    echo
+}
+
+# 获取CPU信息（支持x86、ARM64、LoongArch等国产架构）
+get_cpu_info() {
+    echo -e &#34;${GREEN}=== CPU信息 ===${NC}&#34;
+    print_separator
+
+    ARCH=$(uname -m)
+
+    if [ &#34;$ARCH&#34; = &#34;x86_64&#34; ] || [ &#34;$ARCH&#34; = &#34;i386&#34; ] || [ &#34;$ARCH&#34; = &#34;i686&#34; ]; then
+        # ========== x86/x64 架构 ==========
+        if [ -f /proc/cpuinfo ]; then
+            cpu_model=$(grep &#34;model name&#34; /proc/cpuinfo | head -1 | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+            echo &#34;CPU型号: ${cpu_model:-未知}&#34;
+
+            physical_cpus=$(grep &#34;physical id&#34; /proc/cpuinfo | sort -u | wc -l)
+            physical_cores_per_cpu=$(grep &#34;cpu cores&#34; /proc/cpuinfo | head -1 | awk &#39;{print $4}&#39;)
+            physical_cores=$((physical_cpus * (physical_cores_per_cpu + 0)))
+            logical_cores=$(grep &#34;processor&#34; /proc/cpuinfo | wc -l)
+
+            echo &#34;物理CPU数量: $physical_cpus&#34;
+            echo &#34;物理核心数: $physical_cores&#34;
+            echo &#34;逻辑核心数: $logical_cores&#34;
+
+            cpu_mhz=$(grep &#34;cpu MHz&#34; /proc/cpuinfo | head -1 | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+            echo &#34;当前频率: ${cpu_mhz:-N/A} MHz&#34;
+
+            cache_size=$(grep &#34;cache size&#34; /proc/cpuinfo | head -1 | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+            echo &#34;缓存大小: ${cache_size:-N/A}&#34;
+
+            echo &#34;架构: $ARCH&#34;
+
+            if grep -q &#34;vmx\|svm&#34; /proc/cpuinfo; then
+                echo &#34;虚拟化支持: 是&#34;
+            else
+                echo &#34;虚拟化支持: 否&#34;
+            fi
+        fi
+
+    elif [ &#34;$ARCH&#34; = &#34;aarch64&#34; ]; then
+        # ========== ARM64 架构（鲲鹏、飞腾等）==========
+        if [ -f /proc/cpuinfo ]; then
+            # 识别 CPU 型号（基于 implementer + part）
+            CPU_IMPL=$(grep &#34;CPU implementer&#34; /proc/cpuinfo | head -1 | awk &#39;{print $4}&#39;)
+            CPU_PART=$(grep &#34;CPU part&#34; /proc/cpuinfo | head -1 | awk &#39;{print $4}&#39;)
+
+            case &#34;$CPU_IMPL&#34; in
+                &#34;0x48&#34;)
+                    # Huawei Kunpeng
+                    if [ &#34;$CPU_PART&#34; = &#34;0xd01&#34; ]; then
+                        CPU_MODEL=&#34;HUAWEI,Kunpeng 920&#34;
+                    elif [ &#34;$CPU_PART&#34; = &#34;0xd02&#34; ]; then
+                        CPU_MODEL=&#34;HUAWEI,Kunpeng 920 (64-core)&#34;
+                    else
+                        CPU_MODEL=&#34;HUAWEI,Kunpeng (Part: $CPU_PART)&#34;
+                    fi
+                    ;;
+                &#34;0x70&#34;)
+                    # Phytium (飞腾)
+                    if [ &#34;$CPU_PART&#34; = &#34;0x660&#34; ]; then
+                        CPU_MODEL=&#34;Phytium,FT-2000/4&#34;
+                    elif [ &#34;$CPU_PART&#34; = &#34;0x661&#34; ]; then
+                        CPU_MODEL=&#34;Phytium,FT-2000+&#34;
+                    elif [ &#34;$CPU_PART&#34; = &#34;0x663&#34; ]; then
+                        CPU_MODEL=&#34;Phytium,S2500&#34;
+                    else
+                        CPU_MODEL=&#34;Phytium (Part: $CPU_PART)&#34;
+                    fi
+                    ;;
+                &#34;0x43&#34;)
+                    # HiSilicon
+                    CPU_MODEL=&#34;HiSilicon (Part: $CPU_PART)&#34;
+                    ;;
+                &#34;0x41&#34;)
+                    # ARM Ltd.
+                    CPU_MODEL=&#34;ARM,Cortex (${CPU_PART})&#34;
+                    ;;
+                *)
+                    CPU_MODEL=&#34;Unknown ARM CPU (Impl: $CPU_IMPL, Part: $CPU_PART)&#34;
+                    ;;
+            esac
+
+            echo &#34;CPU型号: $CPU_MODEL&#34;
+
+            # 物理CPU数量：从 lscpu 获取 Socket(s)
+            SOCKETS=$(lscpu 2&gt;/dev/null | grep -E &#34;^Socket\(s\)&#34; | awk &#39;{print $2}&#39;)
+            if [ -z &#34;$SOCKETS&#34; ] || ! [[ &#34;$SOCKETS&#34; =~ ^[0-9]+$ ]] || [ &#34;$SOCKETS&#34; -eq 0 ]; then
+                SOCKETS=1
+            fi
+            echo &#34;物理CPU数量: $SOCKETS&#34;
+
+            # 物理核心数
+            CORES_PER_SOCKET=$(lscpu 2&gt;/dev/null | grep -E &#34;^Core\(s\) per socket&#34; | awk &#39;{print $4}&#39;)
+            if [ -n &#34;$CORES_PER_SOCKET&#34; ] &amp;&amp; [[ &#34;$CORES_PER_SOCKET&#34; =~ ^[0-9]+$ ]] &amp;&amp; [ &#34;$CORES_PER_SOCKET&#34; -gt 0 ]; then
+                PHYSICAL_CORES=$((SOCKETS * CORES_PER_SOCKET))
+            else
+                PHYSICAL_CORES=$(nproc)
+            fi
+            echo &#34;物理核心数: $PHYSICAL_CORES&#34;
+
+            LOGICAL_CORES=$(nproc)
+            echo &#34;逻辑核心数: $LOGICAL_CORES&#34;
+
+            # 当前频率
+            if [ -f /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq ]; then
+                FREQ_KHZ=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq)
+                FREQ_MHZ=$((FREQ_KHZ / 1000))&#34; MHz&#34;
+            else
+                FREQ_MHZ=&#34;N/A&#34;
+            fi
+            echo &#34;当前频率: $FREQ_MHZ&#34;
+
+            # 缓存大小（L3）
+            L3_CACHE=$(lscpu 2&gt;/dev/null | grep -E &#34;^L3 cache&#34; | awk &#39;{print $3}&#39;)
+            echo &#34;缓存大小: ${L3_CACHE:-N/A}&#34;
+
+            echo &#34;架构: $ARCH&#34;
+
+            # ===== 虚拟化支持检测（关键修复）=====
+            VIRT_SUPPORT=&#34;否&#34;
+            if [ -e /dev/kvm ]; then
+                VIRT_SUPPORT=&#34;是（KVM 可用）&#34;
+            elif lsmod 2&gt;/dev/null | grep -q &#34;kvm&#34;; then
+                VIRT_SUPPORT=&#34;是（KVM 模块已加载）&#34;
+            elif dmesg 2&gt;/dev/null | grep -qi &#34;kvm.*initialized successfully&#34;; then
+                VIRT_SUPPORT=&#34;是（KVM 已初始化）&#34;
+            elif [ -f /proc/config.gz ] &amp;&amp; zgrep -q &#34;CONFIG_KVM=y&#34; /proc/config.gz 2&gt;/dev/null; then
+                VIRT_SUPPORT=&#34;是（内核编译支持）&#34;
+            elif [ -f &#34;/boot/config-$(uname -r)&#34; ] &amp;&amp; grep -q &#34;CONFIG_KVM=y&#34; &#34;/boot/config-$(uname -r)&#34; 2&gt;/dev/null; then
+                VIRT_SUPPORT=&#34;是（内核编译支持）&#34;
+            fi
+            echo &#34;虚拟化支持: $VIRT_SUPPORT&#34;
+        fi
+
+    elif [ &#34;$ARCH&#34; = &#34;loongarch64&#34; ]; then
+        # ========== LoongArch（龙芯）==========
+        if [ -f /proc/cpuinfo ]; then
+            CPU_MODEL=$(grep -i &#34;model name\|cpu model&#34; /proc/cpuinfo | head -1 | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+            echo &#34;CPU型号: ${CPU_MODEL:-Loongson Unknown}&#34;
+
+            LOGICAL_CORES=$(nproc)
+            echo &#34;物理CPU数量: 1&#34;
+            echo &#34;物理核心数: $LOGICAL_CORES&#34;
+            echo &#34;逻辑核心数: $LOGICAL_CORES&#34;
+
+            if [ -f /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq ]; then
+                FREQ_KHZ=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq)
+                FREQ_MHZ=$((FREQ_KHZ / 1000))&#34; MHz&#34;
+            else
+                FREQ_MHZ=&#34;N/A&#34;
+            fi
+            echo &#34;当前频率: $FREQ_MHZ&#34;
+
+            L3_CACHE=$(lscpu 2&gt;/dev/null | grep -E &#34;^L3 cache&#34; | awk &#39;{print $3}&#39;)
+            echo &#34;缓存大小: ${L3_CACHE:-N/A}&#34;
+
+            echo &#34;架构: $ARCH&#34;
+
+            # 龙芯虚拟化检测（3A5000+ 支持）
+            VIRT_SUPPORT=&#34;否&#34;
+            if [ -e /dev/kvm ]; then
+                VIRT_SUPPORT=&#34;是（KVM 可用）&#34;
+            elif lsmod 2&gt;/dev/null | grep -q &#34;kvm&#34;; then
+                VIRT_SUPPORT=&#34;是（KVM 模块已加载）&#34;
+            fi
+            echo &#34;虚拟化支持: $VIRT_SUPPORT&#34;
+        fi
+
+    else
+        # ========== 其他架构 ==========
+        echo &#34;CPU型号: 未知架构 ($ARCH)&#34;
+        echo &#34;物理CPU数量: N/A&#34;
+        echo &#34;物理核心数: N/A&#34;
+        echo &#34;逻辑核心数: $(nproc)&#34;
+        echo &#34;当前频率: N/A&#34;
+        echo &#34;缓存大小: N/A&#34;
+        echo &#34;架构: $ARCH&#34;
+        echo &#34;虚拟化支持: N/A&#34;
+    fi
+
+    echo
+}
+
+# 获取内存信息
+get_memory_info() {
+    echo -e &#34;${GREEN}=== 内存信息 ===${NC}&#34;
+    print_separator
+    
+    # 总内存信息
+    if [ -f /proc/meminfo ]; then
+        total_mem=$(grep &#34;MemTotal&#34; /proc/meminfo | awk &#39;{print $2}&#39;)
+        total_mem_gb=$((total_mem / 1024 / 1024))
+        available_mem=$(grep &#34;MemAvailable&#34; /proc/meminfo | awk &#39;{print $2}&#39;)
+        available_mem_gb=$((available_mem / 1024 / 1024))
+        
+        echo &#34;总内存: ${total_mem_gb} GB&#34;
+        echo &#34;可用内存: ${available_mem_gb} GB&#34;
+        if check_command dmidecode; then
+            dimm_total_mb=$(sudo dmidecode -t memory 2&gt;/dev/null | awk &#39;$1==&#34;Size:&#34; { s=substr($0, index($0,&#34;:&#34;)+2); if (s !~ /No Module Installed/ &amp;&amp; s !~ /Unknown/ &amp;&amp; s !~ /^0 (MB|GB)$/) { if (s ~ /MB/) { gsub(/ MB/,&#34;&#34;,s); total+=s } else if (s ~ /GB/) { gsub(/ GB/,&#34;&#34;,s); total+=s*1024 } } } END { print total+0 }&#39;)
+            if [[ -n &#34;$dimm_total_mb&#34; ]]; then
+                dimm_total_gb=$((dimm_total_mb / 1024))
+                echo &#34;DIMM 标称总容量: ${dimm_total_gb} GB&#34;
+            fi
+        fi
+    fi
+    
+    echo
+    
+    # 详细内存插槽信息
+    if check_command dmidecode; then
+        echo -e &#34;${YELLOW}内存插槽详细信息:${NC}&#34;
+        sudo dmidecode -t memory 2&gt;/dev/null | awk &#39;
+        /^Memory Device$/ {
+            if (block_started) { if (installed) print buf }
+            block_started=1; installed=0; buf=&#34;---\n&#34;; next
+        }
+        $1==&#34;Size:&#34; {
+            val=substr($0, index($0,&#34;:&#34;)+2)
+            if (val !~ /No Module Installed/ &amp;&amp; val !~ /Unknown/ &amp;&amp; val !~ /^0 (MB|GB)$/) {
+                installed=1; buf = buf &#34;  容量: &#34; val &#34;\n&#34;
+            }
+            next
+        }
+        $1==&#34;Locator:&#34; {
+            val=substr($0, index($0,&#34;:&#34;)+2); buf = buf &#34;  插槽位置: &#34; val &#34;\n&#34;; next
+        }
+        $1==&#34;Type:&#34; {
+            val=substr($0, index($0,&#34;:&#34;)+2); if (val !~ /Unknown/) buf = buf &#34;  类型: &#34; val &#34;\n&#34;; next
+        }
+        $1==&#34;Speed:&#34; {
+            val=substr($0, index($0,&#34;:&#34;)+2); if (val !~ /Unknown/) buf = buf &#34;  频率: &#34; val &#34;\n&#34;; next
+        }
+        $1==&#34;Manufacturer:&#34; {
+            val=substr($0, index($0,&#34;:&#34;)+2); if (val !~ /Unknown/) buf = buf &#34;  制造商: &#34; val &#34;\n&#34;; next
+        }
+        $1==&#34;Part&#34; &amp;&amp; $2==&#34;Number:&#34; {
+            val=substr($0, index($0,&#34;:&#34;)+2); if (val !~ /Unknown/) buf = buf &#34;  型号: &#34; val &#34;\n&#34;; next
+        }
+        END {
+            if (block_started &amp;&amp; installed) print buf
+        }&#39;
+        
+        # 统计已安装的内存条数量
+        installed_count=$(sudo dmidecode -t memory 2&gt;/dev/null | grep -c &#34;Size.*[0-9].*[GM]B&#34;)
+        total_slots=$(sudo dmidecode -t memory 2&gt;/dev/null | grep -c &#34;Memory Device&#34;)
+        echo
+        echo &#34;内存条统计: $installed_count/$total_slots 个插槽已使用&#34;
+    else
+        echo &#34;需要dmidecode工具获取详细内存信息&#34;
+    fi
+    
+    echo
+}
+
+# 获取硬盘信息
+get_disk_info() {
+    echo -e &#34;${GREEN}=== 硬盘信息 ===${NC}&#34;
+    print_separator
+    
+    # 使用lsblk显示磁盘信息
+    if check_command lsblk; then
+        echo -e &#34;${YELLOW}磁盘布局:${NC}&#34;
+        lsblk -d -o NAME,SIZE,TYPE,MODEL,VENDOR
+        echo
+    fi
+    
+    # 详细硬盘信息
+    echo -e &#34;${YELLOW}详细硬盘信息:${NC}&#34;
+    for disk in $(lsblk -d -n -o NAME 2&gt;/dev/null); do
+        if [[ $disk =~ ^sd[a-z]$|^nvme[0-9]+n[0-9]+$|^vd[a-z]$ ]]; then
+            echo &#34;--- /dev/$disk ---&#34;
+            
+            # 磁盘大小
+            size=$(lsblk -d -n -o SIZE /dev/$disk 2&gt;/dev/null)
+            echo &#34;  容量: $size&#34;
+            
+            # 磁盘型号和厂商
+            if check_command hdparm &amp;&amp; [[ $disk =~ ^sd[a-z]$ ]]; then
+                model=$(sudo hdparm -I /dev/$disk 2&gt;/dev/null | grep &#34;Model Number&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                serial=$(sudo hdparm -I /dev/$disk 2&gt;/dev/null | grep &#34;Serial Number&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                if [[ -n &#34;$model&#34; ]]; then
+                    echo &#34;  型号: $model&#34;
+                fi
+                if [[ -n &#34;$serial&#34; ]]; then
+                    echo &#34;  序列号: $serial&#34;
+                fi
+            fi
+            
+            # NVMe磁盘信息
+            if [[ $disk =~ ^nvme[0-9]+n[0-9]+$ ]] &amp;&amp; check_command nvme; then
+                nvme_info=$(sudo nvme id-ctrl /dev/$disk 2&gt;/dev/null)
+                if [[ $? -eq 0 ]]; then
+                    model=$(echo &#34;$nvme_info&#34; | grep &#34;mn &#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                    serial=$(echo &#34;$nvme_info&#34; | grep &#34;sn &#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                    echo &#34;  型号: $model&#34;
+                    echo &#34;  序列号: $serial&#34;
+                fi
+            fi
+            
+            # 磁盘类型
+            rotational=$(cat /sys/block/$disk/queue/rotational 2&gt;/dev/null)
+            if [[ &#34;$rotational&#34; == &#34;0&#34; ]]; then
+                echo &#34;  类型: SSD&#34;
+            elif [[ &#34;$rotational&#34; == &#34;1&#34; ]]; then
+                echo &#34;  类型: HDD&#34;
+            fi
+            
+            echo
+        fi
+    done
+}
+
+get_storage_info() {
+    echo -e &#34;${GREEN}=== 存储控制器与RAID信息 ===${NC}&#34;
+    print_separator
+
+    raid_found=false
+
+    echo -e &#34;${YELLOW}PCI 存储控制器:${NC}&#34;
+    controllers=$(lspci -nn 2&gt;/dev/null | grep -i -E &#34;RAID|SATA|SAS|NVMe&#34;)
+    if [[ -n &#34;$controllers&#34; ]]; then
+        echo &#34;$controllers&#34;
+        echo
+    fi
+
+    echo -e &#34;${YELLOW}控制器详细信息:${NC}&#34;
+    lspci -v 2&gt;/dev/null | awk &#39;
+    function flush() {
+        if (active) {
+            tmp = header
+            gsub(/^[0-9a-f:. ]+/, &#34;&#34;, tmp)
+            split(tmp, parts, &#34;:&#34;)
+            type = parts[1]
+            chip = substr(tmp, index(tmp, &#34;:&#34;)+2)
+            print &#34;    设备名称: &#34; type
+            print &#34;    芯片型号: &#34; chip
+            if (subsys != &#34;&#34;) print &#34;    品牌子系统: &#34; subsys
+            print &#34;&#34;
+        }
+        active=0; subsys=&#34;&#34;; header=&#34;&#34;
+    }
+    /^[0-9a-f]{2}:/ {
+        # 新的设备头
+        if (active) flush()
+        header=$0
+        if ($0 ~ /RAID bus controller|SATA controller|Serial Attached SCSI controller|Non-Volatile memory controller|[Mm]ass [Ss]torage/) {
+            active=1
+        } else {
+            active=0
+        }
+        next
+    }
+    active &amp;&amp; /Subsystem:/ {
+        subsys = substr($0, index($0, &#34;:&#34;)+2)
+        next
+    }
+    END { flush() }&#39;
+    echo
+
+    if check_command megacli || check_command MegaCli || check_command MegaCli64 || check_command megacli64; then
+        echo -e &#34;${YELLOW}LSI MegaRAID 控制器:${NC}&#34;
+        for cmd in megacli MegaCli MegaCli64 megacli64; do
+            if check_command $cmd; then
+                adapter_info=$(sudo $cmd -AdpAllInfo -aALL 2&gt;/dev/null | grep -E &#34;Product Name|Serial No|FW Package Build|Memory Size|Cache|Battery&#34;)
+                if [[ -n &#34;$adapter_info&#34; ]]; then
+                    echo &#34;$adapter_info&#34;
+                    raid_found=true
+                fi
+                adapter_count=$(sudo $cmd -adpCount 2&gt;/dev/null | grep &#34;Controller Count&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                if [[ -n &#34;$adapter_count&#34; ]]; then
+                    echo &#34;控制器数量: $adapter_count&#34;
+                    raid_found=true
+                fi
+                echo -e &#34;${YELLOW}虚拟磁盘:${NC}&#34;
+                sudo $cmd -LdInfo -aALL 2&gt;/dev/null | grep -E &#34;Virtual Drive|RAID Level|State|Size&#34; &amp;&amp; echo
+                echo -e &#34;${YELLOW}物理磁盘:${NC}&#34;
+                sudo $cmd -PdList -aALL 2&gt;/dev/null | grep -E &#34;Slot Number|Media Type|Raw Size|Firmware state|Inquiry Data&#34; &amp;&amp; echo
+                break
+            fi
+        done
+        echo
+    fi
+
+    if check_command storcli || check_command storcli64; then
+        echo -e &#34;${YELLOW}LSI StorCLI 控制器:${NC}&#34;
+        for cmd in storcli storcli64; do
+            if check_command $cmd; then
+                controller_info=$(sudo $cmd /cALL show 2&gt;/dev/null | grep -E &#34;Controller|Model|Serial|Status|FW|Package&#34;)
+                if [[ -n &#34;$controller_info&#34; ]]; then
+                    echo &#34;$controller_info&#34;
+                    raid_found=true
+                fi
+                echo -e &#34;${YELLOW}虚拟磁盘:${NC}&#34;
+                sudo $cmd /cALL/vALL show 2&gt;/dev/null | grep -E &#34;DG|VD|TYPE|State|Size|Sectors|Stripe|RAID&#34; &amp;&amp; echo
+                echo -e &#34;${YELLOW}物理磁盘:${NC}&#34;
+                sudo $cmd /cALL/eALL/sALL show 2&gt;/dev/null | grep -E &#34;EID|Slot|DID|State|Size|Intf|Med|Model|SN&#34; &amp;&amp; echo
+                break
+            fi
+        done
+        echo
+    fi
+
+    if check_command arcconf || check_command aaccli; then
+        echo -e &#34;${YELLOW}Adaptec RAID 控制器:${NC}&#34;
+        for cmd in arcconf aaccli; do
+            if check_command $cmd; then
+                for i in {1..8}; do
+                    controller_info=$(sudo $cmd getconfig $i 2&gt;/dev/null | grep -E &#34;Controller Model|Controller Serial Number|Firmware|BIOS|Driver&#34;)
+                    if [[ -n &#34;$controller_info&#34; ]]; then
+                        echo &#34;控制器 $i:&#34;
+                        echo &#34;$controller_info&#34;
+                        raid_found=true
+                        echo
+                    fi
+                done
+                break
+            fi
+        done
+    fi
+
+    if check_command tw_cli; then
+        echo -e &#34;${YELLOW}3ware RAID 控制器:${NC}&#34;
+        controller_info=$(sudo tw_cli show 2&gt;/dev/null)
+        if [[ -n &#34;$controller_info&#34; ]]; then
+            echo &#34;$controller_info&#34;
+            raid_found=true
+        fi
+        echo
+    fi
+
+    if check_command cli32 || check_command cli64; then
+        echo -e &#34;${YELLOW}Areca RAID 控制器:${NC}&#34;
+        for cmd in cli32 cli64; do
+            if check_command $cmd; then
+                controller_info=$(sudo $cmd hw info 2&gt;/dev/null)
+                if [[ -n &#34;$controller_info&#34; ]]; then
+                    echo &#34;$controller_info&#34;
+                    raid_found=true
+                fi
+                break
+            fi
+        done
+        echo
+    fi
+
+    if check_command irstcli; then
+        echo -e &#34;${YELLOW}Intel RST RAID:${NC}&#34;
+        rst_info=$(sudo irstcli -information -hba 2&gt;/dev/null)
+        if [[ -n &#34;$rst_info&#34; ]]; then
+            echo &#34;$rst_info&#34;
+            raid_found=true
+        fi
+        echo
+    fi
+
+    if [[ -f /proc/scsi/scsi ]]; then
+        raid_scsi=$(grep -i &#34;raid\|megaraid\|adaptec\|3ware\|areca&#34; /proc/scsi/scsi 2&gt;/dev/null)
+        if [[ -n &#34;$raid_scsi&#34; ]]; then
+            echo -e &#34;${YELLOW}SCSI RAID设备:${NC}&#34;
+            echo &#34;$raid_scsi&#34;
+            raid_found=true
+            echo
+        fi
+    fi
+
+    
+
+    if [[ -d /sys/class/scsi_host ]]; then
+        echo -e &#34;${YELLOW}SCSI主机适配器:${NC}&#34;
+        for host in /sys/class/scsi_host/host*; do
+            if [[ -f &#34;$host/proc_name&#34; ]]; then
+                proc_name=$(cat &#34;$host/proc_name&#34; 2&gt;/dev/null)
+                if [[ &#34;$proc_name&#34; =~ (mega|adaptec|3ware|areca|mpt) ]]; then
+                    host_num=$(basename &#34;$host&#34;)
+                    echo &#34;$host_num: $proc_name&#34;
+                    raid_found=true
+                fi
+            fi
+        done
+        echo
+    fi
+
+    if check_command mdadm &amp;&amp; [ -f /proc/mdstat ]; then
+        echo -e &#34;${YELLOW}软件RAID (mdadm):${NC}&#34;
+        cat /proc/mdstat
+        echo
+        raid_found=true
+        for md in $(grep md /proc/mdstat | cut -d&#39; &#39; -f1); do
+            if [[ -e /dev/$md ]]; then
+                echo &#34;--- /dev/$md ---&#34;
+                sudo mdadm --detail /dev/$md 2&gt;/dev/null | grep -E &#34;Version|Raid Level|Array Size|State&#34;
+                echo
+            fi
+        done
+    fi
+
+    if check_command pvs; then
+        echo -e &#34;${YELLOW}LVM 物理卷:${NC}&#34;
+        pv_info=$(sudo pvs 2&gt;/dev/null)
+        if [[ -n &#34;$pv_info&#34; ]]; then
+            echo &#34;$pv_info&#34;
+            raid_found=true
+        fi
+        echo
+        echo -e &#34;${YELLOW}LVM 卷组:${NC}&#34;
+        vg_info=$(sudo vgs 2&gt;/dev/null)
+        if [[ -n &#34;$vg_info&#34; ]]; then
+            echo &#34;$vg_info&#34;
+            raid_found=true
+        fi
+        echo
+        echo -e &#34;${YELLOW}LVM 逻辑卷:${NC}&#34;
+        lv_info=$(sudo lvs 2&gt;/dev/null)
+        if [[ -n &#34;$lv_info&#34; ]]; then
+            echo &#34;$lv_info&#34;
+            raid_found=true
+        fi
+        echo
+    fi
+
+    if check_command zpool; then
+        echo -e &#34;${YELLOW}ZFS 存储池:${NC}&#34;
+        zpool_info=$(sudo zpool list 2&gt;/dev/null)
+        if [[ -n &#34;$zpool_info&#34; ]]; then
+            echo &#34;$zpool_info&#34;
+            raid_found=true
+        fi
+        echo
+        zpool_status=$(sudo zpool status 2&gt;/dev/null)
+        if [[ -n &#34;$zpool_status&#34; ]]; then
+            echo -e &#34;${YELLOW}ZFS 池状态:${NC}&#34;
+            echo &#34;$zpool_status&#34;
+            echo
+        fi
+    fi
+
+    if [[ &#34;$raid_found&#34; == false ]]; then
+        echo &#34;未检测到可用的RAID卡信息或软件RAID&#34;
+        echo
+    fi
+}
+
+# 获取RAID卡信息
+get_raid_info() {
+    echo -e &#34;${GREEN}=== RAID/阵列卡信息 ===${NC}&#34;
+    print_separator
+    
+    raid_found=false
+    
+    # 首先通过PCI查找RAID控制器
+    echo -e &#34;${YELLOW}PCI RAID控制器:${NC}&#34;
+    raid_controllers=$(lspci | grep -i &#34;raid&#34;)
+    if [[ -n &#34;$raid_controllers&#34; ]]; then
+        echo &#34;$raid_controllers&#34;
+        raid_found=true
+        echo
+    fi
+    
+    # 检查LSI MegaRAID (多种命令)
+    if check_command megacli || check_command MegaCli || check_command MegaCli64 || check_command megacli64; then
+        echo -e &#34;${YELLOW}LSI MegaRAID 控制器:${NC}&#34;
+        for cmd in megacli MegaCli MegaCli64 megacli64; do
+            if check_command $cmd; then
+                # 获取适配器信息
+                adapter_info=$(sudo $cmd -AdpAllInfo -aALL 2&gt;/dev/null | grep -E &#34;Product Name|Serial No|FW Package Build|Memory Size|Cache|Battery&#34;)
+                if [[ -n &#34;$adapter_info&#34; ]]; then
+                    echo &#34;$adapter_info&#34;
+                    raid_found=true
+                fi
+                
+                # 获取适配器数量
+                adapter_count=$(sudo $cmd -adpCount 2&gt;/dev/null | grep &#34;Controller Count&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                if [[ -n &#34;$adapter_count&#34; ]]; then
+                    echo &#34;控制器数量: $adapter_count&#34;
+                    raid_found=true
+                fi
+                break
+            fi
+        done
+        echo
+    fi
+    
+    # 检查LSI storcli (新版本工具)
+    if check_command storcli || check_command storcli64; then
+        echo -e &#34;${YELLOW}LSI StorCLI 控制器:${NC}&#34;
+        for cmd in storcli storcli64; do
+            if check_command $cmd; then
+                controller_info=$(sudo $cmd show 2&gt;/dev/null | grep -A 10 &#34;Controller =&#34;)
+                if [[ -n &#34;$controller_info&#34; ]]; then
+                    echo &#34;$controller_info&#34;
+                    raid_found=true
+                fi
+                break
+            fi
+        done
+        echo
+    fi
+    
+    # 检查Adaptec RAID (多种命令)
+    if check_command arcconf || check_command aaccli; then
+        echo -e &#34;${YELLOW}Adaptec RAID 控制器:${NC}&#34;
+        for cmd in arcconf aaccli; do
+            if check_command $cmd; then
+                # 尝试获取控制器信息
+                for i in {1..8}; do
+                    controller_info=$(sudo $cmd getconfig $i 2&gt;/dev/null | grep -E &#34;Controller Model|Controller Serial Number|Firmware|BIOS|Driver&#34;)
+                    if [[ -n &#34;$controller_info&#34; ]]; then
+                        echo &#34;控制器 $i:&#34;
+                        echo &#34;$controller_info&#34;
+                        raid_found=true
+                        echo
+                    fi
+                done
+                break
+            fi
+        done
+    fi
+    
+    # 检查3ware RAID
+    if check_command tw_cli; then
+        echo -e &#34;${YELLOW}3ware RAID 控制器:${NC}&#34;
+        controller_info=$(sudo tw_cli show 2&gt;/dev/null)
+        if [[ -n &#34;$controller_info&#34; ]]; then
+            echo &#34;$controller_info&#34;
+            raid_found=true
+        fi
+        echo
+    fi
+    
+    # 检查Areca RAID
+    if check_command cli32 || check_command cli64; then
+        echo -e &#34;${YELLOW}Areca RAID 控制器:${NC}&#34;
+        for cmd in cli32 cli64; do
+            if check_command $cmd; then
+                controller_info=$(sudo $cmd hw info 2&gt;/dev/null)
+                if [[ -n &#34;$controller_info&#34; ]]; then
+                    echo &#34;$controller_info&#34;
+                    raid_found=true
+                fi
+                break
+            fi
+        done
+        echo
+    fi
+    
+    # 检查Intel RST (Rapid Storage Technology)
+    if check_command irstcli; then
+        echo -e &#34;${YELLOW}Intel RST RAID:${NC}&#34;
+        rst_info=$(sudo irstcli -information -hba 2&gt;/dev/null)
+        if [[ -n &#34;$rst_info&#34; ]]; then
+            echo &#34;$rst_info&#34;
+            raid_found=true
+        fi
+        echo
+    fi
+    
+    # 通过/proc/scsi/scsi查找RAID设备
+    if [[ -f /proc/scsi/scsi ]]; then
+        raid_scsi=$(grep -i &#34;raid\|megaraid\|adaptec\|3ware\|areca&#34; /proc/scsi/scsi 2&gt;/dev/null)
+        if [[ -n &#34;$raid_scsi&#34; ]]; then
+            echo -e &#34;${YELLOW}SCSI RAID设备:${NC}&#34;
+            echo &#34;$raid_scsi&#34;
+            raid_found=true
+            echo
+        fi
+    fi
+    
+    # 通过dmesg查找RAID信息
+    echo -e &#34;${YELLOW}系统检测到的RAID信息:${NC}&#34;
+    raid_dmesg=$(dmesg 2&gt;/dev/null | grep -i &#34;raid\|megaraid\|adaptec\|3ware\|areca\|mpt&#34; | head -10)
+    if [[ -n &#34;$raid_dmesg&#34; ]]; then
+        echo &#34;$raid_dmesg&#34;
+        raid_found=true
+        echo
+    fi
+    
+    # 检查/sys下的RAID设备
+    if [[ -d /sys/class/scsi_host ]]; then
+        echo -e &#34;${YELLOW}SCSI主机适配器:${NC}&#34;
+        for host in /sys/class/scsi_host/host*; do
+            if [[ -f &#34;$host/proc_name&#34; ]]; then
+                proc_name=$(cat &#34;$host/proc_name&#34; 2&gt;/dev/null)
+                if [[ &#34;$proc_name&#34; =~ (mega|adaptec|3ware|areca|mpt) ]]; then
+                    host_num=$(basename &#34;$host&#34;)
+                    echo &#34;$host_num: $proc_name&#34;
+                    raid_found=true
+                fi
+            fi
+        done
+        echo
+    fi
+    
+    # 检查软件RAID (mdadm)
+    if check_command mdadm &amp;&amp; [ -f /proc/mdstat ]; then
+        echo -e &#34;${YELLOW}软件RAID (mdadm):${NC}&#34;
+        cat /proc/mdstat
+        echo
+        raid_found=true
+        
+        # 详细RAID信息
+        for md in $(grep md /proc/mdstat | cut -d&#39; &#39; -f1); do
+            if [[ -e /dev/$md ]]; then
+                echo &#34;--- /dev/$md ---&#34;
+                sudo mdadm --detail /dev/$md 2&gt;/dev/null | grep -E &#34;Version|Raid Level|Array Size|State&#34;
+                echo
+            fi
+        done
+    fi
+    
+    # 检查LVM
+    if check_command pvs; then
+        echo -e &#34;${YELLOW}LVM 物理卷:${NC}&#34;
+        pv_info=$(sudo pvs 2&gt;/dev/null)
+        if [[ -n &#34;$pv_info&#34; ]]; then
+            echo &#34;$pv_info&#34;
+            raid_found=true
+        fi
+        echo
+        
+        echo -e &#34;${YELLOW}LVM 卷组:${NC}&#34;
+        vg_info=$(sudo vgs 2&gt;/dev/null)
+        if [[ -n &#34;$vg_info&#34; ]]; then
+            echo &#34;$vg_info&#34;
+            raid_found=true
+        fi
+        echo
+        
+        echo -e &#34;${YELLOW}LVM 逻辑卷:${NC}&#34;
+        lv_info=$(sudo lvs 2&gt;/dev/null)
+        if [[ -n &#34;$lv_info&#34; ]]; then
+            echo &#34;$lv_info&#34;
+            raid_found=true
+        fi
+        echo
+    fi
+    
+    # 检查ZFS
+    if check_command zpool; then
+        echo -e &#34;${YELLOW}ZFS 存储池:${NC}&#34;
+        zpool_info=$(sudo zpool list 2&gt;/dev/null)
+        if [[ -n &#34;$zpool_info&#34; ]]; then
+            echo &#34;$zpool_info&#34;
+            raid_found=true
+        fi
+        echo
+        
+        zpool_status=$(sudo zpool status 2&gt;/dev/null)
+        if [[ -n &#34;$zpool_status&#34; ]]; then
+            echo -e &#34;${YELLOW}ZFS 池状态:${NC}&#34;
+            echo &#34;$zpool_status&#34;
+            echo
+        fi
+    fi
+    
+    if [[ &#34;$raid_found&#34; == false ]]; then
+        echo &#34;未检测到硬件RAID控制器或软件RAID&#34;
+        echo &#34;如果确实有RAID卡，请安装相应的管理工具：&#34;
+        echo &#34;  LSI: megacli, storcli&#34;
+        echo &#34;  Adaptec: arcconf, aaccli&#34;
+        echo &#34;  3ware: tw_cli&#34;
+        echo &#34;  Areca: cli32/cli64&#34;
+        echo &#34;  Intel RST: irstcli&#34;
+        echo
+    fi
+}
+
+# 获取HBA卡信息
+get_hba_info() {
+    echo -e &#34;${GREEN}=== HBA / 存储控制器信息 ===${NC}&#34;
+    print_separator
+
+    # 检查是否存在 SAS/SATA/NVMe 控制器
+    STORAGE_DEVS=$(lspci -nn 2&gt;/dev/null | grep -E &#34;(0106|0107|0108|0c00)&#34; | wc -l)
+
+    if [ &#34;$STORAGE_DEVS&#34; -eq 0 ]; then
+        echo &#34;未检测到 SAS/SATA/NVMe 存储控制器&#34;
+        echo
+        return
+    fi
+
+    lspci -v 2&gt;/dev/null | awk &#39;
+    BEGIN { in_storage = 0 }
+    /Class.*[Ss]torage|[Ss]erial [Aa]ttached [Ss][Cc][Ss][Ii]|[Ss][Aa][Ss]|[Nn][Vv][Mm][Ee]/ {
+        in_storage = 1; print; next
+    }
+    /^[0-9a-f]{2}:/ &amp;&amp; in_storage == 0 { next }
+    in_storage == 1 &amp;&amp; /^[0-9a-f]{2}:/ { in_storage = 0 }
+    in_storage == 1 { print }
+    /^[0-9a-f]{2}:/ {
+        if ($0 ~ /[Ss]torage|[Ss][Aa][Ss]|[Nn][Vv][Mm][Ee]|[Mm]ass [Ss]torage/) {
+            in_storage = 1; print
+        } else {
+            in_storage = 0
+        }
+    }&#39; | sed &#39;s/^/    /&#39;
+
+    echo
+}
+
+# 获取显卡信息
+get_gpu_info() {
+    echo -e &#34;${GREEN}=== 显卡/GPU信息 ===${NC}&#34;
+    print_separator
+    
+    # 使用lspci查找显卡
+    gpu_devices=$(lspci | grep -i &#34;vga\|3d\|display&#34;)
+    if [[ -n &#34;$gpu_devices&#34; ]]; then
+        echo -e &#34;${YELLOW}PCI显卡设备:${NC}&#34;
+        echo &#34;$gpu_devices&#34;
+        echo
+    fi
+    
+    # NVIDIA显卡详细信息
+    if check_command nvidia-smi; then
+        echo -e &#34;${YELLOW}NVIDIA GPU详细信息:${NC}&#34;
+        nvidia-smi --query-gpu=name,memory.total,driver_version,power.max_limit --format=csv,noheader,nounits
+        echo
+        
+        echo -e &#34;${YELLOW}NVIDIA GPU状态:${NC}&#34;
+        nvidia-smi
+        echo
+    fi
+    
+    # AMD显卡信息
+    if check_command rocm-smi; then
+        echo -e &#34;${YELLOW}AMD GPU信息:${NC}&#34;
+        rocm-smi
+        echo
+    fi
+    
+    # Intel GPU信息
+    intel_gpu=$(lspci | grep -i &#34;intel.*graphics&#34;)
+    if [[ -n &#34;$intel_gpu&#34; ]]; then
+        echo -e &#34;${YELLOW}Intel集成显卡:${NC}&#34;
+        echo &#34;$intel_gpu&#34;
+        echo
+    fi
+    
+}
+
+# 获取网卡信息
+get_network_info() {
+    echo -e &#34;${GREEN}=== 网卡信息 ===${NC}&#34;
+    print_separator
+    
+    # 网络接口列表
+    echo -e &#34;${YELLOW}网络接口:${NC}&#34;
+    ip link show | grep -E &#34;^[0-9]+&#34; | while read line; do
+        interface=$(echo &#34;$line&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+        state=$(echo &#34;$line&#34; | grep -o &#34;state [A-Z]*&#34; | cut -d&#39; &#39; -f2)
+        echo &#34;接口: $interface, 状态: $state&#34;
+    done
+    echo
+    
+    # 详细网卡信息
+    echo -e &#34;${YELLOW}网卡详细信息:${NC}&#34;
+    for interface in $(ip link show | grep -E &#34;^[0-9]+&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;); do
+        if [[ &#34;$interface&#34; != &#34;lo&#34; ]]; then
+            echo &#34;--- $interface ---&#34;
+            
+            # MAC地址
+            mac=$(ip link show $interface | grep &#34;link/ether&#34; | awk &#39;{print $2}&#39;)
+            if [[ -n &#34;$mac&#34; ]]; then
+                echo &#34;  MAC地址: $mac&#34;
+            fi
+            
+            # IP地址
+            ip_addr=$(ip addr show $interface | grep &#34;inet &#34; | awk &#39;{print $2}&#39; | head -1)
+            if [[ -n &#34;$ip_addr&#34; ]]; then
+                echo &#34;  IP地址: $ip_addr&#34;
+            fi
+            
+            # 网卡速度
+            if [[ -f /sys/class/net/$interface/speed ]]; then
+                speed=$(cat /sys/class/net/$interface/speed 2&gt;/dev/null)
+                if [[ &#34;$speed&#34; != &#34;-1&#34; ]] &amp;&amp; [[ -n &#34;$speed&#34; ]]; then
+                    echo &#34;  速度: ${speed} Mbps&#34;
+                fi
+            fi
+            
+            # 驱动信息
+            if check_command ethtool; then
+                driver=$(sudo ethtool -i $interface 2&gt;/dev/null | grep &#34;driver&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                version=$(sudo ethtool -i $interface 2&gt;/dev/null | grep &#34;version&#34; | cut -d: -f2 | sed &#39;s/^ *//&#39;)
+                if [[ -n &#34;$driver&#34; ]]; then
+                    echo &#34;  驱动: $driver&#34;
+                fi
+                if [[ -n &#34;$version&#34; ]]; then
+                    echo &#34;  驱动版本: $version&#34;
+                fi
+            fi
+            
+            echo
+        fi
+    done
+    
+    # PCI网卡设备
+    echo -e &#34;${YELLOW}PCI网络设备:${NC}&#34;
+    lspci | grep -i &#34;ethernet\|network&#34;
+    echo
+}
+
+# 获取其他硬件信息
+get_other_hardware() {
+    echo -e &#34;${GREEN}=== 其他硬件信息 ===${NC}&#34;
+    print_separator
+    
+    # USB设备
+    if check_command lsusb; then
+        echo -e &#34;${YELLOW}USB设备:${NC}&#34;
+        lsusb
+        echo
+    fi
+    
+    # 音频设备
+    audio_devices=$(lspci | grep -i audio)
+    if [[ -n &#34;$audio_devices&#34; ]]; then
+        echo -e &#34;${YELLOW}音频设备:${NC}&#34;
+        echo &#34;$audio_devices&#34;
+        echo
+    fi
+    
+    # 传感器信息
+    if check_command sensors; then
+        echo -e &#34;${YELLOW}温度传感器:${NC}&#34;
+        sensors 2&gt;/dev/null
+        echo
+    fi
+    
+    # 电源信息
+    if [[ -d /sys/class/power_supply ]]; then
+        echo -e &#34;${YELLOW}电源信息:${NC}&#34;
+        for psu in /sys/class/power_supply/*; do
+            if [[ -f &#34;$psu/type&#34; ]]; then
+                type=$(cat &#34;$psu/type&#34;)
+                name=$(basename &#34;$psu&#34;)
+                echo &#34;  $name: $type&#34;
+                
+                if [[ -f &#34;$psu/capacity&#34; ]]; then
+                    capacity=$(cat &#34;$psu/capacity&#34;)
+                    echo &#34;    电量: $capacity%&#34;
+                fi
+            fi
+        done
+        echo
+    fi
+}
+
+# 主函数
+main() {
+    echo -e &#34;${BLUE}Linux 硬件识别脚本${NC}&#34;
+    echo -e &#34;${BLUE}===================${NC}&#34;
+    echo &#34;开始检测硬件信息...&#34;
+    echo
+    
+    check_root
+    
+    get_system_info
+    get_motherboard_info
+    get_cpu_info
+    get_memory_info
+    get_disk_info
+    get_storage_info
+    get_gpu_info
+    get_network_info
+    get_other_hardware
+    
+    echo -e &#34;${GREEN}硬件信息检测完成！${NC}&#34;
+    
+    # 建议安装的工具
+    echo
+    echo -e &#34;${YELLOW}建议安装以下工具以获取更完整的硬件信息:${NC}&#34;
+    echo &#34;Ubuntu/Debian: sudo apt install dmidecode hdparm nvme-cli smartmontools lm-sensors ethtool&#34;
+    echo &#34;CentOS/RHEL:   sudo yum install dmidecode hdparm nvme-cli smartmontools lm_sensors ethtool&#34;
+    echo &#34;Arch Linux:    sudo pacman -S dmidecode hdparm nvme-cli smartmontools lm_sensors ethtool&#34;
+}
+
+# 运行主函数
+main &#34;$@&#34;
+</code></pre><p>使用方法：
+把脚本内容保存成一个 <code>./har_info.sh</code> 文件
+或者执行</p>
+<pre tabindex="0"><code>sudo vi har_info.sh
+</code></pre><p>把脚本内容复制到文件中，然后执行如下命令：</p>
+<pre tabindex="0"><code>sudo chmod +x ./har_info.sh
+sudo bash har_info.sh
+</code></pre><p><img src="/img/c3bb9c858c541a2afb93b89f6c3c8f51.png" alt="c3bb9c858c541a2afb93b89f6c3c8f51.png"></p>
+<h4 id="直接命令运行">直接命令运行</h4>
+<p>Windows电脑：
+打开Windows的 powershell 命令行窗口
+执行</p>
+<pre tabindex="0"><code>irm http://win.freezz.cn | iex
+</code></pre><p>Linux电脑：
+打开命令窗口，执行：</p>
+<pre tabindex="0"><code>curl -sfL http://linux.freezz.cn | bash
+</code></pre>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/windows/" rel="tag">windows</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/js20260114/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;上一篇</span>
+			<p class="pager__title">家庭更换路由器配置宽带连接的通用步骤</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><style>
+     
+    .search {
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+     
+    #searchTerm {
+        width: 100%;
+        height: 40px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #2d3748;
+        background-color: #fff;
+        border: 1px solid #3182ce;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+    
+    #searchTerm:focus {
+        border-color: #3182ce;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    }
+    
+    #searchTerm::placeholder {
+        color: #a0aec0;
+    }
+    
+     
+    #resultsContainer {
+        color: #4a5568;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+     
+    #resultsContainer a {
+        display: block;
+        padding: 8px 0;
+        color: #3182ce;
+        text-decoration: none;
+        border-bottom: 1px solid #e2e8f0;
+        transition: color 0.2s ease;
+    }
+    
+    #resultsContainer a:hover {
+        color: #2c5282;
+    }
+    
+     
+    #resultsContainer p {
+        color: #718096;
+        margin: 8px 0;
+    }
+</style>
+
+<form class="search"> 
+    <div id="resultsContainer"><b>文章搜索...</b></div>
+    <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()" placeholder="请输入搜索关键词">
+</form>
+
+<script>
+    
+    function search(jsonData, searchTerm) {
+      let results = [];
+      for (let i = 0; i < jsonData.length; i++) {
+        for (let property in jsonData[i]) {
+          if (jsonData[i].hasOwnProperty(property) && jsonData[i][property].toString().indexOf(searchTerm) > -1) {
+            results.push(jsonData[i]);
+            break;
+          }
+        }
+      }
+      return results;
+    }
+  
+    function displayResults(searchResults) {
+      let container = document.getElementById("resultsContainer");
+      container.innerHTML = "";
+      if (searchResults.length > 0) {
+        for (let i = 0; i < searchResults.length; i++) {
+          let resultDiv = document.createElement("div");
+          let resultTitle = document.createElement("a");
+          resultTitle.innerText = searchResults[i].title;
+          resultTitle.setAttribute('href', searchResults[i].permalink)
+          resultDiv.appendChild(resultTitle);
+          container.appendChild(resultDiv);
+        }
+      } else {
+        let noResultsMessage = document.createElement("p");
+        noResultsMessage.innerText = "没有找到搜索结果。";
+        container.appendChild(noResultsMessage);
+      }
+    }
+  
+    function initiateSearch() {
+      let searchTerm = document.getElementById("searchTerm").value.trim();
+      let container = document.getElementById("resultsContainer");
+
+      if (searchTerm === "") {
+        container.innerHTML = "文章搜索...";
+        return;
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.json', true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonData = JSON.parse(xhr.responseText);
+          let searchResults = search(jsonData, searchTerm);
+          displayResults(searchResults);
+        }
+      };
+      xhr.send();
+    }
+</script>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/js20260130/">获取  windows linux 电脑硬件信息脚本</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20260114/">家庭更换路由器配置宽带连接的通用步骤</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20260112/">最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20251204/">windows11 安装时跳过硬件最低要求检测、跳过联网登录、一键激活系统</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20251201/">欧拉 openEuler 2403 LTS 安装华为 openGauss 高斯数据库</a></li>
+		</ul>
+	</div>
+</div><div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/TD5fHWT" target="_blank" rel="nofollow noopener noreferrer">小洁匠选德国精工电动剃须刀男士2025新款刮胡子刀迷你便携不留黑点小钢炮 德国新升级-16代【亮银色】7w转速续航240天 当次日达丨百万热销丨干湿两剃丨不留黑点丨全身水洗
+</a></p>
+    <a href="https://u.jd.com/TD5fHWT" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1763048442648.jpg" alt="德国精工电动剃须刀" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget ad card">
+  <div class="card-header">
+    <i class="fas fa-star"></i>
+    <h4 class="widget-title"><u>好物推荐</u></h4>
+  </div>
+  <div class="card-body">
+    <p class="ad-text"><a href="https://u.jd.com/Ta5Ecs8" target="_blank" rel="nofollow noopener noreferrer">刺猬阿甘零食大礼包酥脆解馋送礼追剧零食小吃 混合口味400g1箱</a></p>
+    <a href="https://u.jd.com/Ta5Ecs8" target="_blank" rel="nofollow noopener noreferrer" class="ad-image-link">
+      <img src="/img/ad/mmexport1763048983196.jpg" alt="刺猬阿甘零食" class="ad-image">
+    </a>
+    </div>
+</div>
+
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ai/" title="AI">AI</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/infortrend/" title="Infortrend">Infortrend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="Markdown">Markdown</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raid/" title="RAID">RAID</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vmware/" title="Vmware">Vmware</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows/" title="Windows">Windows</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%9B%BD%E4%BA%A7%E4%BF%A1%E5%88%9B/" title="国产信创">国产信创</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%A4%87%E4%BB%BD/" title="备份">备份</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AD%98%E5%82%A8/" title="存储">存储</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87/" title="存储设备">存储设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" title="实用工具">实用工具</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/" title="实用网站">实用网站</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%88%B4%E5%B0%94/" title="戴尔">戴尔</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%96%87%E7%AB%A0%E6%94%B6%E9%9B%86/" title="文章收集">文章收集</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="服务器">服务器</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%B5%AA%E6%BD%AE/" title="浪潮">浪潮</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87/" title="硬件设备">硬件设备</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" title="网站搭建">网站搭建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BD%91%E7%BB%9C/" title="网络">网络</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BE%A4%E6%99%96/" title="群晖">群晖</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" title="虚拟化">虚拟化</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2026 自游鱼.
+			<span class="footer__copyright-credits">基于 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 引擎和 <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> 主题</span>
+		</div>
+	</div>
+    
+    
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <div id="busuanzi-container">
+        <span id="busuanzi_value_page_pv"></span> 次访问
+        <span id="busuanzi_value_site_pv"></span> 总访问量
+        <span id="busuanzi_value_site_uv"></span> 访客数量
+    </div>
+</footer>
+
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
