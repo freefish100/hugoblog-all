@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>获取  windows linux 电脑硬件信息脚本 - 自游鱼</title>
+	<title>一行命令获取  windows linux 电脑服务器硬件信息 - 自游鱼</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="获取  windows linux 电脑硬件信息脚本">
 		<meta property="og:url" content="https://freezz.cc/posts/js20260130/">
   <meta property="og:site_name" content="自游鱼">
-  <meta property="og:title" content="获取  windows linux 电脑硬件信息脚本">
+  <meta property="og:title" content="一行命令获取  windows linux 电脑服务器硬件信息">
   <meta property="og:description" content="获取  windows linux 电脑硬件信息脚本">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -19,15 +19,15 @@
     <meta property="article:tag" content="Linux">
 
 		
-  <meta itemprop="name" content="获取  windows linux 电脑硬件信息脚本">
+  <meta itemprop="name" content="一行命令获取  windows linux 电脑服务器硬件信息">
   <meta itemprop="description" content="获取  windows linux 电脑硬件信息脚本">
   <meta itemprop="datePublished" content="2026-01-29T00:36:54+08:00">
   <meta itemprop="dateModified" content="2026-01-29T00:36:54+08:00">
-  <meta itemprop="wordCount" content="4478">
+  <meta itemprop="wordCount" content="4516">
   <meta itemprop="keywords" content="Windows,Linux">
 		
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="获取  windows linux 电脑硬件信息脚本">
+  <meta name="twitter:title" content="一行命令获取  windows linux 电脑服务器硬件信息">
   <meta name="twitter:description" content="获取  windows linux 电脑硬件信息脚本">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,7 +113,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">获取  windows linux 电脑硬件信息脚本</h1>
+			<h1 class="post__title">一行命令获取  windows linux 电脑服务器硬件信息</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-01-29T00:36:54&#43;08:00">2026-01-29</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="category">技术笔记</a>
@@ -128,14 +128,45 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#一行命令获取windows系统电脑的硬件配置">一行命令获取Windows系统电脑的硬件配置</a></li>
+        <li><a href="#一行命令获取linux系统电脑的硬件配置">一行命令获取Linux系统电脑的硬件配置</a></li>
+        <li><a href="#获取windows电脑硬件配置信息的脚本源码">获取windows电脑硬件配置信息的脚本源码</a></li>
+        <li><a href="#获取linux电脑硬件配置信息的脚本源码">获取Linux电脑硬件配置信息的脚本源码</a></li>
       </ul>
     </li>
   </ul>
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
-			<h4 id="获取windows电脑硬件信息脚本">获取windows电脑硬件信息脚本</h4>
+			<p>查看电脑详细的硬件配置和参数，一般都需要安装专门的硬件检测软件，总感觉不太方便，笔者就 Vibe Coding 了两份可以分别查看 Windows 和 Linux 电脑硬件信息的脚本，并且把脚本部署到云上VPS，现在可以不需要安装专门的检测软件了，直接在命令行窗口运行一条简单的命令，就可以查看到自己电脑的硬件信息了，包括主板、CPU、内存、硬盘、显卡等等硬件的型号、基本参数，序列号等多项信息，非常直观方便。</p>
+<p>这个获取硬件信息的脚本运行起来也非常简单，前提是你的电脑能上网，下面说说它的使用方法：</p>
+<h3 id="一行命令获取windows系统电脑的硬件配置">一行命令获取Windows系统电脑的硬件配置</h3>
+<p>Windows系统的电脑，支持 Windows 10/11/Server 等版本，这里以Windows 10 来演示：</p>
+<ol>
+<li>右键点击“开始”菜单，点击 “Powershell” 选项，打开Powershell 命令行窗口<br>
+<img src="/img/26896c1b9395b41c357e070000d15b51.png" alt="26896c1b9395b41c357e070000d15b51.png"></li>
+</ol>
+<ul>
+<li>或者按下 Win+R 快捷键打开“运行”窗口，输入&quot;powershell&quot; 再点击“确定”，也可以打开powershell 命令行窗口<br>
+<img src="/img/4b399b69d65f25d1bd74583005c7ea3d.png" alt="4b399b69d65f25d1bd74583005c7ea3d.png"></li>
+</ul>
+<ol start="2">
+<li>在 Powershell 窗口中输入如下这条命令并按回车键执行它：</li>
+</ol>
+<pre tabindex="0"><code>irm http://win.freezz.cn | iex
+</code></pre><p><img src="/img/1b6c2dc53d337328b83077acdc3360d4.png" alt="1b6c2dc53d337328b83077acdc3360d4.png"></p>
+<ol start="3">
+<li>执行命令后，稍等几秒钟，就可以看到电脑所有的硬件配置信息了<br>
+<img src="/img/568b14df029336cae2040c8c086c99cd.png" alt="568b14df029336cae2040c8c086c99cd.png"></li>
+</ol>
+<h3 id="一行命令获取linux系统电脑的硬件配置">一行命令获取Linux系统电脑的硬件配置</h3>
+<p>如果是Linux系统的电脑，比如 Red Hat / Centos / Debian / Ubuntu / 银河麒麟Kylin / 欧拉openEuler 等，<br>
+打开命令行终端Shell，执行这行命令：</p>
+<pre tabindex="0"><code>curl -sfL http://linux.freezz.cn | bash
+</code></pre><p><img src="/img/a573bc4b9a2d946b0613160d2f3a3c3a.png" alt="a573bc4b9a2d946b0613160d2f3a3c3a.png"></p>
+<p><img src="/img/df8c043f3ad378d38586ae88440002d3.png" alt="df8c043f3ad378d38586ae88440002d3.png"></p>
+<p>下面是脚本的源码</p>
+<h3 id="获取windows电脑硬件配置信息的脚本源码">获取windows电脑硬件配置信息的脚本源码</h3>
 <pre tabindex="0"><code># Windows Hardware Information Script
 # Converted from Linux har_info4.sh
 # Requires PowerShell 5.1 or later (Administrator privileges recommended)
@@ -452,7 +483,7 @@ Write-Host &#34;`n按回车键退出... &#34;
 在powershell命令窗口输入 <code>./har_info_win.ps1</code>并回车执行这一条命令，就可以执行脚本并显示出结果了
 <img src="/img/8122c2056b17560b9ebc44fd3f9dac19.png" alt="8122c2056b17560b9ebc44fd3f9dac19.png">
 <img src="/img/f8524c453214c0c59a53b7e6cd5f2363.png" alt="f8524c453214c0c59a53b7e6cd5f2363.png"></p>
-<h4 id="获取linux电脑硬件信息脚本">获取Linux电脑硬件信息脚本</h4>
+<h3 id="获取linux电脑硬件配置信息的脚本源码">获取Linux电脑硬件配置信息的脚本源码</h3>
 <pre tabindex="0"><code>#!/bin/bash
 
 # Linux硬件识别脚本
@@ -1530,15 +1561,7 @@ main &#34;$@&#34;
 <pre tabindex="0"><code>sudo chmod +x ./har_info.sh
 sudo bash har_info.sh
 </code></pre><p><img src="/img/c3bb9c858c541a2afb93b89f6c3c8f51.png" alt="c3bb9c858c541a2afb93b89f6c3c8f51.png"></p>
-<h4 id="直接命令运行">直接命令运行</h4>
-<p>Windows电脑：
-打开Windows的 powershell 命令行窗口
-执行</p>
-<pre tabindex="0"><code>irm http://win.freezz.cn | iex
-</code></pre><p>Linux电脑：
-打开命令窗口，执行：</p>
-<pre tabindex="0"><code>curl -sfL http://linux.freezz.cn | bash
-</code></pre>
+
 		</div>
 		<footer class="post__footer">
 			
@@ -1694,7 +1717,7 @@ sudo bash har_info.sh
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/posts/js20260130/">获取  windows linux 电脑硬件信息脚本</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/js20260130/">一行命令获取  windows linux 电脑服务器硬件信息</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20260114/">家庭更换路由器配置宽带连接的通用步骤</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20260112/">最经典的硬盘健康检测工具smartctl，全面掌控硬盘的状态信息</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/js20251204/">windows11 安装时跳过硬件最低要求检测、跳过联网登录、一键激活系统</a></li>
